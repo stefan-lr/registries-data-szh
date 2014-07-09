@@ -33,6 +33,9 @@
         "listFields": {
             "$ref": "uri://registries/people#person/listFields"
         },
+		"forcedCriterias": [
+			{ "f": "futballCoach", "op": "ex", "v": ""}
+		],
         "properties": {
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
