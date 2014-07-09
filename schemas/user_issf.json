@@ -3,6 +3,8 @@
 	"id" : "uri://registries/user_issf#",
 	"new" : {
 		"table" : "people",
+		"title" : "Nova osoba",
+		"transCode": "schema.person.title",
 		"properties" : {
 			"baseData" : {
 				"$ref": "uri://registries/people#person/properties/baseData"

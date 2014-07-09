@@ -3,11 +3,30 @@
 	"id": "uri://registries/stadium#",
 	"new": {
 		"table" : "stadium",
+		"title" : "Novy stadion",
+		"transCode": "schema.stadium.title",
 		"listFields": [
 			{"field":"baseData.name", "title":"Názov štadióna"},
 			{"field":"additionalData.overallCapacity", "title":"Celková kapacita"}
 		],
 		"properties":{
+			"_security": {
+				"_create": {
+					"_static": [
+						"Security - write"
+					]
+				},
+				"_read": {
+					"_static": [
+						"Security - read"
+					]
+				},
+				"_modify": {
+					"_static": [
+						"Security - write"
+					]
+				}
+			},
 			"baseData":{
 				"title": "Základné údaje o štadióne",
 				"type": "object",

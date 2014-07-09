@@ -2,8 +2,13 @@
 	"$schema" : "http://json-schema.org/schema#",
 	"id" : "uri://registries/player#",
 	"new" : {
+		"title" : "Nova osoba",
+		"transCode": "schema.person.title",
 		"table" : "people",
 		"properties" : {
+			"_security": {
+				"$ref": "uri://registries/people#person/properties/_security"
+			},
 			"baseData" : {
 				"$ref": "uri://registries/people#person/properties/baseData"
 			},
