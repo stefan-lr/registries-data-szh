@@ -1,42 +1,92 @@
 {
-	"$schema": "http://json-schema.org/schema#",
-	"id": "uri://registries/company",
-	"table": "company",
-		"baseData": {
-			"$ref": "uri://registries/orgnization#properties/baseData"
-		},
-		"logoInfo": {
-			"$ref": "uri://registries/orgnization#properties/logoInfo"
-		},
-		"contactInfo": {
-			"$ref": "uri://registries/orgnization#properties/contactInfo"
-		},
-		"bankInfo": {
-			"$ref": "uri://registries/orgnization#properties/bankInfo"
+	"$schema" : "http://json-schema.org/schema#",
+	"id" : "uri://registries/company#",
+	"new" : {
+		"table" : "organizations",
+		"title" : "Nova organizacia",
+		"transCode": "schema.org.title",
+		"properties" : {
+			"_security": {
+				"$ref": "uri://registries/organization#properties/_security"
+			},
+			"baseData" : {
+				"$ref": "uri://registries/organization#properties/baseData"
+			},
+			
+			"logoInfo": {
+				"$ref": "uri://registries/organization#properties/logoInfo"
+			},
+			"contactInfo": {
+				"$ref": "uri://registries/organization#properties/contactInfo"
+			},
+			"bankInfo": {
+				"$ref": "uri://registries/organization#properties/bankInfo"
+			}
 		}
-			"type": "object",
-			"properties": {
-				"id": {
-					"title": "Identifikátor",
-					"type": "string",
-					"required": true
-				},
-				"name": {
-        "table": "organizations",
-    	"title": "organizacia",
+	},
+	"view" : {
+		"table" : "organizations",
+		"title" : "organizácia",
+		"transCode": "schema.org.view",
+		"properties" : {
+			"_security": {
+				"$ref": "uri://registries/organization#properties/_security"
+			},
+			"baseData" : {
+				"$ref": "uri://registries/organization#properties/baseData"
+			},
+			"volleyballClub":{
+				"$ref": "uri://registries/organization#properties/volleyballClub"
+			},
+			"volleyballClubCurier":{
+				"$ref": "uri://registries/organization#properties/volleyballClubCurier"
+			},
+			"volleyballAssociation":{
+				"$ref": "uri://registries/organization#properties/volleyballAssociation"
+			},
+			"volleyballAssociationCurier":{
+				"$ref": "uri://registries/organization#properties/volleyballAssociationCurier"
+			},
+			"logoInfo": {
+				"$ref": "uri://registries/organization#properties/logoInfo"
+			},
+			"contactInfo": {
+				"$ref": "uri://registries/organization#properties/contactInfo"
+			},
+			"bankInfo": {
+				"$ref": "uri://registries/organization#properties/bankInfo"
+			}
+		}
+	},
+	"search" : {
+		"table": "organizations",
+    	"title": "organizácia",
+		"transCode":"schema.org.view",
         "listFields": {
-            "$ref": "uri://registries/orgnization#listFields"
+            "$ref": "uri://registries/organization#listFields"
         },
         "properties": {
             "baseData": {
-                "$ref": "uri://registries/orgnization#properties/baseData"
+                "$ref": "uri://registries/organization#properties/baseData"
             },
             "contactInfo": {
-                "$ref": "uri://registries/orgnization#properties/contactInfo"
+                "$ref": "uri://registries/organization#properties/contactInfo"
             },
             "bankInfo": {
-                "$ref": "uri://registries/orgnization#properties/bankInfo"
-            }
+                "$ref": "uri://registries/organization#properties/bankInfo"
+            },
+            "volleyballClub":{
+				"$ref": "uri://registries/organization#properties/volleyballClub"
+			},
+			"volleyballClubCurier":{
+				"$ref": "uri://registries/organization#properties/volleyballClubCurier"
+			},
+			"volleyballAssociation":{
+				"$ref": "uri://registries/organization#properties/volleyballAssociation"
+			},
+			"volleyballAssociationCurier":{
+				"$ref": "uri://registries/organization#properties/volleyballAssociationCurier"
+			}
         }
 	}
 }

@@ -32,6 +32,7 @@
     "search": {
     	"table": "people",
     	"title": "osoba",
+		"transCode":"schema.member.view",
         "listFields": {
             "$ref": "uri://registries/people#person/listFields"
         },

@@ -15,5 +15,8 @@
 	"association.json",
 	"member_issf.json",
 	"team.json",
-	"user_issf.json"
+	"user_issf.json",
+	"person.json",
+	"company.json"
+	
 ]

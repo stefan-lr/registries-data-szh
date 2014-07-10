@@ -24,9 +24,6 @@
 			"otherInfo": {
 				"$ref": "uri://registries/people#person/properties/otherInfo"
 			},
-			"licence": {
-				"$ref": "uri://registries/people#person/properties/licence"
-			},
 			"idInfo": {
 				"$ref": "uri://registries/people#person/properties/idInfo"
 			}
@@ -38,6 +35,7 @@
 	"search" : {
 		"table": "people",
     	"title": "osoba",
+		"transCode":"schema.member.view",
         "listFields": {
             "$ref": "uri://registries/people#person/listFields"
         },

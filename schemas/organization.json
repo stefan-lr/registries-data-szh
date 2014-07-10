@@ -104,15 +104,6 @@
 					"render" : {
 						"component" : "psui-datepicker"
 					}
-				},
-				"canBeFacturatedOnClub": {
-					"title": "Môže sa faktúrovať na klub",
-					"type": "string",
-					"enum": [
-						"Áno",
-						"Nie"
-					],
-					"required": true
 				}
 			}
 		},
@@ -161,16 +152,15 @@
 			"title": "Volejbalový zväz",
 			"type": "object",
 			"properties": {
-				"sportName":{
-					"title": "Športový názov zväzu",
+				"associationName":{
+					"title": "Názov zväzu",
 					"type": "string",
 					"required": false
 				},
-				"ico": {
-					"title": "IČO",
-					"transCode": "schema.org.ico",
+				"shortName":{
+					"title": "Skrátený zväzu",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"birthDate": {
 					"title": "Dátum založenia",
@@ -254,11 +244,11 @@
 					"title": "Logo",
 					"transCode": "schema.org.logo",
 					"type": "string",
-					"required": true,
+					"required": false,
 					"render": {
 						"component": "psui-uploadable-image",
 						"height": 400,
-						"width": 300
+						"width": 400
 					}
 				}
 			}
@@ -314,7 +304,7 @@
 					"title": "E-mail",
 					"transCode": "schema.org.email",
 					"type": "string",
-					"required": true
+					"required": false
 				}
 			}
 		},
@@ -333,11 +323,17 @@
 					"title": "IČO",
 					"transCode": "schema.org.ico",
 					"type": "string",
-					"required": false
+					"required": true
 				},
 				"dic": {
 					"title": "DIČ",
 					"transCode": "schema.org.dic",
+					"type": "string",
+					"required": false
+				},
+				"countryIcDPH": {
+					"title": "krajina IČ DPH",
+					"transCode": "schema.org.country.icDPH",
 					"type": "string",
 					"required": false
 				},
@@ -356,6 +352,12 @@
 				"bankCode": {
 					"title": "Kód banky",
 					"transCode": "schema.org.bankCode",
+					"type": "string",
+					"required": false
+				},
+				"bank": {
+					"title": "Názov banky",
+					"transCode": "schema.org.bank",
 					"type": "string",
 					"required": false
 				},

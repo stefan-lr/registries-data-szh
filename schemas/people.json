@@ -35,9 +35,9 @@
 			"title": "Základné údaje",
 			"type": "object",
 			"properties": {
-				"nationalID":{
-					"title": "Rodné číslo",
-					"transCode": "schema.people.nationalID",
+				"registrationID":{
+					"title": "Registračné číslo",
+					"transCode": "schema.people.registrationID",
 					"type": "string",
 					"required": true
 				},
@@ -65,9 +65,15 @@
 					"type": "string",
 					"required": false
 				},
-				"title": {
-					"title": "Titul",
-					"transCode": "schema.people.title",
+				"titleBefore": {
+					"title": "Titul pred",
+					"transCode": "schema.people.title.before",
+					"type": "string",
+					"required": false
+				},
+				"titleAfter": {
+					"title": "Titul za",
+					"transCode": "schema.people.title.after",
 					"type": "string",
 					"required": false
 				},
@@ -95,6 +101,12 @@
 					"transCode": "schema.people.nationality",
 					"type": "string",
 					"required": true
+				},
+				"stateOfPerson": {
+					"title": "Stav osoby",
+					"transCode": "schema.people.state.of.person",
+					"type": "string",
+					"required": false
 				}
 			}
 		},
@@ -109,6 +121,11 @@
 						"registry": "organizations",
 						"name": "baseData.name"
 					}
+				},
+				"stateOfReferee": {
+					"title": "Stav rozhodcu",
+					"type": "string",
+					"required": false
 				},
 				"association": {
 					"title": "Aktuálny zväz",
@@ -154,6 +171,11 @@
 						"registry": "organizations",
 						"name": "baseData.name"
 					}
+				},
+				"stateOfCoach": {
+					"title": "Stav trénera",
+					"type": "string",
+					"required": false
 				},
 				"association": {
 					"title": "Aktuálny zväz",
@@ -244,15 +266,7 @@
 					}
 				},
 				"firstClub": {
-					"title": "Materský klub",
-					"required": false,
-					"$objectLink": {
-						"registry": "organizations",
-						"name": "baseData.name"
-					}
-				},
-				"hostClub": {
-					"title": "Hosťujúci klub (do)",
+					"title": "Klubová príslušnosť",
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
@@ -265,20 +279,14 @@
 					"required": false
 				},
 				"expirationOfProffesionalContract": {
-					"title": "Platnosť profesionálnej zmluvy",
+					"title": "Profesionálna zmluva",
 					"type": "string",
-					"required": false,
-					"render" : {
-						"component" : "psui-datepicker"
-					}
+					"required": false
 				},
 				"expirationOfAgentContract": {
-					"title": "Platnosť zmluvy s agentom",
+					"title": "Zmluva s agentom",
 					"type": "string",
-					"required": false,
-					"render" : {
-						"component" : "psui-datepicker"
-					}
+					"required": false
 				},
 				"expiration": {
 					"title": "Platnosť do",
@@ -351,7 +359,7 @@
 					"title": "Fotografia",
 					"transCode": "schema.people.photo",
 					"type": "string",
-					"required": true,
+					"required": false,
 					"render": {
 						"component": "psui-uploadable-image",
 						"height": 400,
@@ -369,31 +377,31 @@
 					"title": "Ulica",
 					"transCode": "schema.people.street",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"houseNumber": {
 					"title": "Číslo domu",
 					"transCode": "schema.people.houseNumber",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"city": {
 					"title": "Obec",
 					"transCode": "schema.people.city",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"zipCode": {
 					"title": "PSČ",
 					"transCode": "schema.people.zipCode",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"country": {
 					"title": "Štát",
 					"transCode": "schema.people.country",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"phoneNumber": {
 					"title": "Telefón",
@@ -411,7 +419,7 @@
 					"title": "E-mail",
 					"transCode": "schema.people.email",
 					"type": "string",
-					"required": true
+					"required": false
 				}
 			}
 		},
@@ -481,16 +489,6 @@
 			"transCode": "schema.people.otherInfo",
 			"type": "object",
 			"properties": {
-				"isPhotoPublic": {
-					"title": "Je fotka verejná",
-					"transCode": "schema.people.isPhotoPublic",
-					"type": "string",
-					"enum": [
-						"Áno",
-						"Nie"
-					],
-					"required": false
-				},
 				"idCardNumber": {
 					"title": "Číslo OP",
 					"transCode": "schema.people.idCardNumber",
@@ -558,33 +556,12 @@
 				}
 			}
 		},
-		"licence":{
-			"title": "Licencie",
-			"type": "object",
-			"properties": {
-				"a": {
-					"title": "A - Pre amatérske súťaže",
-					"type": "string",
-					"required": false
-				},
-				"fifa": {
-					"title": "FIFA",
-					"type": "string",
-					"required": false
-				},
-				"p": {
-					"title": "P - Pre profesionálne súťaže",
-					"type": "string",
-					"required": false
-				}
-			}
-		},
 		"idInfo": {
 			"title": "Registračný preukaz",
 			"type": "object",
 			"properties": {
 				"currnetId": {
-					"title": "Aktuálny preukaz",
+					"title": "Aktuálne číslo preukazu člena",
 					"type": "string",
 					"required": false
 				},
@@ -597,7 +574,7 @@
 					}
 				},
 				"dateOfApplicationForId": {
-					"title": "Dátum žiadosti o preukaz",
+					"title": "Dátum začiatku platnosti preukazu",
 					"type": "string",
 					"required": false,
 					"render" : {

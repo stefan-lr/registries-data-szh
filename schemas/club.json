@@ -35,6 +35,7 @@
 	"search" : {
 		"table": "organizations",
     	"title": "organizácia",
+		"transCode": "schema.org.view",
         "listFields": {
             "$ref": "uri://registries/organization#listFields"
         },
