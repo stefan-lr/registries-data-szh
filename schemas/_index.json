@@ -17,5 +17,6 @@
 	"user_issf.json",
 	"person.json",
 	"company.json",
-	"userSecurity.json"	
+	"userSecurity.json",
+	"statistics.json"
 ]
