@@ -47,19 +47,15 @@
 						"required": true
 					},
 					"town": {
-						"title": "obec",
-						"type": "string",
-						"required": true
+						"$ref":"uri://registries/towns#town"
 					},
 					"postcode": {
 						"title": "PSČ",
 						"type": "string",
 						"required": true
 					},
-					"state": {
-						"title": "Štát",
-						"type": "string",
-						"required": true
+					"country": {
+						"$ref":"uri://registries/countries#country"
 					}
 				}
 			},
@@ -99,7 +95,11 @@
 							"Áno",
 							"Nie"
 						],
-						"required": false
+						"required": false,
+						"render":{
+							"component": "psui-selectbox",
+							"searchable": true
+						}
 					},
 					"runningFrom": {
 						"title": "V prevádzke od",

@@ -86,7 +86,15 @@
 				"stateOfClub": {
 					"title": "Stav klubu",
 					"type": "string",
-					"required": true
+					"enum":[
+						"aktívna",
+						"neaktívna"
+					],
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"notPaying": {
 					"title": "Neplatič",
@@ -95,7 +103,11 @@
 						"Áno",
 						"Nie"
 					],
-					"required": true
+					"required": true,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"dateOfRegistration": {
 					"title": "Dátum registrácie",
@@ -132,9 +144,7 @@
 					"required": false
 				},
 				"city": {
-					"title": "Obec",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/towns#town"
 				},
 				"zipCode": {
 					"title": "PSČ",
@@ -142,9 +152,7 @@
 					"required": false
 				},
 				"country": {
-					"title": "Štát",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/countries#country"
 				}
 			}
 		},
@@ -182,7 +190,11 @@
 						"Áno",
 						"Nie"
 					],
-					"required": true
+					"required": true,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"dateOfRegistration": {
 					"title": "Dátum registrácie",
@@ -219,9 +231,7 @@
 					"required": false
 				},
 				"city": {
-					"title": "Obec",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/towns#town"
 				},
 				"zipCode": {
 					"title": "PSČ",
@@ -229,9 +239,7 @@
 					"required": false
 				},
 				"country": {
-					"title": "Štát",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/countries#country"
 				}
 			}
 		},
@@ -271,10 +279,7 @@
 					"required": true
 				},
 				"city": {
-					"title": "Obec",
-					"transCode": "schema.org.city",
-					"type": "string",
-					"required": true
+					"$ref":"uri://registries/towns#town"
 				},
 				"zipCode": {
 					"title": "PSČ",
@@ -283,10 +288,7 @@
 					"required": true
 				},
 				"country": {
-					"title": "Štát",
-					"transCode": "schema.org.country",
-					"type": "string",
-					"required": true
+					"$ref":"uri://registries/countries#country"
 				},
 				"phoneNumber": {
 					"title": "Telefón",
@@ -386,10 +388,7 @@
 					"required": true
 				},
 				"city": {
-					"title": "Obec",
-					"transCode": "schema.org.city",
-					"type": "string",
-					"required": true
+					"$ref":"uri://registries/towns#town"
 				},
 				"zipCode": {
 					"title": "PSČ",
@@ -398,10 +397,7 @@
 					"required": true
 				},
 				"country": {
-					"title": "Štát",
-					"transCode": "schema.org.country",
-					"type": "string",
-					"required": true
+					"$ref":"uri://registries/countries#country"
 				}
 			}
 		},
@@ -447,7 +443,11 @@
 						"Áno",
 						"Nie"
 					],
-					"required": true
+					"required": true,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"issfActive": {
 					"title": "ISSF aktívny",
@@ -456,7 +456,11 @@
 						"Áno",
 						"Nie"
 					],
-					"required": true
+					"required": true,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"dateOfRegistration": {
 					"title": "Dátum registrácie",
@@ -473,7 +477,11 @@
 						"Áno",
 						"Nie"
 					],
-					"required": true
+					"required": true,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				}
 			}
 		},
@@ -502,9 +510,7 @@
 					"required": false
 				},
 				"city": {
-					"title": "Obec",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/towns#town"
 				},
 				"zipCode": {
 					"title": "PSČ",
@@ -512,9 +518,7 @@
 					"required": false
 				},
 				"country": {
-					"title": "Štát",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/countries#country"
 				}
 			}
 		}

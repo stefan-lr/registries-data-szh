@@ -94,19 +94,28 @@
 						"Muž",
 						"Žena"
 					],
-					"required": true
+					"required": true,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"nationality": {
-					"title": "Štatna príslusnosť",
-					"transCode": "schema.people.nationality",
-					"type": "string",
-					"required": true
+					"$ref":"uri://registries/nationality#country"
 				},
 				"stateOfPerson": {
 					"title": "Stav osoby",
 					"transCode": "schema.people.state.of.person",
 					"type": "string",
-					"required": false
+					"enum":[
+						"aktívna",
+						"neaktívna"
+					],
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				}
 			}
 		},
@@ -125,7 +134,15 @@
 				"stateOfReferee": {
 					"title": "Stav rozhodcu",
 					"type": "string",
-					"required": false
+					"enum":[
+						"aktívna",
+						"neaktívna"
+					],
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"association": {
 					"title": "Aktuálny zväz",
@@ -175,7 +192,15 @@
 				"stateOfCoach": {
 					"title": "Stav trénera",
 					"type": "string",
-					"required": false
+					"enum":[
+						"aktívna",
+						"neaktívna"
+					],
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"association": {
 					"title": "Aktuálny zväz",
@@ -225,7 +250,15 @@
 				"state": {
 					"title": "Stav",
 					"type": "string",
-					"required": false
+					"enum":[
+						"aktívna",
+						"neaktívna"
+					],
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"association": {
 					"title": "Zväzová príslušnosť",
@@ -276,7 +309,15 @@
 				"stateOfPlayer": {
 					"title": "Stav hráča",
 					"type": "string",
-					"required": false
+					"enum":[
+						"aktívna",
+						"neaktívna"
+					],
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"expirationOfProffesionalContract": {
 					"title": "Profesionálna zmluva",
@@ -386,10 +427,7 @@
 					"required": false
 				},
 				"city": {
-					"title": "Obec",
-					"transCode": "schema.people.city",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/towns#town"
 				},
 				"zipCode": {
 					"title": "PSČ",
@@ -398,10 +436,7 @@
 					"required": false
 				},
 				"country": {
-					"title": "Štát",
-					"transCode": "schema.people.country",
-					"type": "string",
-					"required": false
+					"$ref":"uri://registries/countries#country"
 				},
 				"phoneNumber": {
 					"title": "Telefón",
@@ -465,10 +500,7 @@
 					"required": true
 				},
 				"city": {
-					"title": "Obec",
-					"transCode": "schema.people.city",
-					"type": "string",
-					"required": true
+					"$ref":"uri://registries/towns#town"
 				},
 				"zipCode": {
 					"title": "PSČ",
@@ -477,10 +509,7 @@
 					"required": true
 				},
 				"country": {
-					"title": "Štát",
-					"transCode": "schema.people.country",
-					"type": "string",
-					"required": true
+					"$ref":"uri://registries/countries#country"
 				}
 			}
 		},
@@ -527,7 +556,11 @@
 						"Áno",
 						"Nie"
 					],
-					"required": false
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"hasToChangePassword": {
 					"title": "Musí si zmeniť heslo",
@@ -536,7 +569,11 @@
 						"Áno",
 						"Nie"
 					],
-					"required": false
+					"required": false,
+					"render":{
+						"component": "psui-selectbox",
+						"searchable": true
+					}
 				},
 				"dateOfLastLogin": {
 					"title": "Dátum posledného prihlásenia",

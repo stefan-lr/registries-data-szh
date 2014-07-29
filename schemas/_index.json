@@ -19,4 +19,7 @@
 	"company.json",
 	"userSecurity.json",
 	"statistics.json"
+	"nationality.json",
+	"countries.json",
+	"towns.json"
 ]
