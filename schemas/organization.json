@@ -44,8 +44,8 @@
 				}
 			}
 		},
-		"volleyballClub":{
-			"title": "Volejbalový klub",
+		"club":{
+			"title": "Klub",
 			"type": "object",
 			"properties": {
 				"sportName":{
@@ -119,8 +119,8 @@
 				}
 			}
 		},
-		"volleyballClubCurier": {
-			"title": "Volleyballový klub - poštová adresa",
+		"clubCurier": {
+			"title": "Klub - poštová adresa",
 			"type": "object",
 			"properties": {
 				"contactPerson": {
@@ -156,8 +156,8 @@
 				}
 			}
 		},
-		"volleyballAssociation":{
-			"title": "Volejbalový zväz",
+		"association":{
+			"title": "Zväz",
 			"type": "object",
 			"properties": {
 				"associationName":{
@@ -206,8 +206,8 @@
 				}
 			}
 		},
-		"volleyballAssociationCurier": {
-			"title": "Volleyballový zväz - poštová adresa",
+		"associationCurier": {
+			"title": "Zväz - poštová adresa",
 			"type": "object",
 			"properties": {
 				"contactPerson": {

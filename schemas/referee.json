@@ -12,8 +12,8 @@
 			"baseData" : {
 				"$ref": "uri://registries/people#person/properties/baseData"
 			},
-			"futballReferee": {
-				"$ref": "uri://registries/people#person/properties/futballReferee"
+			"referee": {
+				"$ref": "uri://registries/people#person/properties/referee"
 			},
 			"photoInfo": {
 				"$ref": "uri://registries/people#person/properties/photoInfo"
@@ -40,7 +40,7 @@
             "$ref": "uri://registries/people#person/listFields"
         },
 		"forcedCriterias": [
-			{ "f": "futballReferee", "op": "ex", "v": ""}
+			{ "f": "referee", "op": "ex", "v": ""}
 		],
         "properties": {
             "baseData": {
@@ -55,8 +55,8 @@
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
             },
-            "futballReferee": {
-                "$ref": "uri://registries/people#person/properties/futballReferee"
+            "referee": {
+                "$ref": "uri://registries/people#person/properties/referee"
             }
         }
 	}

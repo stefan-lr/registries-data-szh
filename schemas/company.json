@@ -36,16 +36,16 @@
 				"$ref": "uri://registries/organization#properties/baseData"
 			},
 			"volleyballClub":{
-				"$ref": "uri://registries/organization#properties/volleyballClub"
+				"$ref": "uri://registries/organization#properties/club"
 			},
 			"volleyballClubCurier":{
-				"$ref": "uri://registries/organization#properties/volleyballClubCurier"
+				"$ref": "uri://registries/organization#properties/clubCurier"
 			},
 			"volleyballAssociation":{
-				"$ref": "uri://registries/organization#properties/volleyballAssociation"
+				"$ref": "uri://registries/organization#properties/association"
 			},
 			"volleyballAssociationCurier":{
-				"$ref": "uri://registries/organization#properties/volleyballAssociationCurier"
+				"$ref": "uri://registries/organization#properties/associationCurier"
 			},
 			"logoInfo": {
 				"$ref": "uri://registries/organization#properties/logoInfo"
@@ -76,16 +76,16 @@
                 "$ref": "uri://registries/organization#properties/bankInfo"
             },
             "volleyballClub":{
-				"$ref": "uri://registries/organization#properties/volleyballClub"
+				"$ref": "uri://registries/organization#properties/club"
 			},
 			"volleyballClubCurier":{
-				"$ref": "uri://registries/organization#properties/volleyballClubCurier"
+				"$ref": "uri://registries/organization#properties/clubCurier"
 			},
 			"volleyballAssociation":{
-				"$ref": "uri://registries/organization#properties/volleyballAssociation"
+				"$ref": "uri://registries/organization#properties/association"
 			},
 			"volleyballAssociationCurier":{
-				"$ref": "uri://registries/organization#properties/volleyballAssociationCurier"
+				"$ref": "uri://registries/organization#properties/associationCurier"
 			}
         }
 	}

@@ -12,8 +12,8 @@
 			"baseData" : {
 				"$ref": "uri://registries/people#person/properties/baseData"
 			},
-			"futballPlayer": {
-				"$ref": "uri://registries/people#person/properties/futballPlayer"
+			"player": {
+				"$ref": "uri://registries/people#person/properties/player"
 			},
 			"photoInfo": {
 				"$ref": "uri://registries/people#person/properties/photoInfo"
@@ -40,7 +40,7 @@
             "$ref": "uri://registries/people#person/listFields"
         },
 		"forcedCriterias": [
-			{ "f": "futballPlayer", "op": "ex", "v": ""}
+			{ "f": "player", "op": "ex", "v": ""}
 		],
         "properties": {
             "baseData": {
@@ -55,8 +55,8 @@
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
             },
-            "futballPlayer": {
-                "$ref": "uri://registries/people#person/properties/futballPlayer"
+            "player": {
+                "$ref": "uri://registries/people#person/properties/player"
             }
         }
 	}

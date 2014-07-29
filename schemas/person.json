@@ -31,14 +31,14 @@
 			"baseData" : {
 				"$ref": "uri://registries/people#person/properties/baseData"
 			},
-			"futballPlayer": {
-				"$ref": "uri://registries/people#person/properties/futballPlayer"
+			"player": {
+				"$ref": "uri://registries/people#person/properties/player"
 			},
-			"futballCoach": {
-				"$ref": "uri://registries/people#person/properties/futballCoach"
+			"coach": {
+				"$ref": "uri://registries/people#person/properties/coach"
 			},
-			"futballReferee": {
-				"$ref": "uri://registries/people#person/properties/futballReferee"
+			"referee": {
+				"$ref": "uri://registries/people#person/properties/referee"
 			},
 			"photoInfo": {
 				"$ref": "uri://registries/people#person/properties/photoInfo"
@@ -74,14 +74,14 @@
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
             },
-            "futballCoach": {
-				"$ref": "uri://registries/people#person/properties/futballCoach"
+            "coach": {
+				"$ref": "uri://registries/people#person/properties/coach"
 			},
-			"futballPlayer": {
-				"$ref": "uri://registries/people#person/properties/futballPlayer"
+			"player": {
+				"$ref": "uri://registries/people#person/properties/player"
 			},
-			"futballReferee": {
-				"$ref": "uri://registries/people#person/properties/futballReferee"
+			"referee": {
+				"$ref": "uri://registries/people#person/properties/referee"
 			}
         }
 	}

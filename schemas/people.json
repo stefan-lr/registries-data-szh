@@ -119,8 +119,8 @@
 				}
 			}
 		},
-		"futballReferee":{
-			"title": "Futbalový rozhodca",
+		"referee":{
+			"title": "Rozhodca",
 			"type": "object",
 			"properties": {
 				"firstAssociation": {
@@ -177,8 +177,8 @@
 				}
 			}
 		},
-		"futballCoach":{
-			"title": "Futbalový tréner",
+		"coach":{
+			"title": "Tréner",
 			"type": "object",
 			"properties": {
 				"firstAssociation": {
@@ -235,8 +235,8 @@
 				}
 			}
 		},
-		"futballAgent":{
-			"title": "Futbalový agent",
+		"agent":{
+			"title": "Agent",
 			"type": "object",
 			"properties": {
 				"firstAssociation": {
@@ -286,8 +286,8 @@
 				}
 			}
 		},
-		"futballPlayer":{
-			"title": "Futbalový hráč",
+		"player":{
+			"title": "Hráč",
 			"type": "object",
 			"properties": {
 				"clubOfFirstRegistration": {
