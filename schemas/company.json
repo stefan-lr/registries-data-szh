@@ -35,16 +35,16 @@
 			"baseData" : {
 				"$ref": "uri://registries/organization#properties/baseData"
 			},
-			"volleyballClub":{
+			"club":{
 				"$ref": "uri://registries/organization#properties/club"
 			},
-			"volleyballClubCurier":{
+			"clubCurier":{
 				"$ref": "uri://registries/organization#properties/clubCurier"
 			},
-			"volleyballAssociation":{
+			"association":{
 				"$ref": "uri://registries/organization#properties/association"
 			},
-			"volleyballAssociationCurier":{
+			"associationCurier":{
 				"$ref": "uri://registries/organization#properties/associationCurier"
 			},
 			"logoInfo": {
@@ -75,16 +75,16 @@
             "bankInfo": {
                 "$ref": "uri://registries/organization#properties/bankInfo"
             },
-            "volleyballClub":{
+            "club":{
 				"$ref": "uri://registries/organization#properties/club"
 			},
-			"volleyballClubCurier":{
+			"clubCurier":{
 				"$ref": "uri://registries/organization#properties/clubCurier"
 			},
-			"volleyballAssociation":{
+			"association":{
 				"$ref": "uri://registries/organization#properties/association"
 			},
-			"volleyballAssociationCurier":{
+			"associationCurier":{
 				"$ref": "uri://registries/organization#properties/associationCurier"
 			}
         }
