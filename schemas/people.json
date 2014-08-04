@@ -128,7 +128,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "association.associationName"
 					}
 				},
 				"stateOfReferee": {
@@ -149,7 +149,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "association.associationName"
 					}
 				},
 				"firstYear": {
@@ -186,7 +186,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "association.associationName"
 					}
 				},
 				"stateOfCoach": {
@@ -207,7 +207,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "association.associationName"
 					}
 				},
 				"firstYear": {
@@ -244,7 +244,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "association.associationName"
 					}
 				},
 				"state": {
@@ -265,7 +265,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "association.associationName"
 					}
 				},
 				"expirationOfLicense": {
@@ -295,7 +295,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "club.sportName"
 					}
 				},
 				"firstClub": {
@@ -303,7 +303,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "baseData.name"
+						"name": "club.sportName"
 					}
 				},
 				"stateOfPlayer": {

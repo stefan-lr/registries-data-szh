@@ -9,13 +9,10 @@
 			"_security": {
 				"$ref": "uri://registries/organization#properties/_security"
 			},
-			"baseData" : {
-				"$ref": "uri://registries/organization#properties/baseData"
-			},
-			"club":{
+			"association":{
 				"$ref": "uri://registries/organization#properties/association"
 			},
-			"clubCurier":{
+			"associationCurier":{
 				"$ref": "uri://registries/organization#properties/associationCurier"
 			},
 			"logoInfo": {
@@ -36,9 +33,10 @@
 		"table": "organizations",
     	"title": "organizácia",
 		"transCode": "schema.org.view",
-        "listFields": {
-            "$ref": "uri://registries/organization#listFields"
-        },
+        "listFields": [
+			{"field":"id", "title": "ID"},
+			{"field":"association.associationName", "title":"Meno"}
+		],
 		"forcedCriterias": [
 			{ "f": "association", "op": "ex", "v": ""}
 		],
@@ -52,10 +50,10 @@
             "bankInfo": {
                 "$ref": "uri://registries/organization#properties/bankInfo"
             },
-            "club": {
+            "association": {
                 "$ref": "uri://registries/organization#properties/association"
             },
-			"clubCurier": {
+			"associationCurier": {
                 "$ref": "uri://registries/organization#properties/associationCurier"
             }
         }

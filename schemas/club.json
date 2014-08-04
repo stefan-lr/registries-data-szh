@@ -9,9 +9,6 @@
 			"_security": {
 				"$ref": "uri://registries/organization#properties/_security"
 			},
-			"baseData" : {
-				"$ref": "uri://registries/organization#properties/baseData"
-			},
 			"club":{
 				"$ref": "uri://registries/organization#properties/club"
 			},
@@ -36,9 +33,10 @@
 		"table": "organizations",
     	"title": "organizácia",
 		"transCode": "schema.org.view",
-        "listFields": {
-            "$ref": "uri://registries/organization#listFields"
-        },
+        "listFields": [
+			{"field":"id", "title": "ID"},
+			{"field":"club.sportName", "title":"Meno"}
+		],
 		"forcedCriterias": [
 			{ "f": "club", "op": "ex", "v": ""}
 		],
