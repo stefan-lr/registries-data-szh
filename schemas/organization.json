@@ -278,13 +278,13 @@
 					"title": "Ulica",
 					"transCode": "schema.org.street",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"houseNumber": {
 					"title": "Číslo domu",
 					"transCode": "schema.org.houseNumber",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"city": {
 					"$ref":"uri://registries/towns#town"
@@ -293,7 +293,7 @@
 					"title": "PSČ",
 					"transCode": "schema.org.zipCode",
 					"type": "string",
-					"required": true
+					"required": false
 				},
 				"country": {
 					"$ref":"uri://registries/countries#country"
@@ -396,7 +396,7 @@
 					"required": true
 				},
 				"city": {
-					"$ref":"uri://registries/towns#town"
+					"$ref":"uri://registries/towns_required#town"
 				},
 				"zipCode": {
 					"title": "PSČ",

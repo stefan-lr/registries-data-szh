@@ -39,12 +39,12 @@
 					"street": {
 						"title": "Ulica",
 						"type": "string",
-						"required": true
+						"required": false
 					},
 					"houseNumber": {
 						"title": "Číslo domu",
 						"type": "number",
-						"required": true
+						"required": false
 					},
 					"town": {
 						"$ref":"uri://registries/towns#town"
@@ -52,7 +52,7 @@
 					"postcode": {
 						"title": "PSČ",
 						"type": "string",
-						"required": true
+						"required": false
 					},
 					"country": {
 						"$ref":"uri://registries/countries#country"

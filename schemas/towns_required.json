@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/schema#",
-	"id": "uri://registries/towns#",
+	"id": "uri://registries/towns_required#",
 	"type": "object",
 	"town":{
 		"title": "Obec",
@@ -4115,7 +4115,7 @@
 			"Zvolen",
 			"Žilina"
 		],
-        "required": false,
+        "required": true,
 		"render": {
 			"component": "psui-selectbox",
 			"searchable": true

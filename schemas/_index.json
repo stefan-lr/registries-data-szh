@@ -22,5 +22,8 @@
 	"nationality.json",
 	"countries.json",
 	"roster.json",
-	"towns.json"
+	"towns.json",
+	"towns_required.json",
+	"competition.json",
+	"season.json"
 ]

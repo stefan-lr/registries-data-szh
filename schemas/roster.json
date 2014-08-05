@@ -33,22 +33,18 @@
 					},
 					"competition": {
 						"title": "Súťaž",
-						"type": "string",
 						"required": true,
-						"enum": ["Súťaž 1", "Súťaž 2", "Súťaž 3"],
-						"render":{
-							"component": "psui-selectbox",
-							"searchable": false
+						"$objectLink": {
+							"registry": "competition",
+							"name": "baseData.name"
 						}
 					},
 					"season": {
 						"title": "Obdobie",
-						"type": "string",
 						"required": true,
-						"enum": ["2014/2015", "2015/2016", "2016/2017"],
-						"render":{
-							"component": "psui-selectbox",
-							"searchable": false
+						"$objectLink": {
+							"registry": "season",
+							"name": "baseData.name"
 						}
 					}
 				}
