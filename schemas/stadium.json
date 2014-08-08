@@ -3,10 +3,10 @@
 	"id": "uri://registries/stadium#",
 	"new": {
 		"table" : "stadium",
-		"title" : "Novy stadion",
-		"transCode": "schema.stadium.title",
+		"title" : "Nový športový objekt",
+		"xxtransCode": "schema.stadium.title",
 		"listFields": [
-			{"field":"baseData.name", "title":"Názov štadióna"},
+			{"field":"baseData.name", "title":"Názov športového objektu"},
 			{"field":"additionalData.overallCapacity", "title":"Celková kapacita"}
 		],
 		"properties":{
@@ -28,11 +28,11 @@
 				}
 			},
 			"baseData":{
-				"title": "Základné údaje o štadióne",
+				"title": "Základné údaje o športovom objekte",
 				"type": "object",
 				"properties": {
 					"name": {
-						"title": "Názov štadióna",
+						"title": "Názov športového objektu",
 						"type": "string",
 						"required": true
 					},
@@ -60,9 +60,36 @@
 				}
 			},
 			"additionalData":{
-				"title": "Základné údaje o štadióne",
+				"title": "Doplňujúce údaje o športovom objekte",
 				"type": "object",
 				"properties": {
+					"type": {
+						"title": "Typ športového objektu",
+						"type": "string",
+						"required": false,
+						"enum":[
+							"hala",
+							"ihrisko",
+							"štadión"
+						],
+						"render":{
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					},
+					"surface": {
+						"title": "Povrch",
+						"type": "string",
+						"required": false,
+						"enum":[
+							"prírodný",
+							"umelý"
+						],
+						"render":{
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					},
 					"overallCapacity": {
 						"title": "Celková kapacita",
 						"type": "number",
@@ -157,7 +184,7 @@
 	},
 	"search" : {
 		"table": "stadium",
-    	"title": "štadión",
+    	"title": "športový objekt",
         "listFields": {
             "$ref": "uri://registries/stadium#new/listFields"
         },

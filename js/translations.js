@@ -69,7 +69,7 @@ angular.module('registries')
 		"menu.player.title": "Hráč",
 		"menu.referee.title": "Rozhodca",
 		"menu.coach.title": "Tréner",
-		"menu.stadium.title": "Štadión",
+		"menu.stadium.title": "Športový objekt",
 		"menu.club.title": "Klub",
 		"menu.association.title": "Zväz",
 		"menu.person.title": "Osoba",

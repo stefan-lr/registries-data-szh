@@ -1,0 +1,128 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "uri://registries/transfer#",
+	"new": {
+		"table" : "transfer",
+		"title" : "Nový transfer",
+		"xxtransCode": "schema.transfer.title",
+		"listFields": [
+			{"field":"baseData.player", "title":"Hráč"},
+			{"field":"baseData.clubFrom", "title":"Z klubu"},
+			{"field":"baseData.clubTo", "title":"Do klubu"}
+		],
+		"properties":{
+			"_security": {
+				"_create": {
+					"_static": [
+						"Security - write"
+					]
+				},
+				"_read": {
+					"_static": [
+						"Security - read"
+					]
+				},
+				"_modify": {
+					"_static": [
+						"Security - write"
+					]
+				}
+			},
+			"baseData":{
+				"title": "Základné údaje o transfere",
+				"type": "object",
+				"properties": {
+					"ID": {
+						"title": "ID",
+						"type": "string",
+						"required": true
+					},
+					"player": {
+						"title": "Hráč",
+						"type": "string",
+						"required": true,
+						"$objectLink": {
+							"registry": "people",
+							"name": "baseData.name"
+						}
+					},
+					"clubFrom": {
+						"title": "Z klubu",
+						"type": "string",
+						"required": true,
+						"$objectLink": {
+							"registry": "organizations",
+							"name": "club.sportName"
+						}
+					},
+					"clubTo": {
+						"title": "Do klubu",
+						"type": "string",
+						"required": true,
+						"$objectLink": {
+							"registry": "organizations",
+							"name": "club.sportName"
+						}
+					},
+					"typeOfTransfer": {
+						"title": "Typ transferu",
+						"type": "string",
+						"required": true,
+						"enum":[
+							"prestup",
+							"hosťovanie"
+						],
+						"render":{
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					},
+					"dateFrom": {
+						"title": "Dátum od",
+						"type": "string",
+						"required": true,
+						"render" : {
+							"component" : "psui-datepicker"
+						}
+					},
+					"dateTo": {
+						"title": "Dátum do",
+						"type": "string",
+						"required": false,
+						"render" : {
+							"component" : "psui-datepicker"
+						}
+					},
+					"state": {
+						"title": "Stav",
+						"type": "string",
+						"required": true,
+						"enum":[
+							"aktívny",
+							"neaktívny"
+						],
+						"render":{
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					}
+				}
+			}
+		}
+	},
+	"view" : {
+		"$ref" : "uri://registries/transfer#new"
+	},
+	"search" : {
+		"table": "transfer",
+    	"title": "transfér",
+        "listFields": {
+            "$ref": "uri://registries/transfer#new/listFields"
+        },
+        "properties": {
+            "baseData": {
+                "$ref": "uri://registries/transfer#new/properties/baseData"
+            }
+        }
+	}
+}
