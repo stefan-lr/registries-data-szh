@@ -7,6 +7,7 @@
 		"xxtransCode": "schema.people.baseData.nationality",
         "type": "string",
 		"enum":[
+			"SVK",
 			"AFG",
 			"ALA",
 			"ALB",
@@ -204,7 +205,6 @@
 			"SYC",
 			"SLE",
 			"SGP",
-			"SVK",
 			"SVN",
 			"SOM",
 			"ARE",
@@ -259,6 +259,7 @@
 			"ZWE"
 		],
 		"enumTransCodes":[
+				"schemas.countries.enum.SVK",
 				"schemas.countries.enum.AFG",
 				"schemas.countries.enum.ALA",
 				"schemas.countries.enum.ALB",
@@ -456,7 +457,6 @@
 				"schemas.countries.enum.SYC",
 				"schemas.countries.enum.SLE",
 				"schemas.countries.enum.SGP",
-				"schemas.countries.enum.SVK",
 				"schemas.countries.enum.SVN",
 				"schemas.countries.enum.SOM",
 				"schemas.countries.enum.ARE",
