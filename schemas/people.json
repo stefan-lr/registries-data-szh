@@ -298,7 +298,7 @@
 						"name": "club.sportName"
 					}
 				},
-				"firstClub": {
+				"club": {
 					"title": "Klubová príslušnosť",
 					"required": false,
 					"$objectLink": {

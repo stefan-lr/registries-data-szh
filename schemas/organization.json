@@ -48,7 +48,7 @@
 			"title": "Klub",
 			"type": "object",
 			"properties": {
-				"sportName":{
+				"name":{
 					"title": "Názov klubu",
 					"type": "string",
 					"required": false
@@ -67,7 +67,7 @@
 					"type": "string",
 					"required": true
 				},
-				"birthDate": {
+				"startDate": {
 					"title": "Dátum založenia",
 					"type": "string",
 					"required": false,
@@ -75,7 +75,7 @@
 						"component" : "psui-datepicker"
 					}
 				},
-				"Stadium": {
+				"stadium": {
 					"title": "Štadión",
 					"required": false,
 					"$objectLink": {
@@ -119,7 +119,7 @@
 				}
 			}
 		},
-		"clubCurier": {
+		"clubAdress": {
 			"title": "Klub - poštová adresa",
 			"type": "object",
 			"properties": {
@@ -166,7 +166,7 @@
 					"required": false
 				},
 				"shortName":{
-					"title": "Skrátený zväzu",
+					"title": "Skrátený názov zväzu",
 					"type": "string",
 					"required": false
 				},
@@ -178,7 +178,7 @@
 						"name": "baseData.name"
 					}
 				},
-				"birthDate": {
+				"startDate": {
 					"title": "Dátum založenia",
 					"type": "string",
 					"required": false,
@@ -214,7 +214,7 @@
 				}
 			}
 		},
-		"associationCurier": {
+		"associationAdress": {
 			"title": "Zväz - poštová adresa",
 			"type": "object",
 			"properties": {
@@ -403,127 +403,6 @@
 					"transCode": "schema.org.zipCode",
 					"type": "string",
 					"required": true
-				},
-				"country": {
-					"$ref":"uri://registries/countries#country"
-				}
-			}
-		},
-		"otherInfo": {
-			"title": "Dodatočné informácie",
-			"type": "object",
-			"properties": {
-				"typeOfFutbal": {
-					"title": "Typ futbalu",
-					"type": "string",
-					"required": true
-				},
-				"association": {
-					"title": "Zväz",
-					"type": "string",
-					"required": false
-				},
-				"birthDate": {
-					"title": "Dátum založenia",
-					"type": "string",
-					"required": false,
-					"render" : {
-						"component" : "psui-datepicker"
-					}
-				},
-				"Stadium": {
-					"title": "Štadión",
-					"required": false,
-					"$objectLink": {
-						"registry": "stadium",
-						"name": "baseData.name"
-					}
-				},
-				"stateOfClub": {
-					"title": "Stav klubu",
-					"type": "string",
-					"required": true
-				},
-				"notPaying": {
-					"title": "Neplatič",
-					"type": "string",
-					"enum": [
-						"Áno",
-						"Nie"
-					],
-					"required": true,
-					"render":{
-						"component": "psui-selectbox",
-						"searchable": true
-					}
-				},
-				"issfActive": {
-					"title": "ISSF aktívny",
-					"type": "string",
-					"enum": [
-						"Áno",
-						"Nie"
-					],
-					"required": true,
-					"render":{
-						"component": "psui-selectbox",
-						"searchable": true
-					}
-				},
-				"dateOfRegistration": {
-					"title": "Dátum registrácie",
-					"type": "string",
-					"required": false,
-					"render" : {
-						"component" : "psui-datepicker"
-					}
-				},
-				"canBeFacturatedOnClub": {
-					"title": "Môže sa faktúrovať na klub",
-					"type": "string",
-					"enum": [
-						"Áno",
-						"Nie"
-					],
-					"required": true,
-					"render":{
-						"component": "psui-selectbox",
-						"searchable": true
-					}
-				}
-			}
-		},
-		"curier": {
-			"title": "Kuriér - Dodacia adresa",
-			"type": "object",
-			"properties": {
-				"contactPerson": {
-					"title": "Kontaktná osoba",
-					"type": "string",
-					"required": false
-				},
-				"mobileNumberOfContactPerson": {
-					"title": "Telefónne číslo kontaktnej osoby",
-					"type": "string",
-					"required": false
-				},
-				"street": {
-					"title": "Ulica",
-					"type": "string",
-					"required": false
-				},
-				"houseNumber": {
-					"title": "Číslo domu",
-					"type": "string",
-					"required": false
-				},
-				"city": {
-					"$ref":"uri://registries/towns#town"
-				},
-				"zipCode": {
-					"title": "PSČ",
-					"type": "string",
-					"required": false
 				},
 				"country": {
 					"$ref":"uri://registries/countries#country"

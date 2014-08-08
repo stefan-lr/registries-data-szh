@@ -12,8 +12,8 @@
 			"club":{
 				"$ref": "uri://registries/organization#properties/club"
 			},
-			"clubCurier":{
-				"$ref": "uri://registries/organization#properties/clubCurier"
+			"clubAdress":{
+				"$ref": "uri://registries/organization#properties/clubAdress"
 			},
 			"logoInfo": {
 				"$ref": "uri://registries/organization#properties/logoInfo"
@@ -41,9 +41,6 @@
 			{ "f": "club", "op": "ex", "v": ""}
 		],
         "properties": {
-            "baseData": {
-                "$ref": "uri://registries/organization#properties/baseData"
-            },
             "contactInfo": {
                 "$ref": "uri://registries/organization#properties/contactInfo"
             },
@@ -53,8 +50,8 @@
             "club": {
                 "$ref": "uri://registries/organization#properties/club"
             },
-			"clubCurier": {
-                "$ref": "uri://registries/organization#properties/clubCurier"
+			"clubAdress": {
+                "$ref": "uri://registries/organization#properties/clubAdress"
             }
         }
 	}

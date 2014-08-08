@@ -12,8 +12,8 @@
 			"association":{
 				"$ref": "uri://registries/organization#properties/association"
 			},
-			"associationCurier":{
-				"$ref": "uri://registries/organization#properties/associationCurier"
+			"associationAdress":{
+				"$ref": "uri://registries/organization#properties/associationAdress"
 			},
 			"logoInfo": {
 				"$ref": "uri://registries/organization#properties/logoInfo"
@@ -41,9 +41,6 @@
 			{ "f": "association", "op": "ex", "v": ""}
 		],
         "properties": {
-            "baseData": {
-                "$ref": "uri://registries/organization#properties/baseData"
-            },
             "contactInfo": {
                 "$ref": "uri://registries/organization#properties/contactInfo"
             },
@@ -53,8 +50,8 @@
             "association": {
                 "$ref": "uri://registries/organization#properties/association"
             },
-			"associationCurier": {
-                "$ref": "uri://registries/organization#properties/associationCurier"
+			"associationAdress": {
+                "$ref": "uri://registries/organization#properties/associationAdress"
             }
         }
 	}

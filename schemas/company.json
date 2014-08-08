@@ -38,14 +38,14 @@
 			"club":{
 				"$ref": "uri://registries/organization#properties/club"
 			},
-			"clubCurier":{
-				"$ref": "uri://registries/organization#properties/clubCurier"
+			"clubAdress":{
+				"$ref": "uri://registries/organization#properties/clubAdress"
 			},
 			"association":{
 				"$ref": "uri://registries/organization#properties/association"
 			},
-			"associationCurier":{
-				"$ref": "uri://registries/organization#properties/associationCurier"
+			"associationAdress":{
+				"$ref": "uri://registries/organization#properties/associationAdress"
 			},
 			"logoInfo": {
 				"$ref": "uri://registries/organization#properties/logoInfo"
@@ -78,14 +78,14 @@
             "club":{
 				"$ref": "uri://registries/organization#properties/club"
 			},
-			"clubCurier":{
-				"$ref": "uri://registries/organization#properties/clubCurier"
+			"clubAdress":{
+				"$ref": "uri://registries/organization#properties/clubAdress"
 			},
 			"association":{
 				"$ref": "uri://registries/organization#properties/association"
 			},
-			"associationCurier":{
-				"$ref": "uri://registries/organization#properties/associationCurier"
+			"associationAdress":{
+				"$ref": "uri://registries/organization#properties/associationAdress"
 			}
         }
 	}
