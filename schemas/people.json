@@ -295,7 +295,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "club.sportName"
+						"name": "club.name"
 					}
 				},
 				"club": {
@@ -303,7 +303,7 @@
 					"required": false,
 					"$objectLink": {
 						"registry": "organizations",
-						"name": "club.sportName"
+						"name": "club.name"
 					}
 				},
 				"stateOfPlayer": {

@@ -52,7 +52,7 @@
 						"required": true,
 						"$objectLink": {
 							"registry": "organizations",
-							"name": "club.sportName"
+							"name": "club.name"
 						}
 					},
 					"clubTo": {
@@ -61,7 +61,7 @@
 						"required": true,
 						"$objectLink": {
 							"registry": "organizations",
-							"name": "club.sportName"
+							"name": "club.name"
 						}
 					},
 					"typeOfTransfer": {
