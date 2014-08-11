@@ -35,7 +35,7 @@
 		"transCode": "schema.org.view",
         "listFields": [
 			{"field":"id", "title": "ID"},
-			{"field":"club.sportName", "title":"Meno"}
+			{"field":"club.name", "title":"Meno"}
 		],
 		"forcedCriterias": [
 			{ "f": "club", "op": "ex", "v": ""}
