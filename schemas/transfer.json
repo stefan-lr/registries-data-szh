@@ -77,6 +77,29 @@
 							"searchable": true
 						}
 					},
+					"stateOfTransfer": {
+						"title": "Stav transferu",
+						"type": "string",
+						"required": true,
+						"enum":[
+							"schválený",
+							"neschválený",
+							"storno",
+							"v riešení"
+						],
+						"render":{
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					},
+					"dateOfRealization": {
+						"title": "Dátum realizácie transféru",
+						"type": "string",
+						"required": true,
+						"render" : {
+							"component" : "psui-datepicker"
+						}
+					},
 					"dateFrom": {
 						"title": "Dátum od",
 						"type": "string",
@@ -92,6 +115,12 @@
 						"render" : {
 							"component" : "psui-datepicker"
 						}
+					},
+					"note": {
+						"title": "Poznámka",
+						"type": "string",
+						"required": false,
+						"large":true
 					},
 					"state": {
 						"title": "Stav",

@@ -26,5 +26,8 @@
 	"towns_required.json",
 	"competition.json",
 	"season.json",
-	"transfer.json"
+	"transfer.json",
+	"officer.json",
+	"medic.json",
+	"statistic.json"
 ]

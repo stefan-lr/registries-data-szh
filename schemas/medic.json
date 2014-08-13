@@ -1,0 +1,63 @@
+{
+	"$schema" : "http://json-schema.org/schema#",
+	"id" : "uri://registries/medic#",
+	"new" : {
+		"table" : "people",
+		"title" : "Nova osoba",
+		"transCode": "schema.person.title",
+		"properties" : {
+			"_security": {
+				"$ref": "uri://registries/people#person/properties/_security"
+			},
+			"baseData" : {
+				"$ref": "uri://registries/people#person/properties/baseData"
+			},
+			"medic": {
+				"$ref": "uri://registries/people#person/properties/medic"
+			},
+			"photoInfo": {
+				"$ref": "uri://registries/people#person/properties/photoInfo"
+			},
+			"contactInfo": {
+				"$ref": "uri://registries/people#person/properties/contactInfo"
+			},
+			"otherInfo": {
+				"$ref": "uri://registries/people#person/properties/otherInfo"
+			},
+			"idInfo": {
+				"$ref": "uri://registries/people#person/properties/idInfo"
+			}
+		}
+	},
+	"view" : {
+		"$ref" : "uri://registries/medic#new"
+	},
+	"search" : {
+		"table": "people",
+    	"title": "osoba",
+		"transCode":"schema.member.view",
+        "listFields": {
+            "$ref": "uri://registries/people#person/listFields"
+        },
+		"forcedCriterias": [
+			{ "f": "medic", "op": "ex", "v": ""}
+		],
+        "properties": {
+            "baseData": {
+                "$ref": "uri://registries/people#person/properties/baseData"
+            },
+            "contactInfo": {
+                "$ref": "uri://registries/people#person/properties/contactInfo"
+            },
+            "bankInfo": {
+                "$ref": "uri://registries/people#person/properties/bankInfo"
+            },
+            "otherInfo": {
+                "$ref": "uri://registries/people#person/properties/otherInfo"
+            },
+            "medic": {
+                "$ref": "uri://registries/people#person/properties/medic"
+            }
+        }
+	}
+}

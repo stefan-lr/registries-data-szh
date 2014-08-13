@@ -21,6 +21,11 @@
 						"type": "string",
 						"required": true
 					},
+					"prName": {
+						"title": "Marketingový názov družstva",
+						"type": "string",
+						"required": true
+					},
 					"club": {
 						"title": "Klub",
 						"type": "object",
@@ -45,6 +50,19 @@
 						"$objectLink": {
 							"registry": "season",
 							"name": "baseData.name"
+						}
+					},
+					"category":{
+						"title": "Kategória",
+						"type":"string",
+						"required": true
+					},
+					"lastModification": {
+						"title": "Dátum poslednej modifikácie",
+						"type":"string",
+						"required": true,
+						"render" : {
+							"component" : "psui-datepicker"
 						}
 					}
 				}
@@ -74,6 +92,36 @@
 						}
 					},
 					"aCoach2": {
+						"title": "Asistent Trénera",
+						"type": "object",
+						"$objectLink": {
+							"registry": "people",
+							"surName": "baseData.surName",
+							"firstName": "baseData.name",
+							"coachLicence": "coach.coachLicence"
+						}
+					},
+					"aCoach3": {
+						"title": "Asistent Trénera",
+						"type": "object",
+						"$objectLink": {
+							"registry": "people",
+							"surName": "baseData.surName",
+							"firstName": "baseData.name",
+							"coachLicence": "coach.coachLicence"
+						}
+					},
+					"aCoach4": {
+						"title": "Asistent Trénera",
+						"type": "object",
+						"$objectLink": {
+							"registry": "people",
+							"surName": "baseData.surName",
+							"firstName": "baseData.name",
+							"coachLicence": "coach.coachLicence"
+						}
+					},
+					"aCoach5": {
 						"title": "Asistent Trénera",
 						"type": "object",
 						"$objectLink": {
@@ -116,7 +164,7 @@
 			{"field":"baseData.name", "title": "Názov"},
 			{"field":"baseData.competition", "title":"Súťaž"},
 			{"field":"baseData.season", "title":"Sezóna"},
-			{"field":"baseData.club.refData.name", "title":"Klub"}],
+			{"field":"baseData.club", "title":"Klub"}],
 		"properties": {
 			"baseData": {
 				"$ref": "uri://registries/roster#new/properties/baseData"

@@ -53,6 +53,11 @@
 					"type": "string",
 					"required": false
 				},
+				"codeOfClub":{
+					"title": "Kód klubu",
+					"type": "string",
+					"required": false
+				},
 				"association": {
 					"title": "Zväz",
 					"required": false,
@@ -148,6 +153,11 @@
 				},
 				"zipCode": {
 					"title": "PSČ",
+					"type": "string",
+					"required": false
+				},
+				"region": {
+					"title": "Kraj",
 					"type": "string",
 					"required": false
 				},
@@ -313,6 +323,18 @@
 				"email": {
 					"title": "E-mail",
 					"transCode": "schema.org.email",
+					"type": "string",
+					"required": false
+				},
+				"fax": {
+					"title": "FAX",
+					"xxtransCode": "schema.org.email",
+					"type": "string",
+					"required": false
+				},
+				"webPage": {
+					"title": "Webová stránka",
+					"xxtransCode": "schema.org.email",
 					"type": "string",
 					"required": false
 				}

@@ -40,6 +40,15 @@
 			"referee": {
 				"$ref": "uri://registries/people#person/properties/referee"
 			},
+			"officer": {
+				"$ref": "uri://registries/people#person/properties/officer"
+			},
+			"medic": {
+				"$ref": "uri://registries/people#person/properties/medic"
+			},
+			"statistic": {
+				"$ref": "uri://registries/people#person/properties/statistic"
+			},
 			"photoInfo": {
 				"$ref": "uri://registries/people#person/properties/photoInfo"
 			},
@@ -82,6 +91,15 @@
 			},
 			"referee": {
 				"$ref": "uri://registries/people#person/properties/referee"
+			},
+			"officer": {
+				"$ref": "uri://registries/people#person/properties/officer"
+			},
+			"statistic": {
+				"$ref": "uri://registries/people#person/properties/statistic"
+			},
+			"medic": {
+				"$ref": "uri://registries/people#person/properties/medic"
 			}
         }
 	}
