@@ -120,8 +120,8 @@
 				"properties": {
 					
 					"name": {
-						"title": "Meno",
-						"transCode": "schema.people.baseData.name",
+						"title": "Názov",
+						"xxtransCode": "schema.people.baseData.name",
 						"type": "string",
 						"required": true
 					}

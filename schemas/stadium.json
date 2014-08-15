@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/schema#",
 	"id": "uri://registries/stadium#",
 	"new": {
-		"table" : "stadium",
+		"table" : "stadiums",
 		"title" : "Nový športový objekt",
 		"xxtransCode": "schema.stadium.title",
 		"listFields": [
@@ -183,7 +183,7 @@
 		"$ref" : "uri://registries/stadium#new"
 	},
 	"search" : {
-		"table": "stadium",
+		"table": "stadiums",
     	"title": "športový objekt",
         "listFields": {
             "$ref": "uri://registries/stadium#new/listFields"

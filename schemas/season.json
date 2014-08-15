@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/schema#",
 	"id": "uri://registries/season#",
 	"new": {
-		"table" : "season",
+		"table" : "seasons",
 		"title" : "Nová sezóna",
 		"xxtransCode": "schema.stadium.title",
 		"listFields": [
@@ -43,7 +43,7 @@
 		"$ref" : "uri://registries/season#new"
 	},
 	"search" : {
-		"table": "season",
+		"table": "seasons",
     	"title": "sezóna",
         "listFields": {
             "$ref": "uri://registries/season#new/listFields"

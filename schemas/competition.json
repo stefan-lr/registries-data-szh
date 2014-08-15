@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/schema#",
 	"id": "uri://registries/competition#",
 	"new": {
-		"table" : "competition",
+		"table" : "competitions",
 		"title" : "Nová súťaž",
 		"xxtransCode": "schema.stadium.title",
 		"listFields": [
@@ -43,7 +43,7 @@
 		"$ref" : "uri://registries/competition#new"
 	},
 	"search" : {
-		"table": "competition",
+		"table": "competitions",
     	"title": "súťaž",
         "listFields": {
             "$ref": "uri://registries/competition#new/listFields"

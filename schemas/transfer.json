@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/schema#",
 	"id": "uri://registries/transfer#",
 	"new": {
-		"table" : "transfer",
+		"table" : "transfers",
 		"title" : "Nový transfer",
 		"xxtransCode": "schema.transfer.title",
 		"listFields": [
@@ -143,7 +143,7 @@
 		"$ref" : "uri://registries/transfer#new"
 	},
 	"search" : {
-		"table": "transfer",
+		"table": "transfers",
     	"title": "transfér",
         "listFields": {
             "$ref": "uri://registries/transfer#new/listFields"
