@@ -40,7 +40,7 @@
 						"title": "Súťaž",
 						"required": true,
 						"$objectLink": {
-							"registry": "competition",
+							"registry": "competitions",
 							"name": "baseData.name"
 						}
 					},
@@ -48,7 +48,7 @@
 						"title": "Obdobie",
 						"required": true,
 						"$objectLink": {
-							"registry": "season",
+							"registry": "seasons",
 							"name": "baseData.name"
 						}
 					},
@@ -162,9 +162,9 @@
 		"title":"Súpisky",
 		"listFields": [
 			{"field":"baseData.name", "title": "Názov"},
-			{"field":"baseData.competition", "title":"Súťaž"},
-			{"field":"baseData.season", "title":"Sezóna"},
-			{"field":"baseData.club", "title":"Klub"}],
+			{"field":"baseData.competition.refData.name", "title":"Súťaž"},
+			{"field":"baseData.season.refData.name", "title":"Sezóna"},
+			{"field":"baseData.club.refData.name", "title":"Klub"}],
 		"properties": {
 			"baseData": {
 				"$ref": "uri://registries/roster#new/properties/baseData"
