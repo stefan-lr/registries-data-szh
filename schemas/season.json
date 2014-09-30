@@ -3,10 +3,10 @@
 	"id": "uri://registries/season#",
 	"new": {
 		"table" : "seasons",
-		"title" : "Nová sezóna",
+		"title" : "Nový suťažný ročník",
 		"xxtransCode": "schema.stadium.title",
 		"listFields": [
-			{"field":"baseData.name", "title":"Názov sezóny"}
+			{"field":"baseData.name", "title":"Názov ročníka"}
 		],
 		"properties":{
 			"_security": {
@@ -27,11 +27,11 @@
 				}
 			},
 			"baseData":{
-				"title": "Základné údaje o sezóne",
+				"title": "Základné údaje",
 				"type": "object",
 				"properties": {
 					"name": {
-						"title": "Názov sezóny",
+						"title": "Názov",
 						"type": "string",
 						"required": true
 					}
@@ -44,14 +44,14 @@
 	},
 	"search" : {
 		"table": "seasons",
-    	"title": "sezóna",
-        "listFields": {
-            "$ref": "uri://registries/season#new/listFields"
-        },
-        "properties": {
-            "baseData": {
-                "$ref": "uri://registries/season#new/properties/baseData"
-            }
-        }
+		"title": "Súťažný ročník",
+		"listFields": {
+			"$ref": "uri://registries/season#new/listFields"
+		},
+		"properties": {
+				"baseData": {
+					"$ref": "uri://registries/season#new/properties/baseData"
+				}
+		}
 	}
 }

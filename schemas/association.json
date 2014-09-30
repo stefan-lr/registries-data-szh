@@ -1,45 +1,49 @@
 {
-	"$schema" : "http://json-schema.org/schema#",
-	"id" : "uri://registries/association#",
-	"new" : {
-		"table" : "organizations",
-		"title" : "Nova organizacia",
-		"transCode": "schema.org.title",
-		"properties" : {
-			"_security": {
-				"$ref": "uri://registries/organization#properties/_security"
-			},
-			"association":{
-				"$ref": "uri://registries/organization#properties/association"
-			},
-			"associationAdress":{
-				"$ref": "uri://registries/organization#properties/associationAdress"
-			},
-			"logoInfo": {
-				"$ref": "uri://registries/organization#properties/logoInfo"
-			},
-			"contactInfo": {
-				"$ref": "uri://registries/organization#properties/contactInfo"
-			},
-			"bankInfo": {
-				"$ref": "uri://registries/organization#properties/bankInfo"
-			}
-		}
-	},
-	"view" : {
-		"$ref" : "uri://registries/association#new"
-	},
-	"search" : {
-		"table": "organizations",
-    	"title": "organizácia",
-		"transCode": "schema.org.view",
+    "$schema": "http://json-schema.org/schema#",
+    "id": "uri://registries/association#",
+    "new": {
+        "table": "organizations",
+        "title": "Zväz",
+        "properties": {
+            "_security": {
+                "$ref": "uri://registries/organization#properties/_security"
+            },
+            "association": {
+                "$ref": "uri://registries/organization#properties/association"
+            },
+            "associationAdress": {
+                "$ref": "uri://registries/organization#properties/associationAdress"
+            },
+            "logoInfo": {
+                "$ref": "uri://registries/organization#properties/logoInfo"
+            },
+            "contactInfo": {
+                "$ref": "uri://registries/organization#properties/contactInfo"
+            },
+            "bankInfo": {
+                "$ref": "uri://registries/organization#properties/bankInfo"
+            }
+        }
+    },
+    "view": {
+        "$ref": "uri://registries/association#new"
+    },
+    "search": {
+        "table": "organizations",
+        "title": "Zväzy",
         "listFields": [
-			{"field":"id", "title": "ID"},
-			{"field":"association.associationName", "title":"Meno"}
-		],
-		"forcedCriterias": [
-			{ "f": "association", "op": "ex", "v": ""}
-		],
+            {
+                "field": "association.associationName",
+                "title": "Názov zväzu"
+            }
+        ],
+        "forcedCriteria": [
+            {
+                "f": "association",
+                "op": "ex",
+                "v": ""
+            }
+        ],
         "properties": {
             "contactInfo": {
                 "$ref": "uri://registries/organization#properties/contactInfo"
@@ -50,9 +54,9 @@
             "association": {
                 "$ref": "uri://registries/organization#properties/association"
             },
-			"associationAdress": {
+            "associationAdress": {
                 "$ref": "uri://registries/organization#properties/associationAdress"
             }
         }
-	}
+    }
 }
