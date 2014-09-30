@@ -3,12 +3,12 @@
     "id": "uri://registries/company#",
     "new": {
         "table": "organizations",
+        "_security": {
+            "$ref": "uri://registries/organization#_security"
+        },
         "title": "Organizácia",
         "xxtransCode": "schema.org.title",
         "properties": {
-            "_security": {
-                "$ref": "uri://registries/organization#properties/_security"
-            },
             "baseData": {
                 "$ref": "uri://registries/organization#properties/baseData"
             },
@@ -29,7 +29,7 @@
         "transCode": "schema.org.view",
         "properties": {
             "_security": {
-                "$ref": "uri://registries/organization#properties/_security"
+                "$ref": "uri://registries/organization#_security"
             },
             "baseData": {
                 "$ref": "uri://registries/organization#properties/baseData"

@@ -3,12 +3,12 @@
     "id": "uri://registries/coach#",
     "new": {
         "table": "people",
+        "_security": {
+            "$ref": "uri://registries/people#person/_security"
+        },
         "title": "Tréner",
         "xxtransCode": "schema.person.title",
         "properties": {
-            "_security": {
-                "$ref": "uri://registries/people#person/properties/_security"
-            },
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },

@@ -2,6 +2,23 @@
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/people#person",
     "table": "people",
+    "_security": {
+        "_create": {
+            "_static": [
+                "Security - write"
+            ]
+        },
+        "_read": {
+            "_static": [
+                "Security - read"
+            ]
+        },
+        "_modify": {
+            "_static": [
+                "Security - write"
+            ]
+        }
+    },
     "title": "person",
     "listFields": [
         {
@@ -24,23 +41,6 @@
     "properties": {
         "systemCredentials": {
             "$ref": "uri://registries/security#systemCredentials"
-        },
-        "_security": {
-            "_create": {
-                "_static": [
-                    "Security - write"
-                ]
-            },
-            "_read": {
-                "_static": [
-                    "Security - read"
-                ]
-            },
-            "_modify": {
-                "_static": [
-                    "Security - write"
-                ]
-            }
         },
         "baseData": {
             "title": "Základné údaje",

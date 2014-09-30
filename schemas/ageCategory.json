@@ -2,7 +2,24 @@
    "$schema":"http://json-schema.org/schema#",
    "id":"uri://registries/ageCategory#",
    "new":{  
-      "table":"ageCategories",
+		"table":"ageCategories",
+		"_security":{  
+			"_create":{  
+			   "_static":[  
+			      "Security - write"
+			   ]
+			},
+			"_read":{  
+			   "_static":[  
+			      "Security - read"
+			   ]
+			},
+			"_modify":{  
+			   "_static":[  
+			      "Security - write"
+			   ]
+			}
+		},
       "title":"Veková kategória",
       "xxtransCode":"schema.stadium.title",
       "listFields":[  
@@ -12,23 +29,6 @@
          }
       ],
       "properties":{  
-         "_security":{  
-            "_create":{  
-               "_static":[  
-                  "Security - write"
-               ]
-            },
-            "_read":{  
-               "_static":[  
-                  "Security - read"
-               ]
-            },
-            "_modify":{  
-               "_static":[  
-                  "Security - write"
-               ]
-            }
-         },
          "baseData":{  
             "title":"Základné údaje o súťaži",
             "xxtransCode":"",
@@ -66,7 +66,7 @@
                   "required":true
                },
                "age":{  
-                  "title":"Počet rokov",
+                  "title":"Rok",
                   "xxtransCode":"",
                   "type":"string",
                   "required":true

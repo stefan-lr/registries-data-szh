@@ -2,6 +2,23 @@
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/organization#",
     "table": "organizations",
+    "_security": {
+        "_create": {
+            "_static": [
+                "Security - write"
+            ]
+        },
+        "_read": {
+            "_static": [
+                "Security - read"
+            ]
+        },
+        "_modify": {
+            "_static": [
+                "Security - write"
+            ]
+        }
+    },
     "title": "Organizacie",
     "listFields": [
         {
@@ -14,23 +31,6 @@
         }
     ],
     "properties": {
-        "_security": {
-            "_create": {
-                "_static": [
-                    "Security - write"
-                ]
-            },
-            "_read": {
-                "_static": [
-                    "Security - read"
-                ]
-            },
-            "_modify": {
-                "_static": [
-                    "Security - write"
-                ]
-            }
-        },
         "baseData": {
             "title": "Základné údaje",
             "transCode": "schema.org.baseData",

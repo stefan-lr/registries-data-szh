@@ -3,11 +3,11 @@
     "id": "uri://registries/club#",
     "new": {
         "table": "organizations",
+        "_security": {
+            "$ref": "uri://registries/organization#_security"
+        },
         "title": "Klub",
         "properties": {
-            "_security": {
-                "$ref": "uri://registries/organization#properties/_security"
-            },
             "club": {
                 "$ref": "uri://registries/organization#properties/club"
             },
@@ -24,7 +24,7 @@
         "title": "Klub",
         "properties": {
             "_security": {
-                "$ref": "uri://registries/organization#properties/_security"
+                "$ref": "uri://registries/organization#_security"
             },
             "club": {
                 "$ref": "uri://registries/organization#properties/club"
