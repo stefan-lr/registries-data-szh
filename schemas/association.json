@@ -6,7 +6,7 @@
         "title": "Zväz",
         "properties": {
             "_security": {
-                "$ref": "uri://registries/organization#properties/_security"
+                "$ref": "uri://registries/organization#_security"
             },
             "association": {
                 "$ref": "uri://registries/organization#properties/association"

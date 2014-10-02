@@ -32,7 +32,7 @@
         "title": "Hráč",
         "table": "people",
         "_security": {
-            "$ref": "uri://registries/people#person/properties/_security"
+            "$ref": "uri://registries/people#person/_security"
         },
 		"clientActions": [
 			{
