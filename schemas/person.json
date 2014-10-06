@@ -5,6 +5,26 @@
 		"table" : "people",
 		"title" : "Osoba",
 		"transCode": "schema.member.view",
+		"clientActions": [
+			{
+				"__DIRECTIVE__": "action-link",
+				"title": "Tlač hráčskej licencie 01",
+				"schema": "uri://registries/player#view",
+				"template": "card01.html"
+			},
+			{
+				"__DIRECTIVE__": "action-link",
+				"title": "Tlač hráčskej licencie 02",
+				"schema": "uri://registries/player#view",
+				"template": "card02.html"
+			},
+			{
+				"__DIRECTIVE__": "action-link",
+				"title": "Tlač hráčskej licencie 03",
+				"schema": "uri://registries/player#view",
+				"template": "card03.html"
+			}
+		],
 		"properties" : {
 			"baseData" : {
 				"$ref": "uri://registries/people#person/properties/baseData"

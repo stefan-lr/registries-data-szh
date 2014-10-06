@@ -13,7 +13,7 @@ $icon-font-svg-id: "font" !default;*/
       content: url("/dataset/get/img/logo.png");
       display: table-cell; }
     #main-wrapper > header:after {
-      content: "SLOVENSKÁ VOLEJBALOVÁ FEDERÁCIA";
+      content: "SLOVENSKÝ ZVÄZ HÁDZANEJ";
       white-space: pre;
       display: table-cell;
       text-align: left;
