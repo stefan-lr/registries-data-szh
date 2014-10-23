@@ -7,7 +7,7 @@
             "$ref": "uri://registries/people#person/_security"
         },
         "title": "Osoba",
-        "xxtransCode": "schema.person.title",
+        "transCode": "schema.officer.title",
         "properties": {
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
@@ -35,7 +35,7 @@
     "search": {
         "table": "people",
         "title": "osoba",
-        "transCode": "schema.member.view",
+        "transCode": "schema.officer.view",
         "listFields": {
             "$ref": "uri://registries/people#person/listFields"
         },

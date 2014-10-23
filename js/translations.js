@@ -34,6 +34,7 @@ angular.module('registries')
 		"menu.search.association.lower.level": "Hľadať zväz",
 		"menu.search.statistic.lower.level": "Hľadať štatistu",
 		"menu.search.medic.lower.level": "Hľadať zdravotníka",
+		"menu.search.officer.lower.level": "Hľadať funkcionára",
 				
 		"menu.new.lower.level": "Nový",
 		"menu.new.lower.level.she": "Nová",
@@ -129,6 +130,9 @@ angular.module('registries')
 		"schema.club.notPaying.yes":"Áno",
 		"schema.club.notPaying.no":"Nie",
 
+		"schema.officer.title": "Funkcionár",
+		"schema.officer.view": "Profil Funkcionára",
+
 		"schema.association.state.active":"Aktívny",
 		"schema.association.state.inactive":"Neaktívny",
 		"schema.association.notPaying.yes":"Áno",
@@ -216,6 +220,7 @@ angular.module('registries')
 		"menu.search.company.lower.level": "Hledat spoločnosť",
 		"menu.search.club.lower.level": "Hledat klub",
 		"menu.search.association.lower.level": "Hledat zväz",
+		"menu.search.officer.lower.level": "Hľadať funkcionára",
 		
 		"menu.new.lower.level": "Nový",
 		"menu.new.lower.level.she": "Nová",
@@ -308,6 +313,9 @@ angular.module('registries')
 		"schema.club.state.inactive":"Neaktívny",
 		"schema.club.notPaying.yes":"Áno",
 		"schema.club.notPaying.no":"Nie",
+
+		"schema.officer.title": "Funkcionár",
+		"schema.officer.view": "Profil Funkcionára",
 
 		"schema.association.state.active":"Aktívny",
 		"schema.association.state.inactive":"Neaktívny",
