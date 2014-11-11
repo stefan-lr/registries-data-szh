@@ -8,6 +8,14 @@
         },
         "title": "Osoba",
         "transCode": "schema.officer.title",
+        "clientActions": [
+                {
+                        "__DIRECTIVE__": "action-link",
+                        "title": "Tlač preukazu",
+                        "schema": "uri://registries/officer#view",
+                        "template": "officerCard.html"
+                }
+        ],
         "properties": {
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
