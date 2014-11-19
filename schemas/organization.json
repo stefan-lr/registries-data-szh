@@ -40,7 +40,8 @@
                     "title": "Obchodný názov spoločnosti",
                     "transCode": "schema.org.name",
                     "type": "string",
-                    "required": true
+                    "required": true,
+                    "$collate":true
                 },
                 "stateOfOrganization": {
                     "title": "Stav organizacie",
@@ -63,7 +64,8 @@
                 "name": {
                     "title": "Názov klubu",
                     "type": "string",
-                    "required": false
+                    "required": false,
+                    "$collate":true
                 },
                 "association": {
                     "title": "Zväz",
