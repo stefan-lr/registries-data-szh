@@ -49,17 +49,14 @@
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },
+            "coach": {
+                "$ref": "uri://registries/people#person/properties/coach"
+            },
             "contactInfo": {
                 "$ref": "uri://registries/people#person/properties/contactInfo"
             },
-            "bankInfo": {
-                "$ref": "uri://registries/people#person/properties/bankInfo"
-            },
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
-            },
-            "coach": {
-                "$ref": "uri://registries/people#person/properties/coach"
             }
         }
     }

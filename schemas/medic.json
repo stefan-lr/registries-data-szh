@@ -2,13 +2,13 @@
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/medic#",
     "new": {
-        "table": "people",
         "title": "Zdravotník",
         "xxtransCode": "schema.person.title",
+        "table": "people",
+        "_security": {
+            "$ref": "uri://registries/people#person/_security"
+        },        
         "properties": {
-            "_security": {
-                "$ref": "uri://registries/people#person/_security"
-            },
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },

@@ -48,17 +48,14 @@
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },
+            "referee": {
+                "$ref": "uri://registries/people#person/properties/referee"
+            },
             "contactInfo": {
                 "$ref": "uri://registries/people#person/properties/contactInfo"
             },
-            "bankInfo": {
-                "$ref": "uri://registries/people#person/properties/bankInfo"
-            },
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
-            },
-            "referee": {
-                "$ref": "uri://registries/people#person/properties/referee"
             }
         }
     }

@@ -5,17 +5,17 @@
     "_security": {
         "_create": {
             "_static": [
-                "Security - write"
+                "Registry - write"
             ]
         },
         "_read": {
             "_static": [
-                "Security - read"
+                "Registry - read"
             ]
         },
         "_modify": {
             "_static": [
-                "Security - write"
+                "Registry - write"
             ]
         }
     },
@@ -306,8 +306,8 @@
                     "required": false,
                     "render": {
                         "component": "psui-uploadable-image",
-                        "height": 300,
-                        "width": 300
+                        "height": 230,
+                        "width": 230
                     }
                 }
             }

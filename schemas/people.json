@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/people#person",
+    "title": "person",
     "table": "people",
     "_security": {
         "_create": {
@@ -19,8 +20,11 @@
             ]
         }
     },
-    "title": "person",
     "listFields": [
+        {
+            "field": "baseData.registrationID",
+            "title": "Registračné číslo"
+        },
         {
             "field": "baseData.surName",
             "title": "Priezvisko"
@@ -72,21 +76,9 @@
                     "required": true,
                     "$collate":true
                 },
-                "bornName": {
-                    "title": "Rodné priezvisko",
-                    "transCode": "schema.people.bornName",
-                    "type": "string",
-                    "required": false
-                },
                 "titleBefore": {
                     "title": "Titul pred",
                     "transCode": "schema.people.title.before",
-                    "type": "string",
-                    "required": false
-                },
-                "titleAfter": {
-                    "title": "Titul za",
-                    "transCode": "schema.people.title.after",
                     "type": "string",
                     "required": false
                 },
@@ -241,8 +233,8 @@
             "type": "object",
             "listFields": [
                 {
-                    "field": "coach.coachLicense",
-                    "title": "Číslo Lic"
+                    "field": "baseData.registrationID",
+                    "title": "Registračné číslo"
                 },
                 {
                     "field": "baseData.surName",
@@ -725,8 +717,8 @@
             "type": "object",
             "listFields": [
                 {
-                    "field": "player.playerLicense",
-                    "title": "Číslo HL"
+                    "field": "baseData.registrationID",
+                    "title": "Registračné číslo"
                 },
                 {
                     "field": "baseData.surName",
@@ -741,8 +733,8 @@
                     "title": "Dátum narodenia"
                 },
                 {
-                    "field": "contactInfo.city",
-                    "title": "Mesto"
+                    "field": "player.club.refData.name",
+                    "title": "Klubová príslušnosť"
                 }
             ],
             "properties": {
@@ -763,13 +755,6 @@
                         "component": "psui-selectbox",
                         "searchable": true
                     }
-                },
-                "playerLicense": {
-                    "title": "Číslo HL",
-                    "transCode": "schema.people.playerLicense",
-                    "type": "string",
-                    "required": false,
-                    "$sequence": "playerLicense"
                 },
                 "clubOfFirstRegistration": {
                     "title": "Materský klub",
@@ -953,8 +938,8 @@
                     "required": false,
                     "render": {
                         "component": "psui-uploadable-image",
-                        "height": 400,
-                        "width": 300
+                        "height": 330,
+                        "width": 230
                     }
                 }
             }

@@ -80,17 +80,14 @@
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },
+            "player": {
+                "$ref": "uri://registries/people#person/properties/player"
+            },
             "contactInfo": {
                 "$ref": "uri://registries/people#person/properties/contactInfo"
             },
-            "bankInfo": {
-                "$ref": "uri://registries/people#person/properties/bankInfo"
-            },
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
-            },
-            "player": {
-                "$ref": "uri://registries/people#person/properties/player"
             }
         }
     }

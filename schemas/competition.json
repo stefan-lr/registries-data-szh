@@ -2,44 +2,48 @@
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/competition#",
     "new": {
+        "title": "Nová súťaž",
+        "transCode": "schema.competition.new",
         "table": "competitions",
         "_security": {
             "_create": {
                 "_static": [
-                    "Security - write"
+                    "Registry - write"
                 ]
             },
             "_read": {
                 "_static": [
-                    "Security - read"
+                    "Registry - read"
                 ]
             },
             "_modify": {
                 "_static": [
-                    "Security - write"
+                    "Registry - write"
                 ]
             }
         },
-        "title": "Nová súťaž",
-        "xxtransCode": "schema.stadium.title",
         "listFields": [
             {
                 "field": "baseData.name",
-                "title": "Názov súťaže"
+                "title": "Názov súťaže",
+                "transCode":"schema.competition.listFields.name"
             }
         ],
         "properties": {
             "baseData": {
                 "title": "Základné údaje",
+                "transCode": "schema.competition.baseData",
                 "type": "object",
                 "properties": {
                     "name": {
                         "title": "Názov súťaže",
+                        "transCode": "schema.competition.name",
                         "type": "string",
                         "required": true
                     },
                     "season": {
                         "title": "Súťažný ročnik",
+                        "transCode": "schema.competition.season",
                         "$objectLink": {
                             "registry": "seasons",
                             "name": "baseData.name"
@@ -48,6 +52,7 @@
                     },
                     "association": {
                         "title": "Zväz",
+                        "transCode": "schema.competition.association",
                         "type": "object",
                         "$objectLink": {
                             "registry": "organizations",
@@ -57,6 +62,7 @@
                     },
                     "ageCategory": {
                         "title": "Veková kategória",
+                        "transCode": "schema.competition.ageCategory",
                         "type": "object",
                         "$objectLink": {
                             "registry": "ageCategories",
@@ -64,39 +70,38 @@
                         },
                         "required": true
                     },
-	                "gender": {
-	                    "title": "Pohlavie",
-	                    "transCode": "schema.people.gender",
-	                    "type": " string",
-	                    "enum": [
-	                    	"M",
-	                    	"Z"
-	                    ],
-						"enumTransCodes":[
-							"schema.competition.gender.man",
-							"schema.competition.gender.woman"
-						],
-	                    "required": true,
-	                    "render": {
-	                        "component": "psui-selectbox",
-	                        "searchable": true
-	                    }
-	                },
+                    "gender": {
+                        "title": "Pohlavie",
+                        "transCode": "schema.people.gender",
+                        "type": " string",
+                        "enum": [
+                            "M",
+                            "Z"
+                        ],
+                        "enumTransCodes":[
+                            "schema.competition.gender.man",
+                            "schema.competition.gender.woman"
+                        ],
+                        "required": true,
+                        "render": {
+                            "component": "psui-selectbox",
+                            "searchable": true
+                        }
+                    },
                     "competitionLevel": {
                         "title": "Úroveň súťaže",
+                        "transCode": "schema.competition.competitionLevel",
                         "type": "integer",
-                        "required": true
+                        "required": false
                     }
                 }
             }
         }
     },
     "view": {
-        "$ref": "uri://registries/competition#new"
-    },
-    "search": {
+        "title": "Detail súťaže",
+        "transCode": "schema.competition.view",
         "table": "competitions",
-        "title": "súťaž",
         "listFields": {
             "$ref": "uri://registries/competition#new/listFields"
         },
@@ -104,6 +109,17 @@
             "baseData": {
                 "$ref": "uri://registries/competition#new/properties/baseData"
             }
+        }
+    },
+    "search": {
+        "title": "súťaž",
+        "transCode": "schema.competition.search",
+        "table": "competitions",
+        "listFields": {
+            "$ref": "uri://registries/competition#new/listFields"
+        },
+        "properties": {
+            "$ref": "uri://registries/competition#new/properties"
         }
     }
 }

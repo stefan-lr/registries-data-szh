@@ -24,8 +24,25 @@
         }
     ],
     "new": {
-        "table": "rosters",
         "title": "Nová súpiska",
+        "table": "rosters",
+        "_security": {
+            "_create": {
+                "_static": [
+                    "Registry - write"
+                ]
+            },
+            "_read": {
+                "_static": [
+                    "Registry - read"
+                ]
+            },
+            "_modify": {
+                "_static": [
+                    "Registry - write"
+                ]
+            }
+        },
         "properties": {
             "baseData": {
                 "title": "Základné údaje",

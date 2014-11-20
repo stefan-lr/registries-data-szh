@@ -9,6 +9,9 @@
 			"baseData" : {
 				"$ref": "uri://registries/people#person/properties/baseData"
 			},
+			"photoInfo": {
+				"$ref": "uri://registries/people#person/properties/photoInfo"
+			},
 			"player": {
 				"$ref": "uri://registries/people#person/properties/player"
 			},
@@ -20,9 +23,6 @@
 			},
 			"officer": {
 				"$ref": "uri://registries/people#person/properties/officer"
-			},
-			"photoInfo": {
-				"$ref": "uri://registries/people#person/properties/photoInfo"
 			},
 			"contactInfo": {
 				"$ref": "uri://registries/people#person/properties/contactInfo"
@@ -50,27 +50,24 @@
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },
-            "contactInfo": {
-                "$ref": "uri://registries/people#person/properties/contactInfo"
-            },
-            "bankInfo": {
-                "$ref": "uri://registries/people#person/properties/bankInfo"
-            },
-            "otherInfo": {
-                "$ref": "uri://registries/people#person/properties/otherInfo"
-            },
-            "coach": {
-				"$ref": "uri://registries/people#person/properties/coach"
-			},
 			"player": {
 				"$ref": "uri://registries/people#person/properties/player"
+			},
+			"officer": {
+				"$ref": "uri://registries/people#person/properties/officer"
 			},
 			"referee": {
 				"$ref": "uri://registries/people#person/properties/referee"
 			},
-			"officer": {
-				"$ref": "uri://registries/people#person/properties/officer"
-			}
+            "coach": {
+				"$ref": "uri://registries/people#person/properties/coach"
+			},
+            "contactInfo": {
+                "$ref": "uri://registries/people#person/properties/contactInfo"
+            },
+            "otherInfo": {
+                "$ref": "uri://registries/people#person/properties/otherInfo"
+            }
         }
 	}
 }

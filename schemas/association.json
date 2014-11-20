@@ -4,24 +4,18 @@
     "new": {
         "table": "organizations",
         "title": "Zväz",
+        "_security": {
+            "$ref": "uri://registries/organization#_security"
+        },
         "properties": {
-            "_security": {
-                "$ref": "uri://registries/organization#_security"
-            },
             "association": {
                 "$ref": "uri://registries/organization#properties/association"
-            },
-            "associationAdress": {
-                "$ref": "uri://registries/organization#properties/associationAdress"
             },
             "logoInfo": {
                 "$ref": "uri://registries/organization#properties/logoInfo"
             },
-            "contactInfo": {
-                "$ref": "uri://registries/organization#properties/contactInfo"
-            },
-            "bankInfo": {
-                "$ref": "uri://registries/organization#properties/bankInfo"
+            "associationAdress": {
+                "$ref": "uri://registries/organization#properties/associationAdress"
             }
         }
     },
@@ -45,12 +39,6 @@
             }
         ],
         "properties": {
-            "contactInfo": {
-                "$ref": "uri://registries/organization#properties/contactInfo"
-            },
-            "bankInfo": {
-                "$ref": "uri://registries/organization#properties/bankInfo"
-            },
             "association": {
                 "$ref": "uri://registries/organization#properties/association"
             },

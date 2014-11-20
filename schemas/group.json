@@ -8,33 +8,39 @@
     "listFields": [
         {
             "field": "id",
-            "title": "ID"
+            "title": "ID",
+            "transCode": "schema.group.listFields.id"
         },
         {
             "field": "name",
-            "title": "Nazov skupiny"
+            "title": "Nazov skupiny",
+            "transCode": "schema.group.listFields.name"
         }
     ],
     "properties": {
         "baseData": {
             "title": "Základné údaje",
+            "transCode": "schema.group.baseData",
             "type": "object",
             "properties": {
                 "id": {
                     "title": "Identifikátor",
+                    "transCode": "schema.group.baseData.id",
                     "type": "string",
                     "required": true
                 },
                 "name": {
                     "title": "Nazov skupiny",
+                    "transCode": "schema.group.baseData.name",
                     "type": "string",
                     "required": true
                 },
                 "parent": {
 					"title": "Rodič",
+                    "transCode": "schema.group.baseData.parent",
                     "$objectLink": {
-                        "$registry": "groups",
-                        "name": "name"
+                        "registry": "groups",
+                        "name": "baseData.name"
                     }
                 }
             }

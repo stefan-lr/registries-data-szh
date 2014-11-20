@@ -58,17 +58,14 @@
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },
+            "officer": {
+                "$ref": "uri://registries/people#person/properties/officer"
+            },
             "contactInfo": {
                 "$ref": "uri://registries/people#person/properties/contactInfo"
             },
-            "bankInfo": {
-                "$ref": "uri://registries/people#person/properties/bankInfo"
-            },
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
-            },
-            "officer": {
-                "$ref": "uri://registries/people#person/properties/officer"
             }
         }
     }

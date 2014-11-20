@@ -2,13 +2,13 @@
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/member#",
     "new": {
+        "title" : "Môj profil",
+        "transCode": "schema.member.title",
         "table": "people",
-		"title" : "Môj profil",
-		"transCode": "schema.member.title",
+        "_security": {
+            "$ref": "uri://registries/people#person/_security"
+        },
         "properties": {
-			"_security": {
-				"$ref": "uri://registries/people#person/_security"
-			},
             "baseData": {
                 "$ref": "uri://registries/people#person/properties/baseData"
             },
@@ -17,9 +17,6 @@
             },
             "contactInfo": {
                 "$ref": "uri://registries/people#person/properties/contactInfo"
-            },
-            "bankInfo": {
-                "$ref": "uri://registries/people#person/properties/bankInfo"
             },
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
@@ -42,9 +39,6 @@
             },
             "contactInfo": {
                 "$ref": "uri://registries/people#person/properties/contactInfo"
-            },
-            "bankInfo": {
-                "$ref": "uri://registries/people#person/properties/bankInfo"
             },
             "otherInfo": {
                 "$ref": "uri://registries/people#person/properties/otherInfo"
