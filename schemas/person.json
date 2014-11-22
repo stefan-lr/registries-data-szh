@@ -5,13 +5,101 @@
 		"table" : "people",
 		"title" : "Osoba",
 		"transCode": "schema.member.view",
+		"_saveBySchema":"uri://registries/person#view",
 		"properties" : {
-			"baseData" : {
-				"$ref": "uri://registries/people#person/properties/baseData"
+			"baseData": {
+				"title": "Základné údaje",
+				"type": "object",
+				"properties": {
+					"id": {
+						"title": "Identifikačné číslo",
+						"transCode": "schema.people.identifier",
+						"type": "string",
+						"required": true
+					},
+					"name": {
+						"title": "Meno",
+						"transCode": "schema.people.name",
+						"type": "string",
+						"required": true,
+						"$collate":true
+					},
+					"surName": {
+						"title": "Priezvisko",
+						"transCode": "schema.people.surName",
+						"type": "string",
+						"required": true,
+						"$collate":true
+					},
+					"titleBefore": {
+						"title": "Titul pred",
+						"transCode": "schema.people.title.before",
+						"type": "string",
+						"required": false
+					},
+					"birthDate": {
+						"title": "Dátum narodenia",
+						"transCode": "schema.people.birthDate",
+						"type": "string",
+						"required": true,
+						"render": {
+							"component": "psui-datepicker"
+						}
+					},
+					"gender": {
+						"title": "Pohlavie",
+						"transCode": "schema.people.gender",
+						"type": " string",
+						"enum": [
+							"M",
+							"Z"
+						],
+						"enumTransCodes":[
+							"schema.people.gender.man",
+							"schema.people.gender.woman"
+						],
+						"required": true,
+						"render": {
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					},
+					"nationality": {
+						"$ref": "uri://registries/nationality#country"
+					},
+					"stateOfPerson": {
+						"title": "Stav osoby",
+						"transCode": "schema.people.state.of.person",
+						"type": "string",
+						"enum": [
+							"aktívna",
+							"neaktívna"
+						],
+						"enumTransCodes":[
+							"schema.people.state.of.person.active",
+							"schema.people.state.of.person.inactive"
+						],
+						"required": false,
+						"render": {
+							"component": "psui-selectbox",
+							"searchable": true
+						}
+					}
+				}
 			},
 			"photoInfo": {
 				"$ref": "uri://registries/people#person/properties/photoInfo"
 			},
+			"contactInfo": {
+				"$ref": "uri://registries/people#person/properties/contactInfo"
+			},
+			"otherInfo": {
+				"$ref": "uri://registries/people#person/properties/otherInfo"
+			},
+			"idInfo": {
+				"$ref": "uri://registries/people#person/properties/idInfo"
+			},
+
 			"player": {
 				"$ref": "uri://registries/people#person/properties/player"
 			},
@@ -23,20 +111,43 @@
 			},
 			"officer": {
 				"$ref": "uri://registries/people#person/properties/officer"
-			},
-			"contactInfo": {
-				"$ref": "uri://registries/people#person/properties/contactInfo"
-			},
-			"otherInfo": {
-				"$ref": "uri://registries/people#person/properties/otherInfo"
-			},
-			"idInfo": {
-				"$ref": "uri://registries/people#person/properties/idInfo"
 			}
+
+
 		}
 	},
 	"view" : {
-		"$ref" : "uri://registries/person#new"
+			"table":"people",
+			"properties":{
+
+				"baseData" : {
+					"$ref": "uri://registries/people#person/properties/baseData"
+				},
+				"photoInfo": {
+					"$ref": "uri://registries/people#person/properties/photoInfo"
+				},
+				"contactInfo": {
+					"$ref": "uri://registries/people#person/properties/contactInfo"
+				},
+				"otherInfo": {
+					"$ref": "uri://registries/people#person/properties/otherInfo"
+				},
+				"idInfo": {
+					"$ref": "uri://registries/people#person/properties/idInfo"
+				},
+				"player": {
+					"$ref": "uri://registries/people#person/properties/player"
+				},
+				"coach": {
+					"$ref": "uri://registries/people#person/properties/coach"
+				},
+				"referee": {
+					"$ref": "uri://registries/people#person/properties/referee"
+				},
+				"officer": {
+					"$ref": "uri://registries/people#person/properties/officer"
+				}
+			}
 	},
 
 	"search" : {

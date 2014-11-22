@@ -24,6 +24,7 @@
         {
             "field": "baseData.registrationID",
             "title": "Registračné číslo"
+
         },
         {
             "field": "baseData.surName",
@@ -54,7 +55,8 @@
                     "title": "Registračné číslo",
                     "transCode": "schema.people.registrationID",
                     "type": "string",
-                    "required": true
+                    "required": true,
+                    "$sequence": "people_regs"
                 },
                 "id": {
                     "title": "Identifikačné číslo",
