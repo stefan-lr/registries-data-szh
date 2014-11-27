@@ -34,7 +34,7 @@
                 "transCode": "schema.refereeReport.listFields.awayClub"
             },
             {
-                "field": "baseData.matchDate.refData.name",
+                "field": "baseData.matchDate",
                 "title": "Termín",
                 "transCode": "schema.refereeReport.listFields.date"
             }

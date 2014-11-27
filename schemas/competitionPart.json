@@ -111,9 +111,15 @@
         "title": "Detail časti súťaže",
         "transCode": "schema.competitionPart.view",
         "table": "competitionParts",
-        "listFields": {
-            "$ref": "uri://registries/competitionPart#new/listFields"
-        },
+        "clientActions": [
+			{
+				"__DIRECTIVE__": "generate-action-link",
+				"title": "Generovať zápasy",
+				"schemaFrom": "uri://registries/competitionPart#view",
+				"generateBy": "BERGER",
+				"template": "genBerger.html"
+			}
+		],
 		"properties": {
             "$ref": "uri://registries/competitionPart#new/properties"
         }
