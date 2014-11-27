@@ -28,7 +28,8 @@
         "listFields": [
             {
                 "field": "association.associationName",
-                "title": "Názov zväzu"
+                "title": "Názov zväzu",
+                "transCode": "schema.association.listFields.name"
             }
         ],
         "forcedCriteria": [

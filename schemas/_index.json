@@ -28,5 +28,9 @@
 	"transfer.json",
 	"officer.json",
 	"medic.json",
-	"statistic.json"
+	"statistic.json",
+	"competitionPart.json",
+	"schedule.json",
+	"refereeReport.json",
+	"nomination.json"
 ]

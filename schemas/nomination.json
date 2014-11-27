@@ -1,0 +1,233 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "id": "uri://registries/nomination#",
+    "new": {
+        "title": "Nová nominácia",
+        "transCode": "schema.nomination.new",
+        "table": "nominations",
+        "_security": {
+            "_create": {
+                "_static": [
+                    "Registry - write"
+                ]
+            },
+            "_read": {
+                "_static": [
+                    "Registry - read"
+                ]
+            },
+            "_modify": {
+                "_static": [
+                    "Registry - write"
+                ]
+            }
+        },
+        "listFields": [
+            {
+                "field": "baseData.match",
+                "title": "Stretnutie",
+                "transCode": "schema.nomination.listFields.match"
+            }
+        ],
+        "properties": {
+            "baseData": {
+                "title": "Základné informácie",
+                "transCode": "schema.nomination.baseData",
+                "type": "object",
+                "properties": {
+                    "match": {
+                        "title": "Stretnutie",
+                        "transCode": "schema.nomination.match",
+                        "type": "object",
+                        "required": true,
+                        "$objectLink": {
+                            "registry": "matches",
+                            "homeClub": "baseData.homeClub",
+                            "awayClub": "baseData.awayClub",
+                            "matchDate": "baseData.matchDate"
+                        }
+                    },
+                    "club": {
+                        "title": "Klub",
+                        "transCode": "schema.nomination.club",
+                        "type": "object",
+                        "required": true,
+                        "$objectLink": {
+                            "registry": "organizations",
+                            "club": "club.name"
+                        }
+                    }
+                }
+            },
+	    	"officers": {
+	            "title": "Funkcionári",
+                "transCode": "schema.nomination.officers",
+	            "type": "object",
+				"render": {
+					"width": "full"
+				},
+	            "properties": {
+	                "coach": {
+	                    "title": "Tréner",
+                        "transCode": "schema.nomination.coach",
+	                    "type": "object",
+	                    "$objectLink": {
+	                        "registry": "people",
+	                        "surName": "baseData.surName",
+	                        "firstName": "baseData.name",
+	                        "license": "coach.coachLicense",
+	                        "licenseType": "coach.coachLicenseType"
+	                    },
+	                    "$objectLinkForcedCriteria": [
+	                        {
+	                            "f": "coach.isCoach",
+	                            "op": "eq",
+	                            "v": "Áno"
+	                        }
+	                    ]
+	                },
+	                "aCoach1": {
+	                    "title": "Asistent Trénera",
+                        "transCode": "schema.nomination.aCoach1",
+	                    "type": "object",
+	                    "$objectLink": {
+	                        "registry": "people",
+	                        "surName": "baseData.surName",
+	                        "firstName": "baseData.name",
+	                        "license": "coach.coachLicense",
+	                        "licenseType": "coach.coachLicenseType"
+	                    },
+	                    "$objectLinkForcedCriteria": [
+	                        {
+	                            "f": "coach.isCoach",
+	                            "op": "eq",
+	                            "v": "Áno"
+	                        }
+	                    ]
+	                },
+	                "aCoach2": {
+	                    "title": "Asistent Trénera",
+                        "transCode": "schema.nomination.aCoach2",
+	                    "type": "object",
+	                    "$objectLink": {
+	                        "registry": "people",
+	                        "surName": "baseData.surName",
+	                        "firstName": "baseData.name",
+	                        "license": "coach.coachLicense",
+	                        "licenseType": "coach.coachLicenseType"
+	                    },
+	                    "$objectLinkForcedCriteria": [
+	                        {
+	                            "f": "coach.isCoach",
+	                            "op": "eq",
+	                            "v": "Áno"
+	                        }
+	                    ]
+	                },
+	                "officer1": {
+	                    "title": "Funkcionár",
+                        "transCode": "schema.nomination.officer1",
+	                    "type": "object",
+	                    "$objectLink": {
+	                        "registry": "people",
+	                        "surName": "baseData.surName",
+	                        "firstName": "baseData.name"
+	                    },
+	                    "$objectLinkForcedCriteria": [
+	                        {
+	                            "f": "officer.isOfficer",
+	                            "op": "eq",
+	                            "v": "Áno"
+	                        }
+	                    ]
+	                },
+	                "officer2": {
+	                    "title": "Funkcionár",
+                        "transCode": "schema.nomination.officer2",
+	                    "type": "object",
+	                    "$objectLink": {
+	                        "registry": "people",
+	                        "surName": "baseData.surName",
+	                        "firstName": "baseData.name"
+	                    },
+	                    "$objectLinkForcedCriteria": [
+	                        {
+	                            "f": "officer.isOfficer",
+	                            "op": "eq",
+	                            "v": "Áno"
+	                        }
+	                    ]
+	                }
+                }
+            },
+            "listOfPlayers": {
+                "title": "Nominácia hráčov",
+                "transCode": "schema.nomination.listOfPlayers",
+                "type": "object",
+				"render": {
+					"width": "full"
+				},
+                "properties": {
+                    "players": {
+                        "title": "Hráči",
+                        "transCode": "schema.nomination.players",
+                        "type": "array",
+                        "items": {
+                            "$objectLink": {
+                                "registry": "people",
+                                "surName": "baseData.surName",
+                                "firstName": "baseData.name",
+                                "birthDate": "baseData.birthDate",
+                                "playerLicense": "player.playerLicense"
+                            },
+                            "required": true,
+                            "$objectLinkForcedCriteria": [
+                                {
+                                    "f": "player.isPlayer",
+                                    "op": "eq",
+                                    "v": "Áno"
+                                }
+                            ]
+                        }
+                    },
+                    "state": {
+                        "title": "Stav",
+                        "transCode": "schema.nomination.state",
+                        "type": "string",
+                        "required": true,
+                        "enum": [
+                            "Otvorený",
+                            "Zatvorený"
+                        ],
+                        "render": {
+                            "component": "psui-selectbox",
+                            "searchable": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "view": {
+        "title": "Nominácia",
+        "transCode": "schema.nomination.view",
+        "table": "nominations",
+        "listFields": {
+            "$ref": "uri://registries/nomination#new/listFields"
+        },
+		"properties": {
+            "$ref": "uri://registries/nomination#new/properties"
+        }
+    },
+    "search": {
+        "title": "Nominácia",
+        "transCode": "schema.nomination.search",
+        "table": "nominations",
+        "listFields": {
+            "$ref": "uri://registries/nomination#new/listFields"
+        },
+        "properties": {
+            "$ref": "uri://registries/nomination#new/properties"
+        }
+    }
+}

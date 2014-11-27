@@ -27,6 +27,16 @@
 				"field":"baseData.name",
 				"title":"Názov ročníka",
 				"transCode":"schema.season.listFields.name"
+			},
+			{
+				"field":"baseData.startSeason",
+				"title":"Dátum začiatku",
+				"transCode":"schema.season.listFields.startSeason"
+			},
+			{
+				"field":"baseData.endSeason",
+				"title":"Dátum konca",
+				"transCode":"schema.season.listFields.endSeason"
 			}
 		],
 		"properties":{
@@ -79,9 +89,9 @@
 			"$ref": "uri://registries/season#new/listFields"
 		},
 		"properties": {
-			"baseData": {
-				"$ref": "uri://registries/season#new/properties/baseData"
-			}
+				"baseData": {
+					"$ref": "uri://registries/season#new/properties/baseData"
+				}
 		}
 	}
 }

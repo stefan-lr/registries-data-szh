@@ -23,24 +23,29 @@
     "listFields": [
         {
             "field": "baseData.registrationID",
-            "title": "Registračné číslo"
+            "title": "Registračné číslo",
+            "transCode": "schema.people.listFields.registrationID"
 
         },
         {
             "field": "baseData.surName",
-            "title": "Priezvisko"
+            "title": "Priezvisko",
+            "transCode": "schema.people.listFields.surName"
         },
         {
             "field": "baseData.name",
-            "title": "Meno"
+            "title": "Meno",
+            "transCode": "schema.people.listFields.name"
         },
         {
             "field": "baseData.birthDate",
-            "title": "Dátum narodenia"
+            "title": "Dátum narodenia",
+            "transCode": "schema.people.listFields.birthDate"
         },
         {
             "field": "contactInfo.city",
-            "title": "Mesto"
+            "title": "Mesto",
+            "transCode": "schema.people.listFields.city"
         }
     ],
     "properties": {
@@ -49,6 +54,7 @@
         },
         "baseData": {
             "title": "Základné údaje",
+            "transCode": "schema.people.baseData",
             "type": "object",
             "properties": {
                 "registrationID": {

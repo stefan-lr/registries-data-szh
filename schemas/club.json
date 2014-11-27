@@ -43,11 +43,13 @@
         "listFields": [
             {
                 "field": "club.name",
-                "title": "Názov klubu"
+                "title": "Názov klubu",
+                "transCode": "schema.club.listFields.name"
             },
             {
                 "field": "clubAdress.city",
-                "title": "Mesto"
+                "title": "Mesto",
+                "transCode": "schema.club.listFields.city"
             }
         ],
         "forcedCriteria": [

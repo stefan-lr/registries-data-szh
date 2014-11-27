@@ -25,7 +25,8 @@
     "listFields": [
       {
         "field": "baseData.name",
-        "title": "Názov kategórie"
+        "title": "Názov kategórie",
+        "transCode": "schema.ageCategory.listFields.name"
       }
     ],
     "properties": {

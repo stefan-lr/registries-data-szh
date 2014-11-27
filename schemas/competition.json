@@ -27,6 +27,21 @@
                 "field": "baseData.name",
                 "title": "Názov súťaže",
                 "transCode":"schema.competition.listFields.name"
+            },
+            {
+                "field": "baseData.season.refData.name",
+                "title": "Sezóna",
+                "transCode":"schema.competition.listFields.season"
+            },
+            {
+                "field": "baseData.ageCategory.refData.name",
+                "title": "Veková kategória",
+                "transCode":"schema.competition.listFields.ageCategory"
+            },
+            {
+                "field": "baseData.gender",
+                "title": "Pohlavie",
+                "transCode":"schema.competition.listFields.gender"
             }
         ],
         "properties": {
@@ -50,16 +65,6 @@
                         },
                         "required": true
                     },
-                    "association": {
-                        "title": "Zväz",
-                        "transCode": "schema.competition.association",
-                        "type": "object",
-                        "$objectLink": {
-                            "registry": "organizations",
-                            "name": "association.associationName"
-                        },
-                        "required": true
-                    },
                     "ageCategory": {
                         "title": "Veková kategória",
                         "transCode": "schema.competition.ageCategory",
@@ -70,24 +75,24 @@
                         },
                         "required": true
                     },
-                    "gender": {
-                        "title": "Pohlavie",
-                        "transCode": "schema.people.gender",
-                        "type": " string",
-                        "enum": [
-                            "M",
-                            "Z"
-                        ],
-                        "enumTransCodes":[
-                            "schema.competition.gender.man",
-                            "schema.competition.gender.woman"
-                        ],
-                        "required": true,
-                        "render": {
-                            "component": "psui-selectbox",
-                            "searchable": true
-                        }
-                    },
+	                "gender": {
+	                    "title": "Pohlavie",
+	                    "transCode": "schema.people.gender",
+	                    "type": " string",
+	                    "enum": [
+	                    	"M",
+	                    	"Z"
+	                    ],
+						"enumTransCodes":[
+							"schema.competition.gender.man",
+							"schema.competition.gender.woman"
+						],
+	                    "required": true,
+	                    "render": {
+	                        "component": "psui-selectbox",
+	                        "searchable": true
+	                    }
+	                },
                     "competitionLevel": {
                         "title": "Úroveň súťaže",
                         "transCode": "schema.competition.competitionLevel",
@@ -112,8 +117,8 @@
         }
     },
     "search": {
-        "title": "súťaž",
-        "transCode": "schema.competition.search",
+    	"title": "súťaž",
+    	"transCode": "schema.competition.search",
         "table": "competitions",
         "listFields": {
             "$ref": "uri://registries/competition#new/listFields"
