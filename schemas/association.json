@@ -2,8 +2,9 @@
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/association#",
     "new": {
-        "table": "organizations",
         "title": "Zväz",
+        "transCode": "schema.ass.new",
+        "table": "organizations",
         "_security": {
             "$ref": "uri://registries/organization#_security"
         },
@@ -20,11 +21,17 @@
         }
     },
     "view": {
-        "$ref": "uri://registries/association#new"
+        "title": "Zväz",
+        "transCode": "schema.ass.view",
+        "table": "organizations",
+        "properties": {
+            "$ref": "uri://registries/association#new/properties"
+        }
     },
     "search": {
-        "table": "organizations",
         "title": "Zväzy",
+        "transCode": "schema.ass.search",
+        "table": "organizations",
         "listFields": [
             {
                 "field": "association.associationName",

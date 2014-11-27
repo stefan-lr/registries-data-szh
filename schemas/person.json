@@ -4,7 +4,7 @@
 	"new" : {
 		"table" : "people",
 		"title" : "Osoba",
-		"transCode": "schema.member.view",
+		"transCode": "schema.people.new",
 		"_saveBySchema":"uri://registries/person#view",
 		"properties" : {
 			"baseData": {
@@ -114,47 +114,46 @@
 				"$ref": "uri://registries/people#person/properties/officer"
 			}
 
-
 		}
 	},
 	"view" : {
-			"table":"people",
-			"properties":{
-
-				"baseData" : {
-					"$ref": "uri://registries/people#person/properties/baseData"
-				},
-				"photoInfo": {
-					"$ref": "uri://registries/people#person/properties/photoInfo"
-				},
-				"contactInfo": {
-					"$ref": "uri://registries/people#person/properties/contactInfo"
-				},
-				"otherInfo": {
-					"$ref": "uri://registries/people#person/properties/otherInfo"
-				},
-				"idInfo": {
-					"$ref": "uri://registries/people#person/properties/idInfo"
-				},
-				"player": {
-					"$ref": "uri://registries/people#person/properties/player"
-				},
-				"coach": {
-					"$ref": "uri://registries/people#person/properties/coach"
-				},
-				"referee": {
-					"$ref": "uri://registries/people#person/properties/referee"
-				},
-				"officer": {
-					"$ref": "uri://registries/people#person/properties/officer"
-				}
+		"title":"Osoba",
+		"transCode":"schema.people.view",
+		"table":"people",
+		"properties":{
+			"baseData" : {
+				"$ref": "uri://registries/people#person/properties/baseData"
+			},
+			"photoInfo": {
+				"$ref": "uri://registries/people#person/properties/photoInfo"
+			},
+			"contactInfo": {
+				"$ref": "uri://registries/people#person/properties/contactInfo"
+			},
+			"otherInfo": {
+				"$ref": "uri://registries/people#person/properties/otherInfo"
+			},
+			"idInfo": {
+				"$ref": "uri://registries/people#person/properties/idInfo"
+			},
+			"player": {
+				"$ref": "uri://registries/people#person/properties/player"
+			},
+			"coach": {
+				"$ref": "uri://registries/people#person/properties/coach"
+			},
+			"referee": {
+				"$ref": "uri://registries/people#person/properties/referee"
+			},
+			"officer": {
+				"$ref": "uri://registries/people#person/properties/officer"
 			}
+		}
 	},
-
 	"search" : {
-		"table": "people",
     	"title": "osoba",
-		"transCode":"schema.member.view",
+		"transCode":"schema.people.search",
+		"table": "people",
         "listFields": {
             "$ref": "uri://registries/people#person/listFields"
         },

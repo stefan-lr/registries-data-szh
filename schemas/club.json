@@ -2,11 +2,12 @@
     "$schema": "http://json-schema.org/schema#",
     "id": "uri://registries/club#",
     "new": {
+        "title": "Klub",
+        "transCode": "schema.club.new",
         "table": "organizations",
         "_security": {
             "$ref": "uri://registries/organization#_security"
         },
-        "title": "Klub",
         "properties": {
             "club": {
                 "$ref": "uri://registries/organization#properties/club"
@@ -20,8 +21,9 @@
         }
     },
     "view": {
-        "table": "organizations",
         "title": "Klub",
+        "transCode": "schema.club.view",
+        "table": "organizations",
         "_security": {
             "$ref": "uri://registries/club#new/_security"
         },
@@ -38,8 +40,9 @@
         }
     },
     "search": {
-        "table": "organizations",
         "title": "Klub",
+        "transCode": "schema.club.search",
+        "table": "organizations",
         "listFields": [
             {
                 "field": "club.name",
