@@ -67,7 +67,7 @@
                     "title": "Názov klubu",
                     "transCode": "schema.club.baseData.name",
                     "type": "string",
-                    "required": false,
+                    "required": true,
                     "$collate":true
                 },
                 "association": {
@@ -208,7 +208,7 @@
                     "title": "Názov zväzu",
                     "transCode": "schema.association.baseData.associationName",
                     "type": "string",
-                    "required": false
+                    "required": true
                 },
                 "shortName": {
                     "title": "Skrátený názov zväzu",

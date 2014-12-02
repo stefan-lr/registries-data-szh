@@ -2,6 +2,8 @@ angular.module('registries')
 .config(['$translateProvider', function($translateProvider) {
 	$translateProvider.preferredLanguage('sk');
 	$translateProvider.translations('sk', {
+		"comepttition.part.generated.matches":"Vygenerované stretnutia",
+
 		"menu.member.title": "Člen",
 		"menu.player.title": "Hráč",
 		"menu.fees.title": "Poplatok",
@@ -437,6 +439,8 @@ angular.module('registries')
 	});
 	
 	$translateProvider.translations('cz', {
+		"comepttition.part.generated.matches":"Vygenerované stretnutia",
+		
 		"menu.member.title": "Člen",
 		"menu.player.title": "Hráč",
 		"menu.fees.title": "Poplatek",

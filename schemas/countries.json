@@ -511,7 +511,7 @@
 				"schemas.countries.enum.ZWE"
 			
 		],
-        "required": true,
+        "required": false,
 		"render": {
 			"component": "psui-selectbox",
 			"searchable": true
