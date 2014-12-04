@@ -1,6 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&subset=latin,latin-ext);
+
 #portal-main-container {
 	background-color: silver;
 	font-size: 14px;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: gray;
 }
 
 #portal-header-container {
@@ -169,6 +173,7 @@
 	font-weight: bold;
 	padding-right: 20px;
 	padding-left: 20px;
+	cursor: pointer;
 }
 
 #portal-menu-panel .portal-menu-entry A:HOVER {
@@ -203,29 +208,6 @@
 	margin-bottom: 10px;
 }
 
-#portal-article {
-	background-color: white;
-	padding: 10px;
-	display: inline-block;
-	width: 676px;
-	box-shadow: 0px 3px 3px gray;
-	margin-bottom: 10px;
-}
-
-#portal-article H1 {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-size: 180%;
-}
-#portal-article .abstract {
-	padding-bottom: 10px;
-	font-style: italic;
-	font-size: 120%;
-}
-
-#portal-article img {
-	padding-bottom: 10px;
-}
 
 #portal-content-container H1 {
 	padding-bottom: 10px;
@@ -282,7 +264,6 @@
 }
 
 #footer-container {
-	margin-top: 10px;
 	padding-top: 0;
 	padding-bottom: 2px;
 	background-color: #CB2225;	
@@ -296,3 +277,77 @@
 	margin: 0 auto;
 	background-color: #CB2225;
 }
+
+#portal-article {
+	background-color: white;
+	padding: 10px;
+	display: inline-block;
+	width: 676px;
+	box-shadow: 0px 3px 3px gray;
+	margin-bottom: 10px;
+}
+
+#portal-article H1 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 180%;
+	margin-left: 0;
+	font-style: normal;
+}
+#portal-article .abstract {
+	padding-bottom: 20px;
+	font-style: italic;
+	font-size: 120%;
+	text-align: justify;
+}
+
+#portal-article img {
+	padding-bottom: 10px;
+}
+
+.x-portal-widget-category ARTICLE {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.x-portal-widget-category H1 {
+	margin-bottom: 0;
+	font-size: 140% !important;
+	padding-top: 0 !important;
+}
+
+.x-portal-widget-category H1:HOVER {
+	color: red !important;
+}
+
+.x-portal-widget-category IMG {
+	margin-left: 10px;
+}
+
+.x-portal-widget-showcase {
+	position: relative;
+}
+
+.x-portal-widget-showcase IMG {
+	width: 656px !important;
+	height: 492px !important;
+}
+
+.x-portal-widget-showcase-textblock {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	background-color: rgba(128, 128, 128, 0.6);
+	padding: 5px;
+	color: white;
+}
+
+.x-portal-widget-showcase-textblock H1 {
+	color: white !important;
+	text-shadow: 2px 2px 0 gray;
+}
+
+.x-portal-widget-showcase-textblock H1:HOVER {
+	color: red !important;
+}
+
