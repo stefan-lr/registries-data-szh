@@ -351,3 +351,39 @@
 	color: red !important;
 }
 
+.x-portal-results-hyphen {
+	text-align: center;
+	width: 50px;
+	background-color: #CB2225;
+	color: white;
+	font-weight: bold;
+	border-top: 1px solid white;
+}
+.x-portal-results-left-club {
+	width: 120px;
+	max-width: 120px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden; 
+	padding-right: 5px;
+	text-align: center;
+	font-size: 95%;
+}
+
+.x-portal-results-right-club {
+	width: 120px;
+	max-width: 120px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden; 
+	padding-left: 5px;
+	text-align: center;
+	font-size: 95%;
+}
+
+.x-portal-results-date {
+	text-align: center;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
