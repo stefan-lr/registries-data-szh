@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "uri://registries/portal#",
+	"menu": {
+		"table": "portalMenu",
+		"_security": {
+			"_create": {
+				"_static": [
+					"Security - write"
+				]
+			},
+			"_read": {
+				"_static": [
+					"Security - read"
+				]
+			},
+			"_modify": {
+				"_static": [
+					"Security - write"
+				]
+			}
+		},
+		"title": "Portálové menu",
+		"xxtransCode": "schema.portal.title",
+		"listFields": [],
+		"properties": {
+			"index": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"title": "Meno",
+						"xxtransCode": "",
+						"type": "String"
+					},
+					"transCode": {
+						"title": "Preklad",
+						"transCode": "",
+						"type": "string"
+					},
+					"tags": {
+						"type": "array"
+					},
+					"subElements": {
+						"type": "array"
+					}
+				}
+			}
+		}
+	}
+}
