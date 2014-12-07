@@ -156,9 +156,21 @@
 	border-top: 1px silver solid;
 	white-space: nowrap;
 	cursor: pointer;
+	color: black;
+}
+
+#portal-menu-panel .portal-menu-entry .portal-sub-menu DIV A {
+	color: black;
+	padding-left: 0;
+	font-weight: normal;
 }
 
 #portal-menu-panel .portal-menu-entry .portal-sub-menu DIV:hover {
+	color: white;
+	background: #CB2225;
+}
+
+#portal-menu-panel .portal-menu-entry .portal-sub-menu DIV:hover A {
 	color: white;
 	background: #CB2225;
 }
@@ -215,6 +227,7 @@
 	font-size: 180%;
 	color: #CB2225;
 	text-decoration: none;
+	text-transform: uppercase;
 }
 
 #portal-content-container .abstract {
@@ -236,7 +249,7 @@
 .portal-side-panel {
 	background-color: white;
 	padding: 10px;
-	width:320px;
+	width:300px;
 	box-shadow: 0px 3px 3px gray;
 	margin-bottom: 10px;
 }
@@ -247,20 +260,6 @@
 	font-weight: bold;
 	padding: 5px;
 	border-bottom: 4px red solid;
-}
-
-.portal-side-panel .rowtable TR:HOVER {
-	cursor: pointer;
-	background-color: #CB2225;
-	color: white;
-	border-color: red;
-}
-
-.portal-side-panel .celltable TD:HOVER {
-	cursor: pointer;
-	background-color: #CB2225;
-	color: white;
-	border-color: red;
 }
 
 #footer-container {
@@ -282,7 +281,7 @@
 	background-color: white;
 	padding: 10px;
 	display: inline-block;
-	width: 676px;
+	width: 656px;
 	box-shadow: 0px 3px 3px gray;
 	margin-bottom: 10px;
 }
@@ -293,6 +292,8 @@
 	font-size: 180%;
 	margin-left: 0;
 	font-style: normal;
+	margin-top: 0;
+	margin-bottom: 10px;
 }
 #portal-article .abstract {
 	padding-bottom: 20px;
@@ -301,13 +302,101 @@
 	text-align: justify;
 }
 
-#portal-article img {
+#portal-article figure {
 	padding-bottom: 10px;
+	margin: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+}
+
+#portal-article p {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.x-portal-widget-gallery {
+	text-align: left;
+	border:1px solid white;
+	line-height: 1px;
+	padding-bottom: 10px;
+}
+
+#portal-article .x-portal-widget-gallery-thm {
+	width: 162px;
+	height: 123px;
+	padding: 0;
+	margin:0;
+	border: 0;
+	cursor: pointer;
+	display:inline-block;
+	border:0;
+	padding-left: 1px;
+	padding-bottom: 1px;
+}
+#portal-article .x-portal-widget-gallery-thm img {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+
+.x-portal-widget-gallery-viewer {
+	position: fixed;
+	z-index: 100;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.3);
+	display: none;
+	text-align: center;
+	vertical-align: middle;
+	box-shadow: 0px 3px 3px gray;
+}
+
+.x-portal-widget-gallery-viewer-window {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -256px;
+	margin-left: -338px;
+	height: 538px;
+	width: 676px;
+	background-color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.x-portal-widget-gallery-viewer-window i {
+	cursor: pointer;
+}
+
+.x-portal-widget-gallery-viewer-window i:HOVER {
+	color: black;
+}
+
+.x-portal-widget-gallery-viewer-window-images {
+	height: 492px;
+	width: 656px;
+	position: relative;
+	padding: 10px;
+}
+
+.x-portal-widget-gallery-viewer-window-images img {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 656px;
+	height: 492px;
+	display: none;
 }
 
 .x-portal-widget-category ARTICLE {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	overflow: auto;
 }
 
 .x-portal-widget-category H1 {
@@ -322,6 +411,32 @@
 
 .x-portal-widget-category IMG {
 	margin-left: 10px;
+	width: 164px;
+	float: right;
+}
+
+.x-portal-widget-showcase-view {
+	position: relative;
+	height: 492px;
+}
+
+.x-portal-widget-showcase-view article {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 492px;
+	width: 656px;
+	display: none;
+}
+
+.x-portal-widget-showcase-view-textblock {
+	position: absolute;
+	bottom:0;
+	left: 0;
+	padding: 10px;
+	background-color: rgba(128, 128, 128, 0.6);
+	color: white;
+	width: 636px;
 }
 
 .x-portal-widget-showcase {
@@ -386,4 +501,11 @@
 	font-weight: bold;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+.x-portal-results-selectable {
+	cursor: pointer;
+}
+.x-portal-results-selectable:HOVER {
+	background-color: red;
+	color: white;
 }
