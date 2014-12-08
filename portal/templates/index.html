@@ -91,13 +91,32 @@
 					<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FSlovenskyZvazHadzanej&amp;width=300px&amp;height=590&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=true&amp;show_border=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300pxpx; height:590px;" allowTransparency="true"></iframe>
 				</section>
 				<section class="portal-side-panel">
-					<div style="text-align: center;"><img src="portal/img/mskolsr.png"></img></div>
+					<div style="text-align: center;"><img src="/portal/img/mskolsr.png"></img></div>
 					<div style="text-align: center; padding-top: 5px;">ROK 2014 719 200,- EUR</div>
 				</section>
-				<section class="portal-side-panel">
+				<section class="portal-side-panel partneri">
 					<header>Partneri</header>
-					<div style="text-align: center; padding-top: 5px; height: 200px; vertical-align: middle; display: table-cell;"><img style="" src="portal/img/retic.png"></img></div>
-					<div style="text-align: center; padding-top: 5px;">Hlavný reklamný partner reprezentačného družstva žien</div>
+					<article>
+						<div style="text-align: center; padding-top: 5px;">Hlavný reklamný partner reprezentačného družstva žien</div>
+						<div style="text-align: center; padding-top: 5px; padding-left: 10px; height: 200px; vertical-align: middle; display: table-cell;"><img style="" src="/portal/img/retic.png"></img></div>
+					</article>
+					<article>
+						<div style="text-align: center; padding-top: 5px;">Reklamný partner reprezentačného družstva</div>
+						<div style="text-align: center; padding-top: 5px; padding-left: 10px; height: 200px; vertical-align: middle; display: table-cell;"><img style="" src="/portal/img/logo-adidas.png"></img></div>
+					</article>
+					<article>
+						<div style="text-align: center; padding-top: 5px;">Reklamný partner </div>
+						<div style="text-align: center; padding-top: 5px; padding-left: 10px; height: 200px; vertical-align: middle; display: table-cell;"><img style="" src="/portal/img/logo-sport.png"></img></div>
+					</article>
+					<article>
+						<div style="text-align: center; padding-top: 5px;">Reklamný partner </div>
+						<div style="text-align: center; padding-top: 5px; padding-left: 10px; height: 200px; vertical-align: middle; display: table-cell;"><img style="" src="/portal/img/sita.png"></img></div>
+					</article>
+					<article>
+						<div style="text-align: center; padding-top: 5px;">Reklamný partner </div>
+						<div style="text-align: center; padding-top: 5px; padding-left: 10px; height: 200px; vertical-align: middle; display: table-cell;"><img style="" src="/portal/img/ministerstvosvvs.png"></img></div>
+					</article>
+
 				</section>
 			</div>
 		</div>
@@ -282,6 +301,28 @@
 				$('.x-portal-competition-selector').append('<option value="'+data[i].id+'">'+ data[i].name +'</option>').trigger('change');;
 			}
 		});
+
+		$('.portal-side-panel.partneri').each(function() {
+			$(this).bind('showcase-next', function() {
+				var idx = $(this).data('showcase-current') || 0;
+
+				$(this).find('article').eq(idx).fadeOut();
+
+				if (idx == $(this).find('article').length - 1) {
+					idx = 0;
+				} else {
+					++idx;
+				}
+
+				$(this).find('article').eq(idx).fadeIn();
+
+				$(this).data('showcase-current', idx);
+
+				setTimeout(function() {
+					$('.portal-side-panel.partneri').triggerHandler('showcase-next');
+				}, 3000);
+			});
+		}).triggerHandler('showcase-next');
 	});
 </script>
 </html>

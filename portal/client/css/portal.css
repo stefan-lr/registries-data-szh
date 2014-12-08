@@ -5,6 +5,7 @@
 	font-size: 14px;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: gray;
+	min-width: 1006px;
 }
 
 #portal-header-container {
@@ -262,7 +263,22 @@
 	border-bottom: 4px red solid;
 }
 
+.portal-side-panel.partneri {
+	position: relative;
+	height: 334px;
+}
+
+.portal-side-panel.partneri article {
+	position: absolute;
+	left: 0px;
+	top: 44px;
+	background: white;
+	display: none;
+}
+
 #footer-container {
+	font-family: 'Source Sans Pro', sans-serif;
+	min-width: 1006px;
 	padding-top: 0;
 	padding-bottom: 2px;
 	background-color: #CB2225;	
@@ -294,6 +310,9 @@
 	font-style: normal;
 	margin-top: 0;
 	margin-bottom: 10px;
+}
+#portal-article .x-portal-widget-category H1 {
+	padding-bottom: 0px;
 }
 #portal-article .abstract {
 	padding-bottom: 20px;
