@@ -54,7 +54,7 @@
                         "required": true,
                         "$objectLink": {
                             "registry": "organizations",
-                            "club": "club.name"
+                            "club": "club.name.v"
                         }
                     }
                 }
@@ -73,8 +73,8 @@
 	                    "type": "object",
 	                    "$objectLink": {
 	                        "registry": "people",
-	                        "surName": "baseData.surName",
-	                        "firstName": "baseData.name",
+	                        "surName": "baseData.surName.v",
+	                        "firstName": "baseData.name.v",
 	                        "license": "coach.coachLicense",
 	                        "licenseType": "coach.coachLicenseType"
 	                    },
@@ -92,8 +92,8 @@
 	                    "type": "object",
 	                    "$objectLink": {
 	                        "registry": "people",
-	                        "surName": "baseData.surName",
-	                        "firstName": "baseData.name",
+	                        "surName": "baseData.surName.v",
+	                        "firstName": "baseData.name.v",
 	                        "license": "coach.coachLicense",
 	                        "licenseType": "coach.coachLicenseType"
 	                    },
@@ -111,8 +111,8 @@
 	                    "type": "object",
 	                    "$objectLink": {
 	                        "registry": "people",
-	                        "surName": "baseData.surName",
-	                        "firstName": "baseData.name",
+	                        "surName": "baseData.surName.v",
+	                        "firstName": "baseData.name.v",
 	                        "license": "coach.coachLicense",
 	                        "licenseType": "coach.coachLicenseType"
 	                    },
@@ -130,8 +130,8 @@
 	                    "type": "object",
 	                    "$objectLink": {
 	                        "registry": "people",
-	                        "surName": "baseData.surName",
-	                        "firstName": "baseData.name"
+	                        "surName": "baseData.surName.v",
+	                        "firstName": "baseData.name.v"
 	                    },
 	                    "$objectLinkForcedCriteria": [
 	                        {
@@ -147,8 +147,8 @@
 	                    "type": "object",
 	                    "$objectLink": {
 	                        "registry": "people",
-	                        "surName": "baseData.surName",
-	                        "firstName": "baseData.name"
+	                        "surName": "baseData.surName.v",
+	                        "firstName": "baseData.name.v"
 	                    },
 	                    "$objectLinkForcedCriteria": [
 	                        {
@@ -175,8 +175,8 @@
                         "items": {
                             "$objectLink": {
                                 "registry": "people",
-                                "surName": "baseData.surName",
-                                "firstName": "baseData.name",
+                                "surName": "baseData.surName.v",
+                                "firstName": "baseData.name.v",
                                 "birthDate": "baseData.birthDate",
                                 "playerLicense": "player.playerLicense"
                             },

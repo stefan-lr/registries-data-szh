@@ -196,8 +196,8 @@
 						"required": true,
 						"$objectLink": {
 							"registry": "people",
-							"surName": "baseData.surName",
-							"name": "baseData.name",
+							"surName": "baseData.surName.v",
+							"name": "baseData.name.v",
 							"playerLicense": "player.playerLicense",
 							"birthNumber": "baseData.id",
 							"birthDate": "baseData.birthDate",
@@ -210,7 +210,7 @@
 						"required": true,
 						"$objectLink": {
 							"registry": "organizations",
-							"name": "club.name"
+							"name": "club.name.v"
 						}
 					},
 					"clubTo": {
@@ -219,7 +219,7 @@
 						"required": true,
 						"$objectLink": {
 							"registry": "organizations",
-							"name": "club.name"
+							"name": "club.name.v"
 						}
 					},
 					"typeOfTransfer": {

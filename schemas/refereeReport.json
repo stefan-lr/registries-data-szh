@@ -174,8 +174,8 @@
 						"required": false,
 						"$objectLink": {
 							"registry": "people",
-							"surName": "baseData.surName",
-							"firstName": "baseData.name"
+							"surName": "baseData.surName.v",
+							"firstName": "baseData.name.v"
 						},
 						"$objectLinkForcedCriteria": [
 							{
@@ -192,8 +192,8 @@
 						"required": false,
 						"$objectLink": {
 							"registry": "people",
-							"surName": "baseData.surName",
-							"firstName": "baseData.name"
+							"surName": "baseData.surName.v",
+							"firstName": "baseData.name.v"
 						},
 						"$objectLinkForcedCriteria": [
 							{
@@ -210,8 +210,8 @@
 						"required": false,
 						"$objectLink": {
 							"registry": "people",
-							"surName": "baseData.surName",
-							"firstName": "baseData.name"
+							"surName": "baseData.surName.v",
+							"firstName": "baseData.name.v"
 						},
 						"$objectLinkForcedCriteria": [
 							{
@@ -228,8 +228,8 @@
 						"required": false,
 						"$objectLink": {
 							"registry": "people",
-							"surName": "baseData.surName",
-							"firstName": "baseData.name"
+							"surName": "baseData.surName.v",
+							"firstName": "baseData.name.v"
 						},
 						"$objectLinkForcedCriteria": [
 							{
