@@ -60,7 +60,7 @@
                 "registrationID": {
                     "title": "Registračné číslo",
                     "transCode": "schema.people.registrationID",
-                    "type": "string",
+                    "type": "number",
                     "required": true,
                     "$sequence": "people_regs"
                 },
