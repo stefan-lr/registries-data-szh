@@ -4,25 +4,25 @@
 	"view": {
 	"title": "statistics",
 	"transCode":"schema.statistics.view",
-	"_security": {
-		"_read": {
-			"_static":["Registry - read"]
+	"security": {
+		"read": {
+			"static":["Registry - read"]
 		}
 	},
 	"properties":{
 
 		"baseData": {
-				"title": "Základné statistiky",
+				"title": "Základné štatistiky",
 				"transCode": "schema.statistics.baseData",
 				"type": "object",
 				"properties":{
 					"numberOfMembers":{
-						"title":"Pocet clenov",
+						"title":"Počet členov",
 						"transCode":"schema.statistics.member.count",
 						"type":"Decimal"
 					},
 					"numberOfWomen":{
-						"title":"Pocet zien",
+						"title":"Počet žien",
 						"transCode":"schema.statistics.women.count",
 						"type":"Decimal"
 					}

@@ -1,12 +1,13 @@
 {
 	"$schema" : "http://json-schema.org/schema#",
 	"id" : "uri://registries/security#profilesmaster",
+
 	"new" : {
-		"title": "Nový bezpečnostný profil",
-		"transCode": "schema.securityMaster.new",
 		"table":"securityProfiles",
-		"_security" : {
-			"$ref" : "uri://registries/security#profiles/_security"
+		"title": "Bezpečnostný profil",
+		"transCode":"schema.securityMaster.title",
+		"security" : {
+			"$ref" : "uri://registries/security#profiles/security"
 		},
 		"properties" : {
 			"baseData" : {
@@ -15,22 +16,12 @@
 		}
 	},
 	"view" : {
-		"title": "Bezpečnostný profil",
-		"transCode": "schema.securityMaster.view",
-		"table":"securityProfiles",
-		"_security" : {
-			"$ref" : "uri://registries/security#profiles/_security"
-		},
-		"properties" : {
-			"baseData" : {
-				"$ref": "uri://registries/security#profiles/properties/baseData"
-			}
-		}
+		"$ref" : "uri://registries/security#profilesmaster/new"
 	},
 	"search" : {
-		"title": "Bezpečnostný profil",
-		"transCode": "schema.securityMaster.search",
-		"table":"securityProfiles",
+		"table":"Bezpečnostný profil",
+		"transCode":"schema.securityMaster.title",
+		"title":"profil",
 		"listFields": {
 			"$ref": "uri://registries/security#profiles/listFields"
 		},
@@ -42,6 +33,5 @@
 				"$ref": "uri://registries/security#profiles/properties/security"
 			}
 		}
-
 	}
 }

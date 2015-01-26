@@ -81,7 +81,7 @@
 
 			transferDao.get(event.transferId,function (err,transfer){
 				if (err){log.error(err);return;}
-				transfer.baseData.active='ano';
+				transfer.baseData.active='TRUE';
 
 				peopleDao.get(transfer.baseData.player.oid,function(err,player){
 					if (err){log.error(err);return;}
@@ -127,7 +127,7 @@
 				if (err){log.error(err);return;}
 					console.log(transfer);
 
-				transfer.baseData.active='nie';
+				transfer.baseData.active='FALSE';
 
 				peopleDao.get(transfer.baseData.player.oid,function(err,player){
 					if (err){log.error(err);return;}
@@ -173,8 +173,9 @@
 
 			transferDao.get(event.transferId,function (err,transfer){
 				if (err){log.error(err);return;}
+					console.log(transfer);
 
-				transfer.baseData.active='nie';
+				transfer.baseData.active='FALSE';
 
 				peopleDao.get(transfer.baseData.player.oid,function(err,player){
 					if (err){log.error(err);return;}

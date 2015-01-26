@@ -4,10 +4,9 @@
 	"type": "object",
 	"town":{
 		"title": "Obec",
-		"transCode": "schema.people.baseData.town",
-        "type": "string",
+		"type": "string",
+		"transCode": "schema.towns.town",
 		"enum":[
-			"Bánovce nad Bebravou",
 			"Ábelová",
 			"Abovce",
 			"Abrahám",
@@ -75,6 +74,7 @@
 			"Banky",
 			"Bánov",
 			"Bánová",
+			"Bánovce nad Bebravou",
 			"Bánovce nad Ondavou",
 			"Banská",
 			"Banská Belá",
@@ -4115,7 +4115,6 @@
 			"Zvolen",
 			"Žilina"
 		],
-        "required": false,
 		"render": {
 			"component": "psui-selectbox",
 			"searchable": true
