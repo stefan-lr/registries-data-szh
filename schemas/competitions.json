@@ -51,7 +51,7 @@
 
 	"models":{
 		"competitions":{
-			"table": "competitons",
+			"table": "competitions",
 			"title": "Súťaž",
 			"transCode":"schema.competition.title",
 			"security": {
@@ -100,12 +100,12 @@
 						"transCode": "schema.competition.name"
 					},
 					{
-						"field": "baseData.season",
+						"field": "baseData.season.refData.name",
 						"title": "Súťažný ročník",
 						"transCode": "schema.competition.season"
 					},
 					{
-						"field": "baseData.ageCategory",
+						"field": "baseData.ageCategory.refData.name",
 						"title": "Veková kategória",
 						"transCode": "schema.competition.ageCategory"
 					},

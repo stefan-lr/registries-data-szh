@@ -81,7 +81,7 @@
 					{
 						"field": "baseData.endSeason",
 						"title": "Koniec",
-						"transCode": "schema.season.startSeason"
+						"transCode": "schema.season.endSeason"
 					}
 				]
 			}

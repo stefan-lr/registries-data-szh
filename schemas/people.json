@@ -11,8 +11,9 @@
 				"registrationID": {
 					"title": "Registračné číslo",
 					"transCode": "schema.people.registrationID",
-					"type": "string",
-					"sequence": "people_regs"
+					"type": "number",
+					"required": true,
+					"sequence": "person_regs"
 				},
 				"id": {
 					"title": "Identifikačné číslo",
@@ -823,12 +824,12 @@
 			"view":{
 				"extends":"uri://registries/people#models/fullperson",
 				"clientActions": [
-						{
-							"__DIRECTIVE__": "action-link",
-							"title": "Tlač hráčskej licencie",
-							"schema": "uri://registries/people#views/fullperson/view",
-							"template": "playerLicenseCard.html"
-						}
+					{
+						"__DIRECTIVE__": "action-link",
+						"title": "Tlač hráčskej licencie",
+						"schema": "uri://registries/people#views/fullperson/view",
+						"template": "playerLicenseCard.html"
+					}
 				]
 			},
 			"search":{

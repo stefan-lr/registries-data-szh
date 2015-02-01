@@ -15,7 +15,6 @@
 					"required": true,
 					"objectLink": {
 						"registry": "people",
-						"registrationID": "baseData.registrationID",
 						"surName": "baseData.surName.v",
 						"name": "baseData.name.v",
 						"birthDate":"baseData.birthDate"

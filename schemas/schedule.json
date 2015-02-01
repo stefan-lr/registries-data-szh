@@ -78,7 +78,7 @@
 					{
 						"field": "baseData.name",
 						"title": "Názov termínu",
-						"transCode": "schema.schedule.name"
+						"transCode": "schema.schedule.baseData.name"
 					},
 					{
 						"field": "baseData.competitionPart.refData.name",
@@ -88,12 +88,12 @@
 					{
 						"field": "baseData.competitionPart.refData.name",
 						"title": "Názov časti súťaže",
-						"transCode": "schema.schedule.competitionPart"
+						"transCode": "schema.schedule.baseData.competitionPart"
 					},
 					{
 						"field": "baseData.date",
 						"title": "Dátum",
-						"transCode": "schema.schedule.date"
+						"transCode": "schema.schedule.baseData.date"
 					}
 				]
 			}
