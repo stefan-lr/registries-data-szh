@@ -1,9 +1,24 @@
 <div class="x-portal-widget-showcase-view">{% for article in data.articles %}
-	<article>
+	<article class="showcase-item-{{ article.id }}">
 	{% if article.img.img %}<img src="{{ article.img.img|safe }}">{% endif %}
 	<div class="x-portal-widget-showcase-view-textblock">
 		<a href="/article/{{ article.id }}">{{ article.title|safe }}</a>
 		{{ article.abstract|safe }}
 	</div>
 	</article>
-{% endfor %}</div>
+{% endfor %}
+</div>
+
+<div class="x-portal-widget-showcase-navigation">
+	<a href="#" class="prev">
+		<i class="fa fa-chevron-left"></i>
+	</a>
+	<div>
+		{% for article in data.articles %}
+			<a href="#" class="item"></span>
+		{% endfor %}
+	</div>
+	<a href="#" class="next">
+		<i class="fa fa-chevron-right"></i>
+	</a>
+</div>

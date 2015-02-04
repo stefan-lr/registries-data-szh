@@ -132,7 +132,7 @@
 		$('.x-portal-widget-showcase-view').each(function() {
 			$(this).bind('showcase-next', function() {
 				var idx = $(this).data('showcase-current') || 0;
-				
+
 				$(this).find('article').eq(idx).fadeOut();
 
 				if (idx == $(this).find('article').length - 1) {
@@ -145,12 +145,58 @@
 
 				$(this).data('showcase-current', idx);
 
+				var navigationEl = $(this).next();
+				navigationEl.find('a.item').removeClass('active');
+				navigationEl.find('a.item').eq(idx).addClass('active');
+
 				setTimeout(function() {
 					$('.x-portal-widget-showcase-view').triggerHandler('showcase-next');
-				}, 3000);
+				}, 4000);
 			});
 
 		}).triggerHandler('showcase-next');
+		$('.x-portal-widget-showcase-navigation a.prev').click(function(e) {
+			var showcaseEl = $(this).parent().prev();
+			var navigationEl = $(this).parent();
+			var idx = showcaseEl.data('showcase-current') || 0;
+			showcaseEl.find('article').eq(idx).fadeOut();
+			idx = idx - 1;
+			if (idx < 0) {
+				idx = $('.x-portal-widget-showcase-view article').size()-1;
+			}
+			showcaseEl.find('article').eq(idx).fadeIn();
+			showcaseEl.data('showcase-current', idx);
+			navigationEl.find('a.item').removeClass('active');
+			navigationEl.find('a.item').eq(idx).addClass('active');
+			e.stopPropagation();
+			return false;
+		});
+		$('.x-portal-widget-showcase-navigation a.item').click(function(e) {
+			var showcaseEl = $(this).parents('.x-portal-widget-showcase-navigation').prev();
+			var navigationEl = $(this).parents('.x-portal-widget-showcase-navigation');
+			var idx = showcaseEl.data('showcase-current') || 0;
+			showcaseEl.find('article').eq(idx).fadeOut();
+			idx = $(this).index();
+			showcaseEl.find('article').eq(idx).fadeIn();
+			showcaseEl.data('showcase-current', idx);
+			navigationEl.find('a.item').removeClass('active');
+			navigationEl.find('a.item').eq(idx).addClass('active');
+			e.stopPropagation();
+			return false;
+		});
+		$('.x-portal-widget-showcase-navigation a.next').click(function(e) {
+			var showcaseEl = $(this).parent().prev();
+			var navigationEl = $(this).parent();
+			var idx = showcaseEl.data('showcase-current') || 0;
+			showcaseEl.find('article').eq(idx).fadeOut();
+			idx = (idx+1) % $('.x-portal-widget-showcase-view article').size();
+			showcaseEl.data('showcase-current', idx);
+			showcaseEl.find('article').eq(idx).fadeIn();
+			navigationEl.find('a.item').removeClass('active');
+			navigationEl.find('a.item').eq(idx).addClass('active');
+			e.stopPropagation();
+			return false;
+		});
 
 		$('.x-portal-widget-gallery').each(function(index) {
 

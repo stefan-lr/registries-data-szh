@@ -485,6 +485,51 @@
 	color: red !important;
 }
 
+.x-portal-widget-showcase-navigation {
+	margin-top: 6px;
+	text-align: right;
+}
+
+.x-portal-widget-showcase-navigation div {
+	margin-right: 8px;
+	display: inline;
+}
+
+.x-portal-widget-showcase-navigation div a,
+		.x-portal-widget-showcase-navigation div a:VISITED,
+		.x-portal-widget-showcase-navigation div a:HOVER {
+	margin-left: 8px;
+	color: #FF0D0D;
+}
+
+.x-portal-widget-showcase-navigation a,
+		.x-portal-widget-showcase-navigation a:VISITED,
+		.x-portal-widget-showcase-navigation a:HOVER {
+	color: #FF0D0D;
+	font-weight: bolder;
+}
+
+.x-portal-widget-showcase-navigation div a.active {
+}
+
+.x-portal-widget-showcase-navigation div a.item::after {
+	content: "\f111";
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 14px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+	
+.x-portal-widget-showcase-navigation div a.item.active::after {
+	content: "\f10c";
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 14px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+	
 .x-portal-results-hyphen {
 	text-align: center;
 	width: 50px;
