@@ -83,7 +83,7 @@
 						"license": "coach.coachLicense",
 						"licenseType": "coach.coachLicenseType"
 					},
-					"objectLinkForcedCriteria": [
+					"$objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -102,7 +102,7 @@
 						"license": "coach.coachLicense",
 						"licenseType": "coach.coachLicenseType"
 					},
-					"objectLinkForcedCriteria": [
+					"$objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -121,7 +121,7 @@
 						"license": "coach.coachLicense",
 						"licenseType": "coach.coachLicenseType"
 					},
-					"objectLinkForcedCriteria": [
+					"$objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -140,7 +140,7 @@
 						"license": "coach.coachLicense",
 						"licenseType": "coach.coachLicenseType"
 					},
-					"objectLinkForcedCriteria": [
+					"$objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -159,7 +159,7 @@
 						"license": "coach.coachLicense",
 						"licenseType": "coach.coachLicenseType"
 					},
-					"objectLinkForcedCriteria": [
+					"$objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -178,7 +178,7 @@
 						"license": "coach.coachLicense",
 						"licenseType": "coach.coachLicenseType"
 					},
-					"objectLinkForcedCriteria": [
+					"$objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -210,7 +210,7 @@
 						},
 						"required": true,
 						"_$objectLinkForcedCriteria": true,
-						"objectLinkForcedCriteria": [
+						"$objectLinkForcedCriteria": [
 							{
 								"f": "player.isPlayer",
 								"op": "eq",

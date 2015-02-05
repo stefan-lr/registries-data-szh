@@ -380,12 +380,12 @@
 						"Registry - write"
 					]
 				},
-				"_read": {
+				"read": {
 					"static": [
 						"Registry - read"
 					]
 				},
-				"_modify": {
+				"modify": {
 					"static": [
 						"Registry - write"
 					]
@@ -424,12 +424,12 @@
 						"Registry - write"
 					]
 				},
-				"_read": {
+				"read": {
 					"static": [
 						"Registry - read"
 					]
 				},
-				"_modify": {
+				"modify": {
 					"static": [
 						"Registry - write"
 					]

@@ -47,7 +47,7 @@
 						"license": "coach.coachLicense",
 						"licenseType": "coach.coachLicenseType"
 					},
-					"objectLinkForcedCriteria": [
+					"$objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
