@@ -529,7 +529,17 @@
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 }
-	
+
+.x-portal-widget-match-results header,
+		.x-portal-widget-match-standings header {
+	color: white;
+	text-transform: uppercase;
+	background: #CB2225;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	text-align: center;
+}
+
 .x-portal-results-hyphen {
 	text-align: center;
 	width: 50px;
