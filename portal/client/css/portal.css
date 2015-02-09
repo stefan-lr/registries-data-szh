@@ -254,6 +254,7 @@ a.portal-menu-bottom-entry-head {
 #portal-main-content {
 	display: table-cell;
 	vertical-align: top;
+	background: white;
 }
 
 #portal-headlines-section {
@@ -478,12 +479,17 @@ a.portal-menu-bottom-entry-head {
 	display: none;
 }
 
+.x-portal-widget-category {
+	background: white;
+}
+
 .x-portal-widget-category ARTICLE {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	overflow: hidden;
 	float: left;
 	width: 326px;
+	background: white;
 }
 
 .x-portal-widget-category H1 {
@@ -512,6 +518,10 @@ a.portal-menu-bottom-entry-head {
 	display: -webkit-box;
 	-webkit-line-clamp: 6;
 	-webkit-box-orient: vertical;
+}
+
+.x-portal-widget-category-navigation {
+	clear: both;
 }
 
 .x-portal-widget-showcase-view {
