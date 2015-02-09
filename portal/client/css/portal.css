@@ -49,25 +49,25 @@
 	width: 1006px;
 	margin: 0 auto;
 	display: table;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 
 #portal-club-logos-panel .portal-club-logo {
 	background-repeat: no-repeat;
-	background-size: 26px 26px;
+	background-size: 21px 21px;
 	background-position: center center;
-	height: 30px;
-	width: 30px;
+	height: 28px;
+	width: 28px;
 	display: table-cell;
 }
 
 #portal-club-logos-panel .portal-club-logo:HOVER {
 	background-repeat: no-repeat;
-	background-size: 30px 30px;
+	background-size: 28px 28px;
 	background-position: center center;
-	height: 30px;
-	width: 30px;
+	height: 28px;
+	width: 28px;
 	display: table-cell;
 }
 
@@ -116,7 +116,7 @@
 
 #portal-menu-panel-container {
 	background-color: #fff;
-	border-top: 4px #ef4136 solid;
+	border-top: 2px #ef4136 solid;
 	box-shadow: 0px 3px 3px gray;
 }
 
@@ -248,7 +248,7 @@ a.portal-menu-bottom-entry-head {
 #portal-content-container {
 	width: 1006px;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 36px;
 }
 
 #portal-main-content {
@@ -273,6 +273,9 @@ a.portal-menu-bottom-entry-head {
 	color: #CB2225;
 	text-decoration: none;
 	text-transform: uppercase;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #portal-content-container .abstract {
@@ -478,7 +481,9 @@ a.portal-menu-bottom-entry-head {
 .x-portal-widget-category ARTICLE {
 	padding-top: 10px;
 	padding-bottom: 10px;
-	overflow: auto;
+	overflow: hidden;
+	float: left;
+	width: 326px;
 }
 
 .x-portal-widget-category H1 {
@@ -492,9 +497,21 @@ a.portal-menu-bottom-entry-head {
 }
 
 .x-portal-widget-category IMG {
-	margin-left: 10px;
-	width: 164px;
-	float: right;
+	margin-right: 10px;
+	width: 150px;
+	float: left;
+}
+
+.x-portal-widget-category-inner {
+	margin-right: 10px;
+	color: #111;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 112px;
+	width: 100px;
+	display: -webkit-box;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
 }
 
 .x-portal-widget-showcase-view {
@@ -650,4 +667,8 @@ a.portal-menu-bottom-entry-head {
 .x-portal-results-selectable:HOVER {
 	background-color: red;
 	color: white;
+}
+
+.x-portal-competition-matches {
+	background: white;
 }
