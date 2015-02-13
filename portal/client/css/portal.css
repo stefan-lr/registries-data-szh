@@ -72,7 +72,7 @@
 }
 
 #portal-club-logos-panel .portal-club-logo-1 {
-		background-image: url("/portal/img/club1.jpg");
+		background-image: url("/portal/img/club1.png");
 }
 #portal-club-logos-panel .portal-club-logo-2 {
 		background-image: url("/portal/img/club2.png");
@@ -105,7 +105,7 @@
 		background-image: url("/portal/img/club11.png");
 }
 #portal-club-logos-panel .portal-club-logo-12 {
-		background-image: url("/portal/img/club12.jpg");
+		background-image: url("/portal/img/club12.png");
 }
 #portal-club-logos-panel .portal-club-logo-13 {
 		background-image: url("/portal/img/club13.png");
@@ -254,6 +254,9 @@ a.portal-menu-bottom-entry-head {
 #portal-main-content {
 	display: table-cell;
 	vertical-align: top;
+}
+
+#portal-main-content.portal-main-content-editor {
 	background: white;
 }
 
@@ -378,7 +381,8 @@ a.portal-menu-bottom-entry-head {
 	margin-top: 0;
 	margin-bottom: 10px;
 }
-.portal-article .x-portal-widget-category H1 {
+.portal-article .x-portal-widget-category H1,
+		.portal-article .x-portal-widget-overview H1 {
 	padding-bottom: 0px;
 }
 .portal-article .abstract {
@@ -479,8 +483,9 @@ a.portal-menu-bottom-entry-head {
 	display: none;
 }
 
-.x-portal-widget-category {
+.x-portal-widget-category, .x-portal-widget-overview {
 	background: white;
+	clear: both;
 }
 
 .x-portal-widget-category ARTICLE {
@@ -492,13 +497,21 @@ a.portal-menu-bottom-entry-head {
 	background: white;
 }
 
-.x-portal-widget-category H1 {
+.x-portal-widget-overview ARTICLE {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-right: 10px;
+	overflow: auto;
+	width: auto;
+}
+
+.x-portal-widget-category H1, .x-portal-widget-overview H1 {
 	margin-bottom: 0;
 	font-size: 140% !important;
 	padding-top: 0 !important;
 }
 
-.x-portal-widget-category H1:HOVER {
+.x-portal-widget-category H1:HOVER, .x-portal-widget-overview H1:HOVER {
 	color: red !important;
 }
 
@@ -508,13 +521,19 @@ a.portal-menu-bottom-entry-head {
 	float: left;
 }
 
+.x-portal-widget-overview IMG {
+	margin-right: 10px;
+	width: 164px;
+	float: left;
+}
+
 .x-portal-widget-category-inner {
 	margin-right: 10px;
 	color: #111;
 	overflow: hidden;
-	text-overflow: ellipsis;
 	height: 112px;
 	width: 100px;
+	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-line-clamp: 6;
 	-webkit-box-orient: vertical;
@@ -547,6 +566,12 @@ a.portal-menu-bottom-entry-head {
 	color: white;
 	width: 636px;
 }
+
+.x-portal-widget-showcase-view-image {
+	width: 100%;
+	height: 491px;
+}
+
 
 #portal-content-container .x-portal-widget-showcase-view-textblock h1 {
 	color: white;
@@ -681,4 +706,123 @@ a.portal-menu-bottom-entry-head {
 
 .x-portal-competition-matches {
 	background: white;
+}
+
+@media (max-width: 1020px) {
+	#portal-main-container {
+		min-width: initial;
+	}
+
+	#portal-main-header {
+		width: initial;
+	}
+
+	#portal-menu-panel {
+		width: initial;
+	}
+
+	#portal-club-logos-panel {
+		width: 90%;
+	}
+
+	#portal-content-container {
+		width: auto;
+		position: relative;
+	}
+
+	#portal-main-content {
+		display: block;
+	    width: auto;
+	    margin-right: 325px;
+	    margin-left: 4px;
+	    /*min-height: 1830px;*/
+	}
+	
+	#portal-side-content {
+	    position: absolute;
+	    top: 36px;
+	    right: 0px;
+	}
+
+	#footer-container {
+		min-width: initial;
+	}
+
+	#portal-menu-bottom-panel {
+		display: none;
+	}
+
+	#main-footer {
+		min-width: initial;
+	}
+
+}
+
+@media (max-width: 1020px) {
+	#portal-menu-panel {
+		display: none;
+	}
+	
+	.x-portal-widget-showcase-view img {
+		width: 100%;
+	}
+
+	.portal-article {
+		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	
+	.x-portal-widget-showcase-view-textblock {
+		width: 100%;
+	}
+	
+	.x-portal-widget-showcase-view article {
+		overflow: hidden;
+		width: 100%;
+	}
+}
+
+@media (max-width: 510px) {
+	#portal-main-header h1 {
+		position: static;
+		margin-left: 10px;
+	}
+	
+	#portal-main-header-logo-area {
+		position: static;
+		margin-left: 10px;
+	}	
+}
+
+@media (max-width: 400px) {
+	#portal-content-container {
+		width: auto;
+		position: static;
+	}
+
+	#portal-main-content {
+	    position: static;
+		display: block;
+	    width: auto;
+	    margin-right: 10px;
+	    margin-left: 10px;
+	}
+	
+	#portal-side-content {
+	    position: static;
+	    top: 0px;
+	    left: 0px;
+	    margin-right: 10px;
+	    margin-left: 10px;
+	}
+	
+	.x-portal-widget-match-results {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	.x-portal-widget-category article {
+		padding-left: 5px;
+	}
 }
