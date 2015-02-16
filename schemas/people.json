@@ -517,7 +517,7 @@
 				}
 			}
 		},
-		"contact": {
+		"contactInfo": {
 			"title": "Kontaktné údaje",
 			"transCode": "schema.people.contactInfo",
 			"type": "object",
@@ -640,8 +640,8 @@
 				"baseData":{
 					"extends":"uri://registries/people#blocks/person"
 				},
-				"contact":{
-					"$ref":"uri://registries/people#blocks/contact"
+				"contactInfo":{
+					"$ref":"uri://registries/people#blocks/contactInfo"
 				}
 			}
 		},
@@ -798,8 +798,8 @@
 				"photoInfo":{
 					"$ref":"uri://registries/people#blocks/photoInfo"
 				},
-				"contact":{
-					"$ref":"uri://registries/people#blocks/contact"
+				"contactInfo":{
+					"$ref":"uri://registries/people#blocks/contactInfo"
 				},
 				"otherInfo":{
 					"$ref":"uri://registries/people#blocks/otherInfo"
