@@ -245,6 +245,10 @@ a.portal-menu-bottom-entry-head {
 	
 }
 
+#mobile-menu-toggler {
+	display: none;
+}
+
 #portal-content-container {
 	width: 1006px;
 	margin: 0 auto;
@@ -347,6 +351,7 @@ a.portal-menu-bottom-entry-head {
 	padding-bottom: 2px;
 	border-top: 12px #ef4136 solid;
 	color: #ef4136;
+	clear: both;
 }
 
 #footer-container a {
@@ -399,6 +404,10 @@ a.portal-menu-bottom-entry-head {
 	-webkit-margin-after: 0;
 	-webkit-margin-start: 0;
 	-webkit-margin-end: 0;
+}
+
+.portal-article figure img {
+	width: 100%;
 }
 
 .portal-article p {
@@ -748,10 +757,6 @@ a.portal-menu-bottom-entry-head {
 		min-width: initial;
 	}
 
-	#portal-menu-bottom-panel {
-		display: none;
-	}
-
 	#main-footer {
 		min-width: initial;
 	}
@@ -759,10 +764,7 @@ a.portal-menu-bottom-entry-head {
 }
 
 @media (max-width: 1020px) {
-	#portal-menu-panel {
-		display: none;
-	}
-	
+
 	.x-portal-widget-showcase-view img {
 		width: 100%;
 	}
@@ -784,6 +786,88 @@ a.portal-menu-bottom-entry-head {
 }
 
 @media (max-width: 510px) {
+	#mobile-menu-toggler {
+		display: block;
+	}
+
+	#mobile-menu-toggler a,
+			#mobile-menu-toggler a:visited {
+		display: block;
+		font-size: 35px;
+		color: black;
+		margin-left: 8px;
+	}
+
+	#portal-menu-panel-container {
+		display: none;
+	}
+
+	#portal-menu-panel-container.mobile-visible {
+		display: block;
+	}
+
+	#portal-menu-bottom-panel {
+		display: none;
+	}
+
+	#portal-menu-panel {
+		width: 100%;
+	}
+
+	#portal-menu-panel .portal-menu-entry {
+		display: block;
+		font-size: 140%;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		text-align: center;
+	}
+	#portal-menu-panel .portal-menu-entry .portal-sub-menu {
+		position: static;
+		box-shadow: none;
+		max-height: inherit;
+	}
+	#portal-menu-panel .portal-menu-entry A {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	#portal-menu-panel .portal-menu-entry .portal-sub-menu DIV {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+	#portal-menu-panel-container {
+		padding-bottom: 0px;
+		position: absolute;
+		top: 46px;
+		left: 0px;
+		width: 300px;
+	}
+	#portal-menu-panel-container a.menu-login,
+			#portal-menu-panel-container a.menu-login:VISITED {
+		position: relative;
+		top: 0px;
+		right: 0px;
+		color: #666;
+	}
+	#portal-menu-panel-container .menu-login-container {
+		background: white;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		text-align: center;
+	}
+
+	#portal-menu-panel .portal-menu-entry:last-child {
+		display: block;
+		position: relative;
+		padding-top: 5px;
+		padding-bottom: 6px;
+		text-align: center;
+	}
+
+	#portal-menu-panel .portal-menu-entry .portal-sub-menu DIV,
+			#portal-menu-panel .portal-menu-entry .portal-sub-menu DIV:first-child {
+		border-top: none;
+	}
+
 	#portal-main-header h1 {
 		position: static;
 		margin-left: 10px;

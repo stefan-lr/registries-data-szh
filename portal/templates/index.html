@@ -23,6 +23,11 @@
 	<div id="portal-main-container">
 		<div id="portal-header-container">
 			<header id="portal-main-header">
+				<div id="mobile-menu-toggler">
+					<a href="" class="toogle-menu" >
+						<i class="fa fa-align-justify"></i>
+					</a>
+				</div>
 				<h1>Slovenský Zväz Hádzanej</h1>
 				<img class="portal-logo" src="/portal/img/portal-logo.png" alt="logo" title="SLOVENSKÝ ZVÄZ HÁDZANEJ" />
 				<div id="portal-main-header-logo-area">
@@ -151,6 +156,23 @@
 </body>
 <script>
 	$(function() {
+		$('#portal-menu-panel-container').removeClass('mobile-visible');
+		var mainMenuHidden = true;
+		$('.toogle-menu').click(function (e) {
+			if (mainMenuHidden) {
+				$('#portal-menu-panel-container').addClass('mobile-visible');
+				mainMenuHidden = false;
+			} else {
+				$('#portal-menu-panel-container').removeClass('mobile-visible');
+				mainMenuHidden = true;
+			}
+			e.stopPropagation();
+			return false;
+		});
+		$('body').click(function () {
+			$('#portal-menu-panel-container').removeClass('mobile-visible');
+			mainMenuHidden = true;
+		});
 		$('.x-portal-widget-showcase-view').each(function() {
 			$(this).bind('showcase-next', function() {
 				var idx = $(this).data('showcase-current') || 0;
