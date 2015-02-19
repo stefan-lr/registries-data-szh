@@ -33,7 +33,7 @@
 				<div id="portal-main-header-logo-area">
 					<img src="/portal/img/logo_ehf.png" alt="logo" title="EHF" width="70px" height="70px" />
 					<img src="/portal/img/logo_ihf.png" alt="logo" title="IHF" width="70px" height="70px" />
-					<img src="/portal/img/logo_sk_ol_vybor.png" alt="logo" title="Slovenský Olympijský Výbor" width="70px" height="70px" />
+					<img src="/portal/img/logo_sk_ol_vybor.png" alt="logo" title="Slovenský Olympijský Výbor" width="70px" height="70px" style="margin-left: 1px;"/>
 				</div>
 			</header>
 		</div>
@@ -73,7 +73,7 @@
 		<div id="portal-content-container">
 			<div id="portal-main-content">
 				{% for widget in article.data %}
-					<article class="portal-article">
+					<article class="portal-article {{ widget.meta.type }}">
 						{% set templatePath = "widgets/" + widget.meta.type + ".widget" %}
 						{% include templatePath with widget only %}
 					</article>

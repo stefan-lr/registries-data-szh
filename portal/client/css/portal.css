@@ -26,7 +26,7 @@
 }
 
 #portal-main-header h1 {
-	color: #ef4136;
+	color: #CB2225;
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -37,37 +37,37 @@
 
 #portal-main-header-logo-area {
 	position: absolute;
-	right: 20px;
+	right: 0px;
 	bottom: 36px;
 }
 
 #portal-club-logos-panel-container {
-	background-color: #ef4136;
+	background-color: #CB2225;
 }
 
 #portal-club-logos-panel {
 	width: 1006px;
 	margin: 0 auto;
 	display: table;
-	padding-top: 3px;
-	padding-bottom: 3px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 #portal-club-logos-panel .portal-club-logo {
 	background-repeat: no-repeat;
-	background-size: 21px 21px;
+	background-size: 35px 35px;
 	background-position: center center;
-	height: 28px;
-	width: 28px;
+	height: 40px;
+	width: 40px;
 	display: table-cell;
 }
 
 #portal-club-logos-panel .portal-club-logo:HOVER {
 	background-repeat: no-repeat;
-	background-size: 28px 28px;
+	background-size: 40px 40px;
 	background-position: center center;
-	height: 28px;
-	width: 28px;
+	height: 40px;
+	width: 40px;
 	display: table-cell;
 }
 
@@ -116,7 +116,7 @@
 
 #portal-menu-panel-container {
 	background-color: #fff;
-	border-top: 2px #ef4136 solid;
+	border-top: 1px #CB2225 solid;
 	box-shadow: 0px 3px 3px gray;
 }
 
@@ -190,7 +190,7 @@
 
 #portal-menu-panel .portal-menu-entry A,
 		#portal-menu-panel .portal-menu-entry A:VISITED {
-	color: #ef4136;
+	color: #CB2225;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -213,6 +213,12 @@
 
 #portal-menu-bottom-panel {
 	
+}
+
+#portal-menu-bottom-container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
 }
 
 .portal-menu-bottom-entry {
@@ -282,9 +288,18 @@ a.portal-menu-bottom-entry-head {
 	color: #CB2225;
 	text-decoration: none;
 	text-transform: uppercase;
-	white-space: nowrap;
+}
+
+#portal-content-container .x-portal-widget-category H1,
+ 		#portal-content-container .x-portal-widget-overview H1 {
 	overflow: hidden;
 	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	height: 40px;
+	vertical-align: bottom;
+	font-size: 16px;
 }
 
 #portal-content-container .abstract {
@@ -350,17 +365,17 @@ a.portal-menu-bottom-entry-head {
 	min-width: 1006px;
 	padding-top: 0;
 	padding-bottom: 2px;
-	border-top: 12px #ef4136 solid;
-	color: #ef4136;
+	border-top: 12px #CB2225 solid;
+	color: #CB2225;
 	clear: both;
 }
 
 #footer-container a {
-	color: #ef4136;
+	color: #CB2225;
 }
 
 #main-footer {
-	border-top: 2px #ef4136 solid;
+	border-top: 2px #CB2225 solid;
 	position: relative;
 	min-width: 1006px;
 	clear: both;
@@ -375,6 +390,9 @@ a.portal-menu-bottom-entry-head {
 	display: inline-block;
 	width: 656px;
 	box-shadow: 0px 3px 3px gray;
+}
+
+.portal-article.showcase {
 	margin-bottom: 10px;
 }
 
@@ -503,8 +521,9 @@ a.portal-menu-bottom-entry-head {
 	padding-bottom: 10px;
 	overflow: hidden;
 	float: left;
-	width: 326px;
+	width: 316px;
 	background: white;
+	padding-right: 10px;
 }
 
 .x-portal-widget-overview ARTICLE {
@@ -517,7 +536,7 @@ a.portal-menu-bottom-entry-head {
 
 .x-portal-widget-category H1, .x-portal-widget-overview H1 {
 	margin-bottom: 0;
-	font-size: 140% !important;
+	font-size: 140%;
 	padding-top: 0 !important;
 }
 
@@ -537,12 +556,18 @@ a.portal-menu-bottom-entry-head {
 	float: left;
 }
 
+
+
+.x-portal-widget-category-title {
+	
+}
+
 .x-portal-widget-category-inner {
 	margin-right: 10px;
 	color: #111;
 	overflow: hidden;
 	height: 112px;
-	width: 100px;
+	width: auto;
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-line-clamp: 6;
@@ -643,7 +668,7 @@ a.portal-menu-bottom-entry-head {
 }
 
 .x-portal-widget-showcase-navigation div a.item::after {
-	content: "\f111";
+	content: "\f10c";
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: 14px;
@@ -652,7 +677,7 @@ a.portal-menu-bottom-entry-head {
 }
 	
 .x-portal-widget-showcase-navigation div a.item.active::after {
-	content: "\f10c";
+	content: "\f111";
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: 14px;
@@ -783,6 +808,10 @@ a.portal-menu-bottom-entry-head {
 	.x-portal-widget-showcase-view article {
 		overflow: hidden;
 		width: 100%;
+	}
+
+	#portal-club-logos-panel-container {
+		display: none;
 	}
 }
 
