@@ -355,17 +355,31 @@
 						return d.substr(6,2) + '.' +d.substr(4,2) + '.' + d.substr(0,4);
 					}
 
-					var table = $(that).find('table');
+					var tblContainer = $(that).find('.x-portal-widget-match-results-table');
 
-					table.empty();
+					tblContainer.empty();
+
+					var leftDiv = $('<div style="float: left;"></div>');
+					var rightDiv = $('<div style="float: right;"></div>');
+					tblContainer.append(leftDiv);
+					tblContainer.append(rightDiv);
 
 					var lastDate = null;
+					var position = 0;
 					for (var i in data) {
 						var currDate = formatDate(data[i].matchDate);
 						if (lastDate !== currDate) {
+							var table = $('<table ></table>');
+							if (position <= Math.ceil(data.length/2)) {
+								leftDiv.append(table);
+							} else {
+								rightDiv.append(table);
+							}
 							table.append('<tr><td colspan="3" class="x-portal-results-date">'+currDate+'</td></tr>');
 							lastDate = currDate;
+							position++;
 						}
+						position++;
 
 						var e = $('<tr><td class="x-portal-results-left-club">' + data[i].homeName + '</td><td class="x-portal-results-hyphen">'+(data[i].fullTimeScoreHome || '-')+ '&nbsp;-&nbsp;'+(data[i].fullTimeScoreAway || '-')+'</td><td class="x-portal-results-right-club">' + data[i].guestName + '</td></tr>');
 
