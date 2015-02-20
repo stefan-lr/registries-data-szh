@@ -54,20 +54,20 @@
 		</div>
 		<div id="portal-club-logos-panel-container">
 			<div id="portal-club-logos-panel">
-				<div class="portal-club-logo portal-club-logo-1"></div>
-				<div class="portal-club-logo portal-club-logo-2"></div>
-				<div class="portal-club-logo portal-club-logo-3"></div>
-				<div class="portal-club-logo portal-club-logo-4"></div>
-				<div class="portal-club-logo portal-club-logo-5"></div>
-				<div class="portal-club-logo portal-club-logo-6"></div>
-				<div class="portal-club-logo portal-club-logo-7"></div>
-				<div class="portal-club-logo portal-club-logo-8"></div>
-				<div class="portal-club-logo portal-club-logo-9"></div>
-				<div class="portal-club-logo portal-club-logo-10"></div>
-				<div class="portal-club-logo portal-club-logo-11"></div>
-				<div class="portal-club-logo portal-club-logo-12"></div>
-				<div class="portal-club-logo portal-club-logo-13"></div>
-				<div class="portal-club-logo portal-club-logo-14"></div>
+				<div class="portal-club-logo portal-club-logo-1" data-url="http://www.mhk.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-2" data-url="http://www.sskpresov.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-3" data-url="http://www.sporta.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-4" data-url="http://www.tjstart.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-5" data-url="http://www.hkslavia.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-6" data-url="http://www.salahandball.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-7" data-url="http://www.hkmsalahandball.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-8" data-url="http://www.hoslovanmodra.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-9" data-url="http://www.hadzanamartin.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-10" data-url="http://www.skpbratislava.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-11" data-url="http://www.iuventa-zhk.chemkostavarena.sk/?stranka=portal_marmasoft"></div>
+				<div class="portal-club-logo portal-club-logo-12" data-url="http://www.hadzanamartin.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-13" data-url="http://www.msk.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-14" data-url="http://www.tatranpresov.sk/"></div>
 			</div>
 		</div>
 		<div id="portal-content-container">
@@ -156,6 +156,9 @@
 </body>
 <script>
 	$(function() {
+		$('.portal-club-logo').click(function () {
+			window.open($(this).data('url'), '_blank');
+		});
 		$('#portal-menu-panel-container').removeClass('mobile-visible');
 		var mainMenuHidden = true;
 		$('.toogle-menu').click(function (e) {
@@ -452,6 +455,7 @@
 	$('.x-portal-widget-overview-next-btn').click(function () {
 		updateCategoryNextPrev(1, 'overview');
 	});
+
 	function updateCategoryNextPrev(step, type) {
 		var pathParts = window.location.pathname.split('/');
 		if (window.location.pathname && window.location.pathname.indexOf('article') > -1) {
