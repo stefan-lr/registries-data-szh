@@ -467,6 +467,23 @@
 			"table": "organizations",
 			"title": "Zväzy",
 			"transCode":"schema.association.title",
+			"security": {
+				"create": {
+					"static": [
+						"Registry - write"
+					]
+				},
+				"read": {
+					"static": [
+						"Registry - read"
+					]
+				},
+				"modify": {
+					"static": [
+						"Registry - write"
+					]
+				}
+			},
 			"forcedCriteria": [
 				{
 					"f": "association",
