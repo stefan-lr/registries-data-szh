@@ -483,12 +483,12 @@
 				},
 				"validFrom": {
 					"extends":"uri://registries/commontypes#blocks/date",
-					"title": "Dátum platnosti",
+					"title": "Platnosť RP od",
 					"transCode": "schema.people.player.validFrom"
 				},
 				"validTo": {
 					"extends":"uri://registries/commontypes#blocks/date",
-					"title": "Doba platnosti",
+					"title": "Platnosť RP od",
 					"transCode": "schema.people.player.validTo"
 				},
 				"modifiedOn": {
@@ -862,6 +862,16 @@
 						"field": "contactInfo.city",
 						"title": "Mesto",
 						"transCode":"schema.people.city"
+					},
+					{
+						"field": "player.validFrom",
+						"title": "Platnosť RP od",
+						"transCode": "schema.people.player.validFrom"
+					},
+					{
+						"field": "player.validTo",
+						"title": "Platnosť RP do",
+						"transCode": "schema.people.player.validTo"
 					}
 				]
 			}
@@ -1100,12 +1110,14 @@
 						"transCode":"schema.people.player.club"
 					},
 					{
-						"field": "player.validFrom",
-						"title": "Platnosť RP od"
+						"field": "player.hostingStartDate",
+						"title": "Dátum začiatku hosťovania",
+						"transCode":"schema.people.player.hostingStartDate"
 					},
 					{
-						"field": "player.validTo",
-						"title": "Platnosť RP do"
+						"field": "player.hostingEndDate",
+						"title": "Dátum konca hosťovania",
+						"transCode":"schema.people.player.hostingEndDate"
 					}
 				]
 			}
