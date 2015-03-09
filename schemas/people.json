@@ -682,6 +682,9 @@
 				}
 			],
 			"properties":{
+				"photoInfo":{
+					"$ref":"uri://registries/people#blocks/photoInfo"
+				},
 				"coach":{
 					"$ref":"uri://registries/people#blocks/coach"
 				},
@@ -702,6 +705,9 @@
 				}
 			],
 			"properties":{
+				"photoInfo":{
+					"$ref":"uri://registries/people#blocks/photoInfo"
+				},
 				"referee":{
 					"$ref":"uri://registries/people#blocks/referee"
 				},
@@ -722,6 +728,9 @@
 				}
 			],
 			"properties":{
+				"photoInfo":{
+					"$ref":"uri://registries/people#blocks/photoInfo"
+				},
 				"officer":{
 					"$ref":"uri://registries/people#blocks/officer"
 				},
@@ -742,6 +751,9 @@
 				}
 			],
 			"properties":{
+				"photoInfo":{
+					"$ref":"uri://registries/people#blocks/photoInfo"
+				},
 				"statistic":{
 					"$ref":"uri://registries/people#blocks/statistic"
 				},
@@ -762,6 +774,9 @@
 				}
 			],
 			"properties":{
+				"photoInfo":{
+					"$ref":"uri://registries/people#blocks/photoInfo"
+				},
 				"medic":{
 					"$ref":"uri://registries/people#blocks/medic"
 				},
@@ -782,6 +797,9 @@
 				}
 			],
 			"properties":{
+				"photoInfo":{
+					"$ref":"uri://registries/people#blocks/photoInfo"
+				},
 				"player":{
 					"$ref":"uri://registries/people#blocks/player"
 				},
