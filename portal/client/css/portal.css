@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,latin-ext);
 
 #portal-main-container {
 	background-color: white;
@@ -9,20 +10,20 @@
 	font-size: 14px;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: gray;
-	min-width: 1006px;
+	width: 1006px;
+	margin: 0px auto;
 }
 
 #portal-header-container {
 	padding-top: 8px;
 	padding-bottom: 8px;
-	background-color: #fff;
+	box-shadow: 0px 3px 6px gray;
 }
 
 #portal-main-header {
 	position: relative;
 	width: 1006px;
 	margin: 0 auto;
-	background-color: #fff;
 }
 
 #portal-main-header h1 {
@@ -33,16 +34,16 @@
 	margin-bottom: 3px;
 	text-transform: uppercase;
 	font-size: 26px;
+	margin-right: 10px;
 }
 
 #portal-main-header-logo-area {
 	position: absolute;
-	right: 0px;
+	right: 10px;
 	bottom: 36px;
 }
 
 #portal-club-logos-panel-container {
-	background-color: #CB2225;
 }
 
 #portal-club-logos-panel {
@@ -117,8 +118,8 @@
 
 #portal-menu-panel-container {
 	background-color: #fff;
-	border-top: 1px #CB2225 solid;
-	box-shadow: 0px 3px 3px gray;
+	/*border-top: 1px #CB2225 solid;*/
+	box-shadow: 0px 3px 6px gray;
 }
 
 #portal-menu-panel {
@@ -126,6 +127,7 @@
 	margin: 0 auto;
 	padding-top: 0px;
 	padding-bottom: 0px;
+	margin-top: 18px;
 	color: white;
 	
 }
@@ -152,7 +154,7 @@
 	margin-top: 0px;
 	color: black;
 	background-color: white;
-	box-shadow: 3px 3px 10px gray;
+	box-shadow: 3px 3px 6px gray;
 	z-index: 3;
 	transition: all 0.5s ease 0;
 	-webkit-transition: all 0.5s ease 0;
@@ -195,6 +197,7 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
+	letter-spacing: 1.2px;
 	padding-right: 20px;
 	padding-left: 20px;
 	cursor: pointer;
@@ -281,13 +284,21 @@ a.portal-menu-bottom-entry-head {
 	margin-bottom: 10px;
 }
 
+.portal-article.portal-article-title {
+	background: #CB2225;
+}
+
 #portal-content-container H1 {
 	padding-bottom: 10px;
-	font-style: italic;
+	font-family: 'PT Sans Narrow', sans-serif;
 	font-size: 180%;
 	color: #CB2225;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+
+#portal-content-container .portal-article.portal-article-title H1 {
+	color: #fdfdfd;
 }
 
 #portal-content-container .x-portal-widget-category H1,
@@ -310,8 +321,10 @@ a.portal-menu-bottom-entry-head {
 }
 
 #portal-content-container .abstract {
+	font-family: Arial;
 	font-style: italic;
-	font-size: 120%;
+	font-size: 14px;
+	line-height: 22px;
 }
 
 #portal-content-container A {
@@ -329,7 +342,7 @@ a.portal-menu-bottom-entry-head {
 	background-color: white;
 	padding: 10px;
 	width:300px;
-	box-shadow: 0px 3px 3px gray;
+	box-shadow: 0px 3px 6px gray;
 	margin-bottom: 10px;
 }
 
@@ -375,6 +388,10 @@ a.portal-menu-bottom-entry-head {
 	border-top: 12px #CB2225 solid;
 	color: #CB2225;
 	clear: both;
+	margin: 0px auto;
+	width: 1006px;
+	box-shadow: 0px 3px 6px gray;
+	margin-bottom: 12px;
 }
 
 #footer-container a {
@@ -392,11 +409,14 @@ a.portal-menu-bottom-entry-head {
 }
 
 .portal-article {
+	font-family: Arial;
+	font-size: 14px;
+	text-align: justify;
 	background-color: white;
 	padding: 10px;
 	display: inline-block;
 	width: 656px;
-	box-shadow: 0px 3px 3px gray;
+	box-shadow: 0px 3px 6px gray;
 }
 
 .portal-article.showcase {
@@ -751,8 +771,10 @@ a.portal-menu-bottom-entry-head {
 }
 
 @media (max-width: 1020px) {
+	
 	#portal-main-container {
 		min-width: initial;
+		width: auto;
 	}
 
 	#portal-main-header {
@@ -788,6 +810,7 @@ a.portal-menu-bottom-entry-head {
 
 	#footer-container {
 		min-width: initial;
+		width: auto;
 	}
 
 	#main-footer {
@@ -947,3 +970,4 @@ a.portal-menu-bottom-entry-head {
 		padding-left: 5px;
 	}
 }
+

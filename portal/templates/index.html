@@ -31,9 +31,9 @@
 				<h1>Slovenský Zväz Hádzanej</h1>
 				<a href="/"><img class="portal-logo" src="/portal/img/portal-logo.png" alt="logo" title="SLOVENSKÝ ZVÄZ HÁDZANEJ" /></a>
 				<div id="portal-main-header-logo-area">
+					<img src="/portal/img/logo_sk_ol_vybor.png" alt="logo" title="Slovenský Olympijský Výbor" width="70px" height="70px" style="margin-left: 1px;"/>
 					<img src="/portal/img/logo_ehf.png" alt="logo" title="EHF" width="70px" height="70px" />
 					<img src="/portal/img/logo_ihf.png" alt="logo" title="IHF" width="70px" height="70px" />
-					<img src="/portal/img/logo_sk_ol_vybor.png" alt="logo" title="Slovenský Olympijský Výbor" width="70px" height="70px" style="margin-left: 1px;"/>
 				</div>
 			</header>
 		</div>
@@ -52,28 +52,10 @@
 				</div>
 			{% endblock menu %}
 		</div>
-		<div id="portal-club-logos-panel-container">
-			<div id="portal-club-logos-panel">
-				<div class="portal-club-logo portal-club-logo-1" data-url="http://www.mhk.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-2" data-url="http://www.sskpresov.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-3" data-url="http://www.sporta.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-4" data-url="http://www.tjstart.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-5" data-url="http://www.hkslavia.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-6" data-url="http://www.salahandball.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-7" data-url="http://www.hkmsalahandball.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-8" data-url="http://www.hoslovanmodra.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-9" data-url="http://www.hadzanamartin.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-10" data-url="http://www.skpbratislava.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-11" data-url="http://www.iuventa-zhk.chemkostavarena.sk/?stranka=portal_marmasoft"></div>
-				<div class="portal-club-logo portal-club-logo-12" data-url="http://www.hadzanamartin.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-13" data-url="http://www.msk.sk/"></div>
-				<div class="portal-club-logo portal-club-logo-14" data-url="http://www.tatranpresov.sk/"></div>
-			</div>
-		</div>
 		<div id="portal-content-container">
 			<div id="portal-main-content">
 				{% for widget in article.data %}
-					<article class="portal-article {{ widget.meta.type }}">
+					<article class="portal-article {{ widget.meta.type }} portal-article-{{ widget.meta.name }}">
 						{% set templatePath = "widgets/" + widget.meta.type + ".widget" %}
 						{% include templatePath with widget only %}
 					</article>
@@ -126,6 +108,24 @@
 		</div>
 	</div>
 	<div id="footer-container">
+		<div id="portal-club-logos-panel-container">
+			<div id="portal-club-logos-panel">
+				<div class="portal-club-logo portal-club-logo-1" data-url="http://www.mhk.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-2" data-url="http://www.sskpresov.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-3" data-url="http://www.sporta.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-4" data-url="http://www.tjstart.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-5" data-url="http://www.hkslavia.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-6" data-url="http://www.salahandball.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-7" data-url="http://www.hkmsalahandball.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-8" data-url="http://www.hoslovanmodra.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-9" data-url="http://www.hadzanamartin.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-10" data-url="http://www.skpbratislava.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-11" data-url="http://www.iuventa-zhk.chemkostavarena.sk/?stranka=portal_marmasoft"></div>
+				<div class="portal-club-logo portal-club-logo-12" data-url="http://www.hadzanamartin.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-13" data-url="http://www.msk.sk/"></div>
+				<div class="portal-club-logo portal-club-logo-14" data-url="http://www.tatranpresov.sk/"></div>
+			</div>
+		</div>
 		<div>
 			<div id="portal-menu-bottom-container">
 				{% block menu %}
