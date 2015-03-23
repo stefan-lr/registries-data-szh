@@ -793,6 +793,24 @@ a.portal-menu-bottom-entry-head {
 	#portal-club-logos-panel {
 		width: 90%;
 	}
+	
+	article.portal-article .title,
+			article.portal-article .abstract,
+			article.portal-article .content,
+			article.portal-article .contentBlock,
+			article.portal-article .x-portal-widget-category-title {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.x-portal-widget-showcase-navigation {
+		box-sizing: border-box;
+		margin-right: 10px;
+	}
+
+	.x-portal-widget-showcase-view-textblock {
+		box-sizing: border-box;
+	}
 
 	#portal-content-container {
 		width: auto;
@@ -805,6 +823,11 @@ a.portal-menu-bottom-entry-head {
 	    margin-right: 325px;
 	    margin-left: 4px;
 	    /*min-height: 1830px;*/
+	}
+
+	.x-portal-widget-category-navigation,
+			.x-portal-widget-overview-navigation {
+		margin-right: 10px;
 	}
 	
 	#portal-side-content {
