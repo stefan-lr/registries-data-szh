@@ -301,6 +301,10 @@ a.portal-menu-bottom-entry-head {
 	color: #fdfdfd;
 }
 
+#portal-content-container .x-portal-widget-category H1 {
+	text-align: left;
+}
+
 #portal-content-container .x-portal-widget-category H1,
  		#portal-content-container .x-portal-widget-overview H1 {
 	overflow: hidden;
@@ -593,7 +597,8 @@ a.portal-menu-bottom-entry-head {
 	margin-right: 10px;
 	color: #111;
 	overflow: hidden;
-	height: 112px;
+	height: 102px;
+	line-height: 17px;
 	width: auto;
 	text-overflow: ellipsis;
 	display: -webkit-box;
