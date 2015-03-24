@@ -13,7 +13,7 @@
 					"transCode": "schema.people.registrationID",
 					"type": "number",
 					"required": true,
-					"sequence": "person_regs"
+					"sequence": "people_regs"
 				},
 				"id": {
 					"title": "Identifikačné číslo",
