@@ -12,11 +12,13 @@
 					"transCode": "schema.nomination.match",
 					"type": "object",
 					"required": true,
-					"objectLink": {
-						"registry": "refereeReports",
-						"homeClub": "baseData.homeClub",
-						"awayClub": "baseData.awayClub",
-						"matchDate": "baseData.matchDate"
+					"objectLink2": {
+						"schema":"uri://registries/refereeReports#views/refereeReports/view",
+						"fields":{
+							"homeClub": "baseData.homeClub",
+							"awayClub": "baseData.awayClub",
+							"matchDate": "baseData.matchDate"
+						}
 					}
 				},
 				"club": {
@@ -24,9 +26,11 @@
 					"transCode": "schema.nomination.club",
 					"type": "object",
 					"required": true,
-					"objectLink": {
-						"registry": "organizations",
-						"club": "club.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/club/view",
+						"fields":{
+							"club": "club.name"
+						}
 					}
 				}
 			}
@@ -40,14 +44,16 @@
 					"title": "Tréner",
 					"transCode": "schema.nomination.coach",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v",
-						"license": "coach.coachLicense",
-						"licenseType": "coach.coachLicenseType"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/coach/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name",
+							"license": "coach.coachLicense",
+							"licenseType": "coach.coachLicenseType"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -59,14 +65,16 @@
 					"title": "Asistent Trénera",
 					"transCode": "schema.nomination.aCoach1",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v",
-						"license": "coach.coachLicense",
-						"licenseType": "coach.coachLicenseType"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/coach/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name",
+							"license": "coach.coachLicense",
+							"licenseType": "coach.coachLicenseType"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -78,14 +86,16 @@
 					"title": "Asistent Trénera",
 					"transCode": "schema.nomination.aCoach2",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v",
-						"license": "coach.coachLicense",
-						"licenseType": "coach.coachLicenseType"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/coach/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name",
+							"license": "coach.coachLicense",
+							"licenseType": "coach.coachLicenseType"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "coach.isCoach",
 							"op": "eq",
@@ -97,12 +107,14 @@
 					"title": "Funkcionár",
 					"transCode": "schema.nomination.officer1",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/officer/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "officer.isOfficer",
 							"op": "eq",
@@ -114,12 +126,14 @@
 					"title": "Funkcionár",
 					"transCode": "schema.nomination.officer2",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/officer/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "officer.isOfficer",
 							"op": "eq",
@@ -142,7 +156,7 @@
 					"transCode": "schema.nomination.players",
 					"type": "array",
 					"items": {
-						"objectLink": {
+						"objectLink2": {
 							"registry": "people",
 							"surName": "baseData.surName.v",
 							"firstName": "baseData.name.v",
@@ -150,7 +164,7 @@
 							"playerLicense": "player.playerLicense"
 						},
 						"required": true,
-						"$objectLinkForcedCriteria": [
+						"objectLinkForcedCriteria": [
 							{
 								"f": "player.isPlayer",
 								"op": "eq",

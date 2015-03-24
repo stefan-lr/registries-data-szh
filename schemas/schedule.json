@@ -16,12 +16,13 @@
 				"competitionPart": {
 					"title": "Časť súťaže",
 					"transCode": "schema.schedule.baseData.competitionPart",
-					"type": "string",
+					"type": "object",
 					"required": true,
-					"objectLink": {
-						"registry": "competitionParts",
-						"name": "baseData.name",
-						"surName": "baseData.competition.refData.name"
+					"objectLink2": {
+						"schema":"uri://registries/competitionPart#views/competitionPart/view",
+						"fields":{
+							"name": "baseData.name"
+						}
 					}
 				},
 				"date": {
@@ -81,7 +82,7 @@
 						"transCode": "schema.schedule.baseData.name"
 					},
 					{
-						"field": "baseData.competitionPart.refData.name",
+						"field": "baseData.competitionPart.refData.competition",
 						"title": "Súťaž",
 						"transCode": "schema.schedule.listFields.competition"
 					},

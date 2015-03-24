@@ -8,7 +8,7 @@
 			"transCode": "schema.requisitions.attachments",
 			"properties": {
 				"attachments": {
-					"title": "Hráči",
+					"title": "Prílohy",
 					"transCode": "schema.requisitions.attachments",
 					"type": "array",
 					"items": {
@@ -35,11 +35,11 @@
 			"properties": {
 				"applicant": {
 					"transCode": "schema.requisitions.basedata.applicant",
-					"type": "string",
+					"type": "object",
 					"required": true,
-					"$objectLink2": {
-						"schema":"uri://registries/people#views/fullperson",
-						"registry": "people",
+					"objectLink2": {
+						"schema":"uri://registries/people#views/fullperson/view",
+						
 						"fields":{
 							"surName": "baseData.surName",
 							"name": "baseData.name"
@@ -48,10 +48,10 @@
 				},
 				"assignedTo": {
 					"transCode": "schema.requisitions.basedata.assignedto",
-					"type": "string",
-					"$objectLink2": {
-						"schema":"uri://registries/people#views/fullperson",
-						"registry": "people",
+					"type": "object",
+					"objectLink2": {
+						"schema":"uri://registries/people#views/fullperson/view",
+						
 						"fields":{
 							"surName": "baseData.surName",
 							"name": "baseData.name"
@@ -221,22 +221,22 @@
 				"listFields": [
 					{
 						"field": "baseData.setupDate",
-						"title": "Meno",
+						"title": "Dátum vystavenia",
 						"transCode": "schema.requisitions.basedata.setupdate"
 					},
 					{
 						"field": "baseData.subject",
-						"title": "Meno",
+						"title": "Predmet žiadosti",
 						"transCode": "schema.requisitions.basedata.subject"
 					},
 					{
 						"field": "baseData.assignedTo.refData.surName",
-						"title": "Meno",
+						"title": "Riešiteľ",
 						"transCode": "schema.requisitions.basedata.assignedto"
 					},
 					{
 						"field": "baseData.modifiedOn",
-						"title": "Meno",
+						"title": "Dátum poslednej zmeny",
 						"transCode": "schema.requisitions.basedata.modifiedOn"
 					}
 

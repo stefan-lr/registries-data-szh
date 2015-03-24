@@ -19,6 +19,11 @@
 		"menu.search.season.lower.level":"Hľadať súťažný ročník",
 		"menu.new.ageCategory.lower.level.she":"Nová veková kategória",
 		"menu.search.ageCategory.lower.level":"Hľadať vekovú kategóriu",
+		"menu.requisitions.solver.title":"Riešenie žiadosti",
+		"menu.requisitions.solver.search.lower.level":"Vyhľadáť",
+		"menu.requisitions.title":"Žiadosti",
+		"menu.requisitions.new.lower.level":"Nová",
+		"menu.requisitions.search.lower.level":"Vyhľadáť",
 
 		"schema.towns.town":"Mesto",
 
@@ -382,6 +387,21 @@
 		"schema.nomination.players":"Hráči",
 		"schema.nomination.state":"Stav",
 
+		"schema.requisitions.title":"Žiadosť",
+		"schema.requisitions.basedata":"Základné informácie",
+		"schema.requisitions.basedata.applicant":"Žiadateľ",
+		"schema.requisitions.basedata.assignedto":"Riešiteľ",
+		"schema.requisitions.basedata.subject":"Predmet žiadosti",
+		"schema.requisitions.basedata.text":"Text žiadosti",
+		"schema.requisitions.basedata.setupdate":"Dátum vystavenia",
+		"schema.requisitions.basedata.status":"Stav",
+		"schema.requisitions.basedata.status.created":"Vytvorená",
+		"schema.requisitions.basedata.status.processing":"Spracovávaná",
+		"schema.requisitions.basedata.status.closed":"Uzavretá",
+		"schema.requisitions.attachments":"Prílohy",
+		"schema.requisitions.basedata.responsetext":"Odpoveď",
+		"schema.requisitions.basedata.modifiedOn":"Čas poslednej zmeny",
+
 		"schema.statistics.view":"Štatistiky",
 		"schema.statistics.baseData":"Základné",
 		"schema.statistics.member.count":"Počet členov",
@@ -424,6 +444,11 @@
 		"menu.my.profile.title": "Můj profil",
 		"menu.permissions.title": "Oprávnění",
 		"menu.schemas.title": "Schémata",
+		"menu.requisitions.solver.title":"Rešení žádostí",
+		"menu.requisitions.solver.search.lower.level":"Vyhľadáť",
+		"menu.requisitions.title":"Žádosti",
+		"menu.requisitions.new.lower.level":"Nová",
+		"menu.requisitions.search.lower.level":"Hledat",
 
 		"menu.new.person.lower.level": "Nová osoba",
 		"menu.new.company.lower.level": "Nová společnosť",
@@ -771,7 +796,22 @@
 		"schema.nomination.officer2":"Funkcionár",
 		"schema.nomination.listOfPlayers":"Nominácia hráčov",
 		"schema.nomination.players":"Hráči",
-		"schema.nomination.state":"Stav"
+		"schema.nomination.state":"Stav",
+
+		"schema.requisitions.title":"Žádost",
+		"schema.requisitions.basedata":"Základní údaje",
+		"schema.requisitions.basedata.applicant":"Žadatel",
+		"schema.requisitions.basedata.assignedto":"Rešitel",
+		"schema.requisitions.basedata.subject":"Predmet žádosti",
+		"schema.requisitions.basedata.text":"Text žádosti",
+		"schema.requisitions.basedata.setupdate":"Datum vystavení",
+		"schema.requisitions.basedata.status":"Stav",
+		"schema.requisitions.basedata.status.created":"Vytvorená",
+		"schema.requisitions.basedata.status.processing":"Spracovávaná",
+		"schema.requisitions.basedata.status.closed":"Uzavretá",
+		"schema.requisitions.attachments":"Přílohy",
+		"schema.requisitions.basedata.responsetext":"Odpověď",
+		"schema.requisitions.basedata.modifiedOn":"Čas poslednej zmeny"
 	});
 }]);
 }(angular));

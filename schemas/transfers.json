@@ -11,7 +11,7 @@
 				"player": {
 					"title": "Hráč",
 					"transCode":"schema.transfer.player",
-					"type": "string",
+					"type": "object",
 					"required": true,
 					"objectLink2": {
 						"schema":"uri://registries/people#views/player/view",
@@ -32,7 +32,7 @@
 				"clubFrom": {
 					"title": "Z klubu",
 					"transCode":"schema.transfer.clubFrom",
-					"type": "string",
+					"type": "object",
 					"required": true,
 					"objectLink2": {
 						"schema":"uri://registries/organizations#views/club/view",
@@ -42,7 +42,7 @@
 					}
 				},
 				"clubTo": {
-					"type": "string",
+					"type": "object",
 					"title": "Do klubu",
 					"transCode":"schema.transfer.clubTo",
 					"required": true,

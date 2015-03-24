@@ -8,23 +8,27 @@
 			"type": "object",
 			"properties": {
 				"competition": {
+					"type":"object",
 					"title": "Súťaž",
-					"transCode": "schema.refereeReport.baseData.competition",
-					"type": "object",
+					"transCode":"schema.roster.competition",
 					"required": true,
-					"objectLink": {
-						"registry": "competitions",
-						"name": "baseData.name"
+					"objectLink2": {
+						"schema":"uri://registries/competitions#views/competitions/view",
+						"fields":{
+							"name": "baseData.name"
+						}
 					}
 				},
 				"competitionPart": {
-					"title": "Domáce družstvo",
-					"transCode": "schema.refereeReport.baseData.competitionPart",
+					"title": "Časť súťaže",
+					"transCode": "schema.schedule.baseData.competitionPart",
 					"type": "object",
 					"required": true,
-					"objectLink": {
-						"registry": "competitionParts",
-						"name": "baseData.name"
+					"objectLink2": {
+						"schema":"uri://registries/competitionPart#views/competitionPart/view",
+						"fields":{
+							"name": "baseData.name"
+						}
 					}
 				},
 				"homeClub": {
@@ -32,9 +36,11 @@
 					"transCode": "schema.refereeReport.baseData.homeClub",
 					"type": "object",
 					"required": true,
-					"objectLink": {
-						"registry": "rosters",
-						"name": "baseData.prName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/club/view",
+						"fields":{
+							"name": "club.name"
+						}
 					}
 				},
 				"awayClub": {
@@ -42,9 +48,11 @@
 					"transCode": "schema.refereeReport.baseData.awayClub",
 					"type": "object",
 					"required": true,
-					"objectLink": {
-						"registry": "rosters",
-						"name": "baseData.prName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/club/view",
+						"fields":{
+							"name": "club.name"
+						}
 					}
 				},
 				"matchRound": {
@@ -52,9 +60,11 @@
 					"transCode": "schema.refereeReport.baseData.matchRound",
 					"type": "object",
 					"required": true,
-					"objectLink": {
-						"registry": "schedules",
-						"name": "baseData.name"
+					"objectLink2": {
+						"schema":"uri://registries/schedule#views/schedule/view",
+						"fields":{
+							"name": "baseData.name"
+						}
 					}
 				},
 				"matchDate": {
@@ -98,9 +108,11 @@
 					"title": "Štadion",
 					"transCode": "schema.refereeReport.baseData.stadium",
 					"type": "object",
-					"objectLink": {
-						"registry": "stadiums",
-						"name": "baseData.name"
+					"objectLink2": {
+						"schema":"uri://registries/stadiums#views/stadium/view",
+						"fields":{
+							"name": "baseData.name"
+						}
 					}
 				}
 			}
@@ -114,12 +126,14 @@
 					"title": "Rozhodca",
 					"transCode": "schema.refereeReport.delegatedPerson.referee",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/referee/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "referee.isReferee",
 							"op": "eq",
@@ -131,12 +145,14 @@
 					"title": "Asistent rozhodcu",
 					"transCode": "schema.refereeReport.delegatedPerson.aReferee1",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/referee/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "referee.isReferee",
 							"op": "eq",
@@ -148,12 +164,14 @@
 					"title": "Asistent rozhodcu",
 					"transCode": "schema.refereeReport.delegatedPerson.aReferee2",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/referee/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "referee.isReferee",
 							"op": "eq",
@@ -165,12 +183,14 @@
 					"title": "Delegát",
 					"transCode": "schema.refereeReport.delegatedPerson.delegate",
 					"type": "object",
-					"objectLink": {
-						"registry": "people",
-						"surName": "baseData.surName.v",
-						"firstName": "baseData.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/people#views/referee/view",
+						"fields":{
+							"surName": "baseData.surName",
+							"firstName": "baseData.name"
+						}
 					},
-					"$objectLinkForcedCriteria": [
+					"objectLinkForcedCriteria": [
 						{
 							"f": "referee.isReferee",
 							"op": "eq",
