@@ -1,0 +1,271 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "uri://registries/requisitions#",
+
+	"blocks": {
+		"attachments":{
+			"type": "object",
+			"transCode": "schema.requisitions.attachments",
+			"properties": {
+				"attachments": {
+					"title": "Hráči",
+					"transCode": "schema.requisitions.attachments",
+					"type": "array",
+					"items": {
+						"file": {
+							"properties":{
+								"name":{"type":"string"},
+								"size":{"type":"number"},
+								"createdOn":{"type":"string"},
+								"mime":{"type":"string"}
+							}
+						},
+						"required": false,
+						"render": {
+							"component":"xpsui-uploadable-file"
+						}
+					}
+				}
+			}
+		},
+		"baseData": {
+			"title": "ZÁKLADNÍ INFORMACE",
+			"transCode": "schema.requisitions.basedata",
+			"type": "object",
+			"properties": {
+				"applicant": {
+					"transCode": "schema.requisitions.basedata.applicant",
+					"type": "string",
+					"required": true,
+					"$objectLink2": {
+						"schema":"uri://registries/people#views/fullperson",
+						"registry": "people",
+						"fields":{
+							"surName": "baseData.surName",
+							"name": "baseData.name"
+						}
+					}
+				},
+				"assignedTo": {
+					"transCode": "schema.requisitions.basedata.assignedto",
+					"type": "string",
+					"$objectLink2": {
+						"schema":"uri://registries/people#views/fullperson",
+						"registry": "people",
+						"fields":{
+							"surName": "baseData.surName",
+							"name": "baseData.name"
+						}
+					}
+				},
+				"subject": {
+					"transCode": "schema.requisitions.basedata.subject",
+					"type": "string",
+					"required": true
+				},
+
+				"text": {
+					"transCode": "schema.requisitions.basedata.text",
+					"type": "string",
+					"required": true,
+					"render":{"component":"psui-textarea"}
+				},
+
+				"responseText": {
+					"transCode": "schema.requisitions.basedata.responsetext",
+					"type": "string",
+					"render":{"component":"psui-textarea"}
+				},
+				"setupDate": {
+					"extends":"uri://registries/commontypes#blocks/date",
+					"transCode": "schema.requisitions.basedata.setupdate",
+					"required": true
+				},
+				"status": {
+					"transCode": "schema.requisitions.basedata.status",
+					"type": "string",
+					"enum": ["created",
+							"processing",
+							"closed"
+					],
+					"enumTransCodes": [
+						"schema.requisitions.basedata.status.created",
+						"schema.requisitions.basedata.status.processing",
+						"schema.requisitions.basedata.status.closed"
+					],
+					"render": {
+						"component": "psui-selectbox",
+						"searchable": true
+					}
+				},
+				"modifiedOn": {
+					"transCode": "schema.requisitions.basedata.modifiedOn",
+					"timestamp":true,
+					"readOnly":true
+				}
+			}
+		}
+	},
+
+	"models": {
+		"requisition": {
+			"title":"Žiadosť",
+			"transCode": "schema.requisitions.title",
+			"table": "requisitions",
+			"security": {
+				"create": {
+					"static": [
+						"Registry - write"
+					]
+				},
+				"read": {
+					"static": [
+						"Registry - read"
+					]
+				},
+				"modify": {
+					"static": [
+						"Registry - write"
+					]
+				}
+			},
+			"fireEvents":{
+				"create": "event-requisition-created",
+				"update": "event-requisition-updated"
+			},
+			"properties": {
+				"baseData": {
+					"extends":"uri://registries/requisitions#blocks/baseData"
+				},
+				"attachments": {
+					"extends":"uri://registries/requisitions#blocks/attachments"
+				}
+			}
+		}
+	},
+
+	"views": {
+		"requisition": {
+			"new":{
+				"extends":"uri://registries/requisitions#models/requisition",
+				"saveBySchema":"uri://registries/requisitions#views/requisition/view"
+			},
+			"view": {
+				"extends":"uri://registries/requisitions#models/requisition"
+			},
+			"search": {
+				"extends":"uri://registries/requisitions#models/requisition",
+				"listFields": [
+					{
+						"field": "baseData.setupDate",
+						"transCode": "schema.requisitions.basedata.setupdate"
+					},
+					{
+						"field": "baseData.subject",
+						"transCode": "schema.requisitions.basedata.subject"
+					},
+					{
+						"field": "baseData.applicant.refData.surName",
+						"transCode": "schema.requisitions.basedata.applicant"
+					},
+					{
+						"field": "baseData.assignedTo.refData.surName",
+						"transCode": "schema.requisitions.basedata.assignedto"
+					},
+					{
+						"field": "baseData.modifiedOn",
+						"transCode": "schema.requisitions.basedata.modifiedOn"
+					},
+					{
+						"field": "baseData.status",
+						"transCode": "schema.requisitions.basedata.status"
+					}
+				]
+			}
+		},
+		"requisitionApplicant":{
+			"extends":"uri://registries/requisitions#views/requisition",
+			"new":{
+				"properties":{
+					"baseData": {
+						"properties": {
+							"applicant":null,
+							"assignedTo":null,
+							"club": null,
+							"setupDate":null,
+							"status":null,
+							"responseText":null,
+							"modifiedOn":null
+						}
+					}
+
+				}
+			},
+			"view":{
+				"properties":{
+					"baseData": {
+						"properties": {
+							"applicant":{"readOnly":true},
+							"assignedTo":{"readOnly":true},
+							"club": null,
+							"setupDate":{"readOnly":true},
+							"status":{"readOnly":true},
+							"responseText":{"readOnly":true},
+							"modifiedOn":{"readOnly":true}
+						}
+					}
+
+				}
+			},
+			"search":{
+				"listFields": [
+					{
+						"field": "baseData.setupDate",
+						"title": "Meno",
+						"transCode": "schema.requisitions.basedata.setupdate"
+					},
+					{
+						"field": "baseData.subject",
+						"title": "Meno",
+						"transCode": "schema.requisitions.basedata.subject"
+					},
+					{
+						"field": "baseData.assignedTo.refData.surName",
+						"title": "Meno",
+						"transCode": "schema.requisitions.basedata.assignedto"
+					},
+					{
+						"field": "baseData.modifiedOn",
+						"title": "Meno",
+						"transCode": "schema.requisitions.basedata.modifiedOn"
+					}
+
+				]
+			}
+
+		},
+		"requisitionSolver":{
+			"extends":"uri://registries/requisitions#views/requisition",
+			"new":null,
+			"view":{
+				"properties":{
+					"baseData": {
+						"properties": {
+							"applicant":{"readOnly":true},
+							"subject":{"readOnly":true},
+							"text":{"readOnly":true},
+							"assignedTo":{"readOnly":false},
+							"club": null,
+							"setupDate":{"readOnly":true},
+							"status":{"readOnly":true},
+							"responseText":{"readOnly":false},
+							"modifiedOn":{"readOnly":true}
+						}
+					}
+
+				}
+			}
+
+		}
+	}
+}

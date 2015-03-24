@@ -21,5 +21,6 @@
 	"refereeReport.json",
 	"nomination.json",
 	"commonTypes.json",
-	"commonEnums.json"
+	"commonEnums.json",
+	"requisitions.json"
 ]
