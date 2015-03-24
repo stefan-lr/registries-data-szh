@@ -77,11 +77,14 @@
 					"transCode": "schema.people.isReferee"
 				},
 				"firstAssociation": {
+					"type":"string",
 					"title": "Prvotný zväz",
 					"transCode": "schema.people.referee.firstAssociation",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "association.associationName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/association/view",
+						"fields":{
+							"name": "association.associationName"
+						}
 					}
 				},
 				"stateOfReferee": {
@@ -90,11 +93,14 @@
 					"transCode": "schema.people.referee.stateOfReferee"
 				},
 				"association": {
+					"type":"string",
 					"title": "Aktuálny zväz",
 					"transCode": "schema.people.referee.association",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "association.associationName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/association/view",
+						"fields":{
+							"name": "association.associationName"
+						}
 					}
 				},
 				"firstYear": {
@@ -149,11 +155,14 @@
 					"transCode": "schema.people.isCoach"
 				},
 				"firstAssociation": {
+					"type":"string",
 					"title": "Prvotný zväz",
 					"transCode": "schema.people.coach.firstAssociation",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "association.associationName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/association/view",
+						"fields":{
+							"name": "association.associationName"
+						}
 					}
 				},
 				"stateOfCoach": {
@@ -162,11 +171,14 @@
 					"transCode": "schema.people.coach.stateOfCoach"
 				},
 				"association": {
+					"type":"string",
 					"title": "Aktuálny zväz",
 					"transCode": "schema.people.coach.association",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "association.associationName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/association/view",
+						"fields":{
+							"name": "association.associationName"
+						}
 					}
 				},
 				"firstYear": {
@@ -243,19 +255,25 @@
 					"transCode": "schema.people.officer.stateOfOfficer"
 				},
 				"association": {
+					"type":"string",
 					"title": "Aktuálny zväz",
 					"transCode": "schema.people.officer.association",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "association.associationName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/association/view",
+						"fields":{
+							"name": "association.associationName"
+						}
 					}
 				},
 				"club": {
+					"type":"string",
 					"title": "Klubová príslušnosť",
 					"transCode": "schema.people.officer.club",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "club.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/club/view",
+						"fields":{
+							"name": "club.name"
+						}
 					}
 				},
 				"note": {
@@ -386,10 +404,13 @@
 			"type": "object",
 			"properties": {
 				"firstAssociation": {
+					"type":"string",
 					"title": "Prvotný zväz",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "association.associationName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/association/view",
+						"fields":{
+							"name": "association.associationName"
+						}
 					}
 				},
 				"state": {
@@ -397,10 +418,13 @@
 					"title": "Stav"
 				},
 				"association": {
+					"type":"string",
 					"title": "Zväzová príslušnosť",
-					"objectLink": {
-						"registry": "organizations",
-						"name": "association.associationName"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/association/view",
+						"fields":{
+							"name": "association.associationName"
+						}
 					}
 				},
 				"expirationOfLicense": {
@@ -433,21 +457,27 @@
 					"required": true
 				},
 				"clubOfFirstRegistration": {
+					"type":"string",
 					"title": "Materský klub",
 					"transCode": "schema.people.player.clubOfFirstRegistration",
 					"required": true,
-					"objectLink": {
-						"registry": "organizations",
-						"name": "club.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/club/view",
+						"fields":{
+							"name": "club.name"
+						}
 					}
 				},
 				"club": {
+					"type":"string",
 					"title": "Klubová príslušnosť",
 					"transCode": "schema.people.player.club",
 					"required": true,
-					"objectLink": {
-						"registry": "organizations",
-						"name": "club.name.v"
+					"objectLink2": {
+						"schema":"uri://registries/organizations#views/club/view",
+						"fields":{
+							"name": "club.name"
+						}
 					}
 				},
 				"stateOfPlayer": {
