@@ -975,7 +975,15 @@
 				"extends":"uri://registries/people#models/officer"
 			},
 			"view":{
-				"extends":"uri://registries/people#models/officer"
+				"extends":"uri://registries/people#models/officer",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "action-link",
+						"title": "Tlač preukazu",
+						"schema": "uri://registries/people#views/officer/view",
+						"template": "officerCard.html"
+					}
+				]
 			},
 			"search":{
 				"extends":"uri://registries/people#models/officer",
