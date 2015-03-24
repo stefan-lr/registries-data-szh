@@ -22,7 +22,7 @@
 				"houseNumber": {
 					"title": "Číslo domu",
 					"transCode":"schema.stadium.houseNumber",
-					"type": "number"
+					"type": "string"
 				},
 				"town": {
 					"$ref":"uri://registries/towns#town"

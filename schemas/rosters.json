@@ -1,94 +1,93 @@
 {
 	"$schema": "http://json-schema.org/schema#",
 	"id": "uri://registries/rosters#",
-
-	"blocks":{
+	"blocks": {
 		"baseData": {
 			"title": "Základné údaje",
-			"transCode":"schema.roster.baseData",
+			"transCode": "schema.roster.baseData",
 			"type": "object",
 			"properties": {
 				"prName": {
 					"title": "Názov družstva",
-					"transCode":"schema.roster.prName",
+					"transCode": "schema.roster.prName",
 					"type": "string",
 					"required": true
 				},
 				"club": {
 					"title": "Klub",
-					"transCode":"schema.roster.club",
+					"transCode": "schema.roster.club",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/club/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/club/view",
+						"fields": {
 							"name": "club.name"
 						}
 					},
 					"required": true
 				},
 				"season": {
-					"type":"object",
+					"type": "object",
 					"title": "Súťažný ročnik",
-					"transCode":"schema.roster.season",
+					"transCode": "schema.roster.season",
 					"required": true,
 					"objectLink2": {
-						"schema":"uri://registries/seasons#views/seasons/view",
-						"fields":{
+						"schema": "uri://registries/seasons#views/seasons/view",
+						"fields": {
 							"name": "baseData.name"
 						}
 					}
 				},
 				"gender": {
-					"extends":"uri://registries/commonenums#blocks/gender",
+					"extends": "uri://registries/commonenums#blocks/gender",
 					"title": "Pohlavie",
 					"transCode": "schema.people.gender",
 					"required": true
 				},
 				"ageCategory": {
 					"title": "Veková kategória",
-					"transCode":"schema.roster.ageCategory",
+					"transCode": "schema.roster.ageCategory",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/ageCategory#views/ageCategory/view",
-						"fields":{
+						"schema": "uri://registries/ageCategory#views/ageCategory/view",
+						"fields": {
 							"name": "baseData.name"
 						}
 					},
 					"required": true
 				},
 				"competition": {
-					"type":"object",
+					"type": "object",
 					"title": "Súťaž",
-					"transCode":"schema.roster.competition",
+					"transCode": "schema.roster.competition",
 					"required": true,
 					"objectLink2": {
-						"schema":"uri://registries/competitions#views/competitions/view",
-						"fields":{
+						"schema": "uri://registries/competitions#views/competitions/view",
+						"fields": {
 							"name": "baseData.name"
 						}
 					}
 				},
 				"lastModification": {
 					"title": "Dátum poslednej zmeny",
-					"transCode":"schema.roster.lastModification",
+					"transCode": "schema.roster.lastModification",
 					"type": "string",
 					"readOnly": true,
-					"timestamp" : true
+					"timestamp": true
 				}
 			}
 		},
 		"coaches": {
 			"title": "Tréneri",
-			"transCode":"schema.roster.coaches",
+			"transCode": "schema.roster.coaches",
 			"type": "object",
 			"properties": {
 				"coach": {
 					"title": "Tréner",
-					"transCode":"schema.roster.coach",
+					"transCode": "schema.roster.coach",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/people#views/coach/view",
-						"fields":{
+						"schema": "uri://registries/people#views/coach/view",
+						"fields": {
 							"surName": "baseData.surName",
 							"firstName": "baseData.name",
 							"license": "coach.coachLicense",
@@ -105,11 +104,11 @@
 				},
 				"aCoach1": {
 					"title": "Asistent Trénera",
-					"transCode":"schema.roster.aCoach",
+					"transCode": "schema.roster.aCoach",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/people#views/coach/view",
-						"fields":{
+						"schema": "uri://registries/people#views/coach/view",
+						"fields": {
 							"surName": "baseData.surName",
 							"firstName": "baseData.name",
 							"license": "coach.coachLicense",
@@ -126,11 +125,11 @@
 				},
 				"aCoach2": {
 					"title": "Asistent Trénera",
-					"transCode":"schema.roster.aCoach",
+					"transCode": "schema.roster.aCoach",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/people#views/coach/view",
-						"fields":{
+						"schema": "uri://registries/people#views/coach/view",
+						"fields": {
 							"surName": "baseData.surName",
 							"firstName": "baseData.name",
 							"license": "coach.coachLicense",
@@ -147,11 +146,11 @@
 				},
 				"aCoach3": {
 					"title": "Asistent Trénera",
-					"transCode":"schema.roster.aCoach",
+					"transCode": "schema.roster.aCoach",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/people#views/coach/view",
-						"fields":{
+						"schema": "uri://registries/people#views/coach/view",
+						"fields": {
 							"surName": "baseData.surName",
 							"firstName": "baseData.name",
 							"license": "coach.coachLicense",
@@ -168,11 +167,11 @@
 				},
 				"aCoach4": {
 					"title": "Asistent Trénera",
-					"transCode":"schema.roster.aCoach",
+					"transCode": "schema.roster.aCoach",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/people#views/coach/view",
-						"fields":{
+						"schema": "uri://registries/people#views/coach/view",
+						"fields": {
 							"surName": "baseData.surName",
 							"firstName": "baseData.name",
 							"license": "coach.coachLicense",
@@ -189,11 +188,11 @@
 				},
 				"aCoach5": {
 					"title": "Asistent Trénera",
-					"transCode":"schema.roster.aCoach",
+					"transCode": "schema.roster.aCoach",
 					"type": "object",
 					"objectLink2": {
-						"schema":"uri://registries/people#views/coach/view",
-						"fields":{
+						"schema": "uri://registries/people#views/coach/view",
+						"fields": {
 							"surName": "baseData.surName",
 							"firstName": "baseData.name",
 							"license": "coach.coachLicense",
@@ -212,7 +211,7 @@
 		},
 		"listOfPlayers": {
 			"title": "Zoznam hráčov",
-			"transCode":"schema.roster.listOfPlayers",
+			"transCode": "schema.roster.listOfPlayers",
 			"type": "object",
 			"render": {
 				"width": "full"
@@ -220,16 +219,15 @@
 			"properties": {
 				"players": {
 					"title": "Hráči",
-					"transCode":"schema.roster.players",
+					"transCode": "schema.roster.players",
 					"type": "array",
 					"items": {
 						"objectLink2": {
-							"schema":"uri://registries/people#views/player/view",
-							"fields":{
+							"schema": "uri://registries/people#views/player/view",
+							"fields": {
 								"surName": "baseData.surName",
 								"firstName": "baseData.name",
 								"birthDate": "baseData.birthDate",
-								"playerLicense": "player.playerLicense"
 							}
 						},
 						"required": true
@@ -238,12 +236,11 @@
 			}
 		}
 	},
-
-	"models":{
-		"rosters":{
+	"models": {
+		"rosters": {
 			"table": "rosters",
 			"title": "Súpiska",
-			"transCode":"schema.roster.title",
+			"transCode": "schema.roster.title",
 			"security": {
 				"create": {
 					"static": [
@@ -261,50 +258,49 @@
 					]
 				}
 			},
-			"properties":{
-				"baseData":{
-					"extends":"uri://registries/rosters#blocks/baseData"
+			"properties": {
+				"baseData": {
+					"extends": "uri://registries/rosters#blocks/baseData"
 				},
-				"coaches":{
-					"$ref":"uri://registries/rosters#blocks/coaches"
+				"coaches": {
+					"$ref": "uri://registries/rosters#blocks/coaches"
 				},
-				"listOfPlayers":{
-					"$ref":"uri://registries/rosters#blocks/listOfPlayers"
+				"listOfPlayers": {
+					"$ref": "uri://registries/rosters#blocks/listOfPlayers"
 				}
 			}
 		}
 	},
-
-	"views":{
-		"rosters":{
-			"new":{
-				"extends":"uri://registries/rosters#models/rosters"
+	"views": {
+		"rosters": {
+			"new": {
+				"extends": "uri://registries/rosters#models/rosters"
 			},
-			"view":{
-				"extends":"uri://registries/rosters#models/rosters"
+			"view": {
+				"extends": "uri://registries/rosters#models/rosters"
 			},
-			"search":{
-				"extends":"uri://registries/rosters#models/rosters",
+			"search": {
+				"extends": "uri://registries/rosters#models/rosters",
 				"listFields": [
 					{
 						"field": "baseData.season.refData.name",
 						"title": "Sezóna",
-						"transCode":"schema.roster.season"
+						"transCode": "schema.roster.season"
 					},
 					{
 						"field": "baseData.competition.refData.name",
 						"title": "Súťaž",
-						"transCode":"schema.roster.competition"
+						"transCode": "schema.roster.competition"
 					},
 					{
 						"field": "baseData.club.refData.name",
 						"title": "Klub",
-						"transCode":"schema.roster.club"
+						"transCode": "schema.roster.club"
 					},
 					{
 						"field": "baseData.prName",
 						"title": "Názov družstva",
-						"transCode":"schema.roster.prName"
+						"transCode": "schema.roster.prName"
 					}
 				]
 			}
