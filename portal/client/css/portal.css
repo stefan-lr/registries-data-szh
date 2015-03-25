@@ -590,7 +590,6 @@ a.portal-menu-bottom-entry-head {
 
 
 .x-portal-widget-category-title {
-	
 }
 
 .x-portal-widget-category-inner {
@@ -803,6 +802,20 @@ a.portal-menu-bottom-entry-head {
 		padding-right: 10px;
 	}
 
+	article.portal-article .x-portal-widget-category-title {
+		padding-left: 160px;
+		padding-right: 350px;
+		position: absolute;
+	}
+
+	.x-portal-widget-category ARTICLE {
+		width: auto;
+	}
+
+	.x-portal-widget-category-inner {
+		padding-top: 40px;
+	}
+
 	.x-portal-widget-showcase-navigation {
 		box-sizing: border-box;
 		margin-right: 10px;
@@ -815,6 +828,7 @@ a.portal-menu-bottom-entry-head {
 	#portal-content-container {
 		width: auto;
 		position: relative;
+		margin-right: 4px;
 	}
 
 	#portal-main-content {
@@ -839,6 +853,7 @@ a.portal-menu-bottom-entry-head {
 	#footer-container {
 		min-width: initial;
 		width: auto;
+		margin-top: 5px;
 	}
 
 	#main-footer {
@@ -871,6 +886,14 @@ a.portal-menu-bottom-entry-head {
 	#portal-club-logos-panel-container {
 		display: none;
 	}
+
+	#portal-menu-bottom-panel {
+		display: none;
+	}
+
+	.x-portal-widget-category ARTICLE {
+		width: inherit;
+	}
 }
 
 @media (max-width: 510px) {
@@ -892,10 +915,6 @@ a.portal-menu-bottom-entry-head {
 
 	#portal-menu-panel-container.mobile-visible {
 		display: block;
-	}
-
-	#portal-menu-bottom-panel {
-		display: none;
 	}
 
 	#portal-menu-panel {
@@ -965,9 +984,20 @@ a.portal-menu-bottom-entry-head {
 		position: static;
 		margin-left: 10px;
 	}	
+
+	.x-portal-widget-category-title {
+		padding-left: 10px;
+		padding-right: 10px;
+		position: static;
+	}
+
+	.x-portal-widget-category-inner {
+		clear: both;
+		padding-top: 10px;
+	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 510px) {
 	#portal-content-container {
 		width: auto;
 		position: static;
@@ -987,8 +1017,9 @@ a.portal-menu-bottom-entry-head {
 	    left: 0px;
 	    margin-right: 10px;
 	    margin-left: 10px;
+	    padding-top: 10px;
 	}
-	
+
 	.x-portal-widget-match-results {
 		padding-left: 5px;
 		padding-right: 5px;
@@ -998,4 +1029,3 @@ a.portal-menu-bottom-entry-head {
 		padding-left: 5px;
 	}
 }
-
