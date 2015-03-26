@@ -2,8 +2,8 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,latin-ext);
 
 #portal-main-container {
-	background-color: white;
-	background-image: url("/portal/img/background.jpg");
+	background-color: rgba(255, 255, 255, 0.23);
+/*	background-image: url("/portal/img/background.jpg");*/
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -52,23 +52,24 @@
 	display: table;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	background: white;
 }
 
 #portal-club-logos-panel .portal-club-logo {
 	background-repeat: no-repeat;
-	background-size: 35px 35px;
+	background-size: 45px 45px;
 	background-position: center center;
-	height: 40px;
-	width: 40px;
+	height: 45px;
+	width: 45px;
 	display: table-cell;
 }
 
 #portal-club-logos-panel .portal-club-logo:HOVER {
 	background-repeat: no-repeat;
-	background-size: 40px 40px;
+	background-size: 48px 48px;
 	background-position: center center;
-	height: 40px;
-	width: 40px;
+	height: 45px;
+	width: 45px;
 	display: table-cell;
 	cursor: pointer;
 }
@@ -369,6 +370,11 @@ a.portal-menu-bottom-entry-head {
 	font-weight: bold;
 	padding: 5px;
 	border-bottom: 4px red solid;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	letter-spacing: 1.2px;
+	font-weight: bold;
 }
 
 .portal-side-panel.partneri {
@@ -396,6 +402,7 @@ a.portal-menu-bottom-entry-head {
 	width: 1006px;
 	box-shadow: 0px 3px 6px gray;
 	margin-bottom: 12px;
+	background-color: rgba(255, 255, 255, 0.62);
 }
 
 #footer-container a {
@@ -416,7 +423,8 @@ a.portal-menu-bottom-entry-head {
 	font-family: Arial;
 	font-size: 14px;
 	text-align: justify;
-	background-color: white;
+	/*background-color: white;*/
+	background-color: rgba(255, 255, 255, 0.62);
 	padding: 10px;
 	display: inline-block;
 	width: 656px;
@@ -543,7 +551,7 @@ a.portal-menu-bottom-entry-head {
 }
 
 .x-portal-widget-category, .x-portal-widget-overview {
-	background: white;
+	/*background: white;*/
 	clear: both;
 }
 
@@ -553,7 +561,7 @@ a.portal-menu-bottom-entry-head {
 	overflow: hidden;
 	float: left;
 	width: 316px;
-	background: white;
+	/*background: white;*/
 	padding-right: 10px;
 }
 
@@ -724,6 +732,9 @@ a.portal-menu-bottom-entry-head {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+	letter-spacing: 1.2px;
+	font-weight: bold;
 }
 
 .x-portal-results-hyphen {
@@ -1028,4 +1039,18 @@ a.portal-menu-bottom-entry-head {
 	.x-portal-widget-category article {
 		padding-left: 5px;
 	}
+}
+
+#staticbck {
+	background-image: url("/portal/img/staticbck.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.3;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
 }
