@@ -39,7 +39,7 @@
 					"required": true,
 					"objectLink2": {
 						"schema":"uri://registries/people#views/fullperson/view",
-						
+
 						"fields":{
 							"surName": "baseData.surName",
 							"name": "baseData.name"
@@ -51,7 +51,7 @@
 					"type": "object",
 					"objectLink2": {
 						"schema":"uri://registries/people#views/fullperson/view",
-						
+
 						"fields":{
 							"surName": "baseData.surName",
 							"name": "baseData.name"
@@ -115,17 +115,17 @@
 			"security": {
 				"create": {
 					"static": [
-						"Registry - write"
+						"System User"
 					]
 				},
 				"read": {
 					"static": [
-						"Registry - read"
+						"System User"
 					]
 				},
 				"modify": {
 					"static": [
-						"Registry - write"
+						"System User"
 					]
 				}
 			},
@@ -257,7 +257,7 @@
 							"assignedTo":{"readOnly":false},
 							"club": null,
 							"setupDate":{"readOnly":true},
-							"status":{"readOnly":true},
+							"status":{"readOnly":false},
 							"responseText":{"readOnly":false},
 							"modifiedOn":{"readOnly":true}
 						}

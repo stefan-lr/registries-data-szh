@@ -35,6 +35,11 @@
 				"title": "Modifikácia dát zabezpečenia",
 				"type": "boolean",
 				"default": true
+			},
+			"Portal - write": {
+				"title": "Modifikácia portalu",
+				"type": "boolean",
+				"default": true
 			}
 		}
 	},
