@@ -20,12 +20,14 @@
 					"numberOfMembers": {
 						"title": "Počet členov",
 						"transCode": "schema.statistics.member.count",
-						"type": "number"
+						"type": "number",
+						"readOnly": true
 					},
 					"numberOfWomen": {
 						"title": "Počet žien",
 						"transCode": "schema.statistics.women.count",
-						"type": "number"
+						"type": "number",
+						"readOnly": true
 					}
 				}
 			}

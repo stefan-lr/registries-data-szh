@@ -227,7 +227,7 @@
 							"fields": {
 								"surName": "baseData.surName",
 								"firstName": "baseData.name",
-								"birthDate": "baseData.birthDate",
+								"birthDate": "baseData.birthDate"
 							}
 						},
 						"required": true
