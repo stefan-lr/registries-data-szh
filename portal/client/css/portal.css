@@ -1,12 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic&subset=latin,latin-ext);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,latin-ext);
 
+body {
+	background-image: url("/portal/img/background3.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 #portal-main-container {
+/*	
 	background-color: white;
 	background-image: url("/portal/img/background.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;*/
 	font-size: 14px;
 	font-family: 'Source Sans Pro', sans-serif;
 	color: gray;
@@ -18,6 +26,7 @@
 	padding-top: 8px;
 	padding-bottom: 8px;
 	box-shadow: 0px 3px 6px gray;
+	background: white;
 }
 
 #portal-main-header {
@@ -56,19 +65,19 @@
 
 #portal-club-logos-panel .portal-club-logo {
 	background-repeat: no-repeat;
-	background-size: 35px 35px;
+	background-size: 60px 60px;
 	background-position: center center;
-	height: 40px;
-	width: 40px;
+	height: 65px;
+	width: 65px;
 	display: table-cell;
 }
 
 #portal-club-logos-panel .portal-club-logo:HOVER {
 	background-repeat: no-repeat;
-	background-size: 40px 40px;
+	background-size: 65px 65px;
 	background-position: center center;
-	height: 40px;
-	width: 40px;
+	height: 65px;
+	width: 65px;
 	display: table-cell;
 	cursor: pointer;
 }
@@ -129,7 +138,7 @@
 	padding-bottom: 0px;
 	margin-top: 18px;
 	color: white;
-	
+	background: #cb2225;
 }
 
 #portal-menu-panel .portal-menu-entry {
@@ -193,7 +202,7 @@
 
 #portal-menu-panel .portal-menu-entry A,
 		#portal-menu-panel .portal-menu-entry A:VISITED {
-	color: #CB2225;
+	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -263,6 +272,7 @@ a.portal-menu-bottom-entry-head {
 	width: 1006px;
 	margin: 0 auto;
 	padding-top: 36px;
+	padding-bottom: 28px;
 }
 
 #portal-main-content {
@@ -344,7 +354,7 @@ a.portal-menu-bottom-entry-head {
 
 .portal-side-panel, .portal-side-panel-logos {
 	background-color: white;
-	padding: 10px;
+	padding: 13px 10px 14px 10px;
 	width:300px;
 	box-shadow: 0px 3px 6px gray;
 	margin-bottom: 10px;
@@ -369,6 +379,11 @@ a.portal-menu-bottom-entry-head {
 	font-weight: bold;
 	padding: 5px;
 	border-bottom: 4px red solid;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1.2px;
 }
 
 .portal-side-panel.partneri {
@@ -385,31 +400,35 @@ a.portal-menu-bottom-entry-head {
 }
 
 #footer-container {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Arial';
+	font-size: 14px;
 	min-width: 1006px;
-	padding-top: 0;
-	padding-bottom: 2px;
-	border-top: 12px #CB2225 solid;
+	background-color: white;
+	padding-top: 10px;
 	color: #CB2225;
 	clear: both;
 	margin: 0px auto;
 	width: 1006px;
-	box-shadow: 0px 3px 6px gray;
-	margin-bottom: 12px;
+	box-shadow: 0px 0px 4px gray;
 }
 
 #footer-container a {
-	color: #CB2225;
+	color: #5a5a5a;
 }
 
 #main-footer {
-	border-top: 2px #CB2225 solid;
+	background-color: #CB2225;
+	color: white;
 	position: relative;
 	min-width: 1006px;
 	clear: both;
 	text-align: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+#main-footer a, #main-footer a:VISITED, #main-footer a:HOVER {
+	color: white;
 }
 
 .portal-article {
@@ -555,6 +574,7 @@ a.portal-menu-bottom-entry-head {
 	width: 316px;
 	background: white;
 	padding-right: 10px;
+	border-bottom: #EAE8E8 1px solid;
 }
 
 .x-portal-widget-overview ARTICLE {
@@ -604,6 +624,7 @@ a.portal-menu-bottom-entry-head {
 	display: -webkit-box;
 	-webkit-line-clamp: 6;
 	-webkit-box-orient: vertical;
+	text-align: left;
 }
 
 .x-portal-widget-category-navigation {
@@ -696,11 +717,28 @@ a.portal-menu-bottom-entry-head {
 	font-weight: bolder;
 }
 
+.x-portal-widget-showcase-navigation a.prev:after,
+		.x-portal-widget-showcase-navigation a.next:after {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 18px;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+.x-portal-widget-showcase-navigation a.prev:after {
+	content: "\f0d9";
+}
+
+.x-portal-widget-showcase-navigation a.next:after {
+	content: "\f0da";
+}
+
 .x-portal-widget-showcase-navigation div a.active {
 }
 
 .x-portal-widget-showcase-navigation div a.item::after {
-	content: "\f10c";
+	content: "\f096";
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: 14px;
@@ -709,22 +747,22 @@ a.portal-menu-bottom-entry-head {
 }
 	
 .x-portal-widget-showcase-navigation div a.item.active::after {
-	content: "\f111";
-	display: inline-block;
-	font: normal normal normal 14px/1 FontAwesome;
-	font-size: 14px;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
+	content: "\f0c8";
+	padding-top: 10px;
+
 }
 
 .x-portal-widget-match-results header,
 		.x-portal-widget-match-standings header {
 	color: white;
-	text-transform: uppercase;
 	background: #CB2225;
 	padding-top: 6px;
 	padding-bottom: 6px;
 	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1.2px;
 }
 
 .x-portal-results-hyphen {

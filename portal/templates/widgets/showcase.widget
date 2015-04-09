@@ -11,7 +11,6 @@
 
 <div class="x-portal-widget-showcase-navigation">
 	<a href="#" class="prev">
-		<i class="fa fa-chevron-left"></i>
 	</a>
 	<div>
 		{% for article in data.articles %}
@@ -19,6 +18,5 @@
 		{% endfor %}
 	</div>
 	<a href="#" class="next">
-		<i class="fa fa-chevron-right"></i>
 	</a>
 </div>
