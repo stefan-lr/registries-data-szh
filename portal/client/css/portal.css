@@ -561,6 +561,10 @@ a.portal-menu-bottom-entry-head {
 	display: none;
 }
 
+.x-portal-widget-file-list-item {
+	margin: 10px 0px;
+}
+
 .x-portal-widget-category, .x-portal-widget-overview {
 	background: white;
 	clear: both;
