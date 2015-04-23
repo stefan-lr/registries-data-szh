@@ -68,7 +68,7 @@
 					<img src="/portal/img/sk_sien_slavy.png" height="251px" align="middle"></img>
 				</section>
 				<section class="portal-side-panel x-portal-competition-results">
-					<header>Poradie</header>
+					<header>Tabuľka</header>
 					<div style="width:100%;"><select style="width:100%; padding-top: 5px; padding-bottom: 5px; padding-left: 36px; margin-top: 5px; margin-bottom: 5px;" class="x-portal-competition-selector"><option>Extraliga - Muži</option></select></div>
 
 					<table style="width:100%; padding-top: 1px;" class="rowtable">
@@ -434,7 +434,7 @@
 	});
 
 	function updateMainContentHeight() {
-		if (parseInt($(window).width()) <= 400) {
+		if (parseInt($(window).width()) <= 510) {
 			$('#portal-main-content').css('min-height', '0px');
 		} else {
 			$('#portal-main-content').css('min-height', parseInt($('#portal-side-content').height()) + 20);

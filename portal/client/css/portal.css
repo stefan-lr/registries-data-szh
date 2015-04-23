@@ -890,6 +890,24 @@ a.portal-menu-bottom-entry-head {
 	#portal-club-logos-panel-container {
 		display: none;
 	}
+
+	#portal-menu-bottom-panel {
+		display: none;
+	}
+
+	.x-portal-widget-category ARTICLE {
+		width: inherit;
+	}
+
+	.portal-article-title .title {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.portal-article-contentBlock .contentBlock {
+		margin-left: 10px;
+		padding-right: 10px;
+	}
 }
 
 @media (max-width: 510px) {
@@ -911,10 +929,6 @@ a.portal-menu-bottom-entry-head {
 
 	#portal-menu-panel-container.mobile-visible {
 		display: block;
-	}
-
-	#portal-menu-bottom-panel {
-		display: none;
 	}
 
 	#portal-menu-panel {
@@ -984,9 +998,20 @@ a.portal-menu-bottom-entry-head {
 		position: static;
 		margin-left: 10px;
 	}	
+
+	.portal-article-title .title {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.portal-article-contentBlock .contentBlock {
+		margin-left: 10px;
+		padding-right: 10px;
+	}
+
 }
 
-@media (max-width: 400px) {
+@media (max-width: 510px) {
 	#portal-content-container {
 		width: auto;
 		position: static;
