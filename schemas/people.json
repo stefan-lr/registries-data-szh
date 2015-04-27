@@ -21,7 +21,7 @@
 					"type": "string",
 					"required": true,
 					"unique": {
-						"schema": "uri://registries/people#views/person",
+						"schema": "uri://registries/people#views/fullperson",
 						"field": "baseData.id"
 					}
 				},
@@ -755,6 +755,11 @@
 			},
 			"search":{
 				"extends":"uri://registries/people#models/fullperson",
+				"recordActions": [{
+					"__DIRECTIVE__": "view-link",
+					"title": "Zobraziť",
+					"schema": ""
+				}],
 				"properties": {
 					"photoInfo":null
 				},
