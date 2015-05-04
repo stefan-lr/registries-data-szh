@@ -610,6 +610,14 @@
 			},
 			"view": {
 				"extends": "uri://registries/requisitions#models/peopleRegistration",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "action-link",
+						"title": "Vytvoriť člena",
+						"schema": "uri://registries/requisitions#views/peopleRegistrationApplicant",
+						"template": "createMember.html"
+					}
+				],
 				"properties": {
 					"baseData": {
 						"properties": {
