@@ -1,13 +1,12 @@
 {
 	"$schema": "http://json-schema.org/schema#",
 	"id": "uri://registries/people#",
-
-	"blocks":{
-		"person":{
+	"blocks": {
+		"person": {
 			"title": "Základné informácie",
 			"transCode": "schema.people.baseData",
 			"type": "object",
-			"properties":{
+			"properties": {
 				"registrationID": {
 					"title": "Registračné číslo",
 					"transCode": "schema.people.registrationID",
@@ -29,14 +28,14 @@
 					"title": "Meno",
 					"transCode": "schema.people.name",
 					"type": "string",
-					"collate":true,
+					"collate": true,
 					"required": true
 				},
 				"surName": {
 					"title": "Priezvisko",
 					"transCode": "schema.people.surName",
 					"type": "string",
-					"collate":true,
+					"collate": true,
 					"required": true
 				},
 				"titleBefore": {
@@ -45,13 +44,13 @@
 					"type": "string"
 				},
 				"birthDate": {
-						"extends":"uri://registries/commontypes#blocks/date",
-						"title": "Dátum narodenia",
-						"transCode": "schema.people.birthDate",
-						"required": true
+					"extends": "uri://registries/commontypes#blocks/date",
+					"title": "Dátum narodenia",
+					"transCode": "schema.people.birthDate",
+					"required": true
 				},
 				"gender": {
-					"extends":"uri://registries/commonenums#blocks/gender",
+					"extends": "uri://registries/commonenums#blocks/gender",
 					"title": "Pohlavie",
 					"transCode": "schema.people.gender",
 					"required": true
@@ -59,52 +58,52 @@
 				"nationality": {
 					"$ref": "uri://registries/countries#country"
 				},
-				"stateofPerson":{
-					"extends":"uri://registries/commonenums#blocks/active",
+				"stateofPerson": {
+					"extends": "uri://registries/commonenums#blocks/active",
 					"title": "Stav osoby",
 					"transCode": "schema.people.state.of.person"
 				}
 			}
 		},
-		"referee":{
+		"referee": {
 			"title": "Rozhodca",
 			"transCode": "schema.people.referee",
 			"type": "object",
 			"properties": {
 				"isReferee": {
-					"extends":"uri://registries/commonenums#blocks/boolean",
+					"extends": "uri://registries/commonenums#blocks/boolean",
 					"title": "Je rozhodca",
 					"transCode": "schema.people.isReferee"
 				},
 				"firstAssociation": {
-					"type":"object",
+					"type": "object",
 					"title": "Prvotný zväz",
 					"transCode": "schema.people.referee.firstAssociation",
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/association/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/association/view",
+						"fields": {
 							"name": "association.associationName"
 						}
 					}
 				},
 				"stateOfReferee": {
-					"extends":"uri://registries/commonenums#blocks/active",
+					"extends": "uri://registries/commonenums#blocks/active",
 					"title": "Stav rozhodcu",
 					"transCode": "schema.people.referee.stateOfReferee"
 				},
 				"association": {
-					"type":"object",
+					"type": "object",
 					"title": "Aktuálny zväz",
 					"transCode": "schema.people.referee.association",
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/association/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/association/view",
+						"fields": {
 							"name": "association.associationName"
 						}
 					}
 				},
 				"firstYear": {
-					"extends":"uri://registries/commontypes#blocks/year",
+					"extends": "uri://registries/commontypes#blocks/year",
 					"title": "Rok začiatku kariéry",
 					"transCode": "schema.people.referee.firstYear"
 				},
@@ -150,49 +149,49 @@
 			"type": "object",
 			"properties": {
 				"isCoach": {
-					"extends":"uri://registries/commonenums#blocks/boolean",
+					"extends": "uri://registries/commonenums#blocks/boolean",
 					"title": "Je tréner",
 					"transCode": "schema.people.isCoach"
 				},
 				"firstAssociation": {
-					"type":"object",
+					"type": "object",
 					"title": "Prvotný zväz",
 					"transCode": "schema.people.coach.firstAssociation",
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/association/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/association/view",
+						"fields": {
 							"name": "association.associationName"
 						}
 					}
 				},
 				"stateOfCoach": {
-					"extends":"uri://registries/commonenums#blocks/active",
+					"extends": "uri://registries/commonenums#blocks/active",
 					"title": "Stav trénera",
 					"transCode": "schema.people.coach.stateOfCoach"
 				},
 				"association": {
-					"type":"object",
+					"type": "object",
 					"title": "Aktuálny zväz",
 					"transCode": "schema.people.coach.association",
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/association/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/association/view",
+						"fields": {
 							"name": "association.associationName"
 						}
 					}
 				},
 				"firstYear": {
-					"extends":"uri://registries/commontypes#blocks/year",
+					"extends": "uri://registries/commontypes#blocks/year",
 					"title": "Rok začiatku kariéry",
 					"transCode": "schema.people.coach.firstYear"
 				},
 				"proffesionalCompetence": {
-					"extends":"uri://registries/commontypes#blocks/year",
+					"extends": "uri://registries/commontypes#blocks/year",
 					"title": "Odborná spôsobilosť od (rok)",
 					"transCode": "schema.people.coach.proffesionalCompetence"
 				},
 				"dateOfRegistration": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum registrácie",
 					"transCode": "schema.people.coach.dateOfRegistration"
 				},
@@ -203,7 +202,7 @@
 				},
 				"coachLicenseType": {
 					"title": "Typ licencie",
-					"type":"string",
+					"type": "string",
 					"transCode": "schema.people.coach.coachLicenseType",
 					"enum": [
 						"I",
@@ -218,17 +217,17 @@
 					}
 				},
 				"dateOfExpiration": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum platnosti preukazu",
 					"transCode": "schema.people.coach.dateOfExpiration"
 				},
 				"dateOfApplicationForId": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum začiatku platnosti preukazu",
 					"transCode": "schema.people.coach.dateOfApplicationForId"
 				},
 				"feeDate": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Poplatky",
 					"transCode": "schema.people.coach.feeDate"
 				},
@@ -245,22 +244,22 @@
 			"type": "object",
 			"properties": {
 				"isOfficer": {
-					"extends":"uri://registries/commonenums#blocks/boolean",
+					"extends": "uri://registries/commonenums#blocks/boolean",
 					"title": "Je funkcionár",
 					"transCode": "schema.people.isOfficer"
 				},
 				"stateOfOfficer": {
-					"extends":"uri://registries/commonenums#blocks/active",
+					"extends": "uri://registries/commonenums#blocks/active",
 					"title": "Stav funkcionára",
 					"transCode": "schema.people.officer.stateOfOfficer"
 				},
 				"club": {
-					"type":"object",
+					"type": "object",
 					"title": "Klubová príslušnosť",
 					"transCode": "schema.people.officer.club",
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/club/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/club/view",
+						"fields": {
 							"name": "club.name"
 						}
 					}
@@ -272,22 +271,22 @@
 					"large": true
 				},
 				"dateOfRegistration": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum registrácie",
 					"transCode": "schema.people.officer.dateOfRegistration"
 				},
 				"expiration": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Platnosť do",
 					"transCode": "schema.people.officer.expiration"
 				},
 				"dateOfExpiration": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum platnosti preukazu",
 					"transCode": "schema.people.officer.dateOfExpiration"
 				},
 				"dateOfApplicationForId": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum začiatku platnosti preukazu",
 					"transCode": "schema.people.officer.dateOfApplicationForId"
 				}
@@ -299,37 +298,37 @@
 			"type": "object",
 			"properties": {
 				"isPlayer": {
-					"extends":"uri://registries/commonenums#blocks/boolean",
+					"extends": "uri://registries/commonenums#blocks/boolean",
 					"title": "Je hráč",
 					"transCode": "schema.people.isPlayer",
 					"required": true
 				},
 				"clubOfFirstRegistration": {
-					"type":"object",
+					"type": "object",
 					"title": "Materský klub",
 					"transCode": "schema.people.player.clubOfFirstRegistration",
 					"required": true,
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/club/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/club/view",
+						"fields": {
 							"name": "club.name"
 						}
 					}
 				},
 				"club": {
-					"type":"object",
+					"type": "object",
 					"title": "Klubová príslušnosť",
 					"transCode": "schema.people.player.club",
 					"required": true,
 					"objectLink2": {
-						"schema":"uri://registries/organizations#views/club/view",
-						"fields":{
+						"schema": "uri://registries/organizations#views/club/view",
+						"fields": {
 							"name": "club.name"
 						}
 					}
 				},
 				"stateOfPlayer": {
-					"extends":"uri://registries/commonenums#blocks/active",
+					"extends": "uri://registries/commonenums#blocks/active",
 					"title": "Stav hráča",
 					"transCode": "schema.people.player.stateOfPlayer",
 					"required": true
@@ -337,35 +336,35 @@
 				"expirationOfProffesionalContract": {
 					"title": "Profesionálna zmluva",
 					"transCode": "schema.people.player.expirationOfProffesionalContract",
-					"type":"string"
+					"type": "string"
 				},
 				"registrationCanceled": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Zrušená registrácia",
 					"transCode": "schema.people.player.registrationCanceled"
 				},
 				"dateOfRegistration": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum registrácie",
 					"transCode": "schema.people.player.dateOfRegistration"
 				},
 				"hostingStartDate": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum začiatku hosťovania",
 					"transCode": "schema.people.player.hostingStartDate"
 				},
 				"hostingEndDate": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Dátum konca hosťovania",
 					"transCode": "schema.people.player.hostingEndDate"
 				},
 				"validFrom": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Platnosť RP od",
 					"transCode": "schema.people.player.validFrom"
 				},
 				"validTo": {
-					"extends":"uri://registries/commontypes#blocks/date",
+					"extends": "uri://registries/commontypes#blocks/date",
 					"title": "Platnosť RP od",
 					"transCode": "schema.people.player.validTo"
 				},
@@ -374,7 +373,7 @@
 					"transCode": "schema.people.player.modifiedOn",
 					"type": "string",
 					"readOnly": true,
-					"timestamp" : true
+					"timestamp": true
 				}
 			}
 		},
@@ -467,9 +466,8 @@
 			}
 		}
 	},
-
-	"models":{
-		"person":{
+	"models": {
+		"person": {
 			"table": "people",
 			"security": {
 				"create": {
@@ -488,48 +486,48 @@
 					]
 				}
 			},
-			"fireEvents":{
+			"fireEvents": {
 				"create": "event-person-created",
 				"update": "event-person-updated"
 			},
-			"properties":{
-				"baseData":{
-					"extends":"uri://registries/people#blocks/person"
+			"properties": {
+				"baseData": {
+					"extends": "uri://registries/people#blocks/person"
 				},
-				"contactInfo":{
-					"$ref":"uri://registries/people#blocks/contactInfo"
+				"contactInfo": {
+					"$ref": "uri://registries/people#blocks/contactInfo"
 				}
 			}
 		},
-		"fullperson":{
-			"extends":"uri://registries/people#models/person",
-			"title":"Osoba",
-			"transCode":"schema.people.title",
-			"properties":{
-				"player":{
-					"$ref":"uri://registries/people#blocks/player"
+		"fullperson": {
+			"extends": "uri://registries/people#models/person",
+			"title": "Osoba",
+			"transCode": "schema.people.title",
+			"properties": {
+				"player": {
+					"$ref": "uri://registries/people#blocks/player"
 				},
-				"coach":{
-					"$ref":"uri://registries/people#blocks/coach"
+				"coach": {
+					"$ref": "uri://registries/people#blocks/coach"
 				},
-				"referee":{
-					"$ref":"uri://registries/people#blocks/referee"
+				"referee": {
+					"$ref": "uri://registries/people#blocks/referee"
 				},
-				"officer":{
-					"$ref":"uri://registries/people#blocks/officer"
+				"officer": {
+					"$ref": "uri://registries/people#blocks/officer"
 				},
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
-		"fullperson-km":{
-			"extends":"uri://registries/people#models/person",
-			"title":"Osoba",
-			"transCode":"schema.people.title",
+		"fullperson-km": {
+			"extends": "uri://registries/people#models/person",
+			"title": "Osoba",
+			"transCode": "schema.people.title",
 			"security": {
 				"create": {
 					"static": [
@@ -547,117 +545,117 @@
 					]
 				}
 			},
-			"properties":{
-				"player":{
-					"$ref":"uri://registries/people#blocks/player"
+			"properties": {
+				"player": {
+					"$ref": "uri://registries/people#blocks/player"
 				},
-				"officer":{
-					"$ref":"uri://registries/people#blocks/officer"
+				"officer": {
+					"$ref": "uri://registries/people#blocks/officer"
 				},
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
-		"coach":{
-			"extends":"uri://registries/people#models/person",
-			"title":"Tréner",
-			"transCode":"schema.people.coach",
+		"coach": {
+			"extends": "uri://registries/people#models/person",
+			"title": "Tréner",
+			"transCode": "schema.people.coach",
 			"forcedCriteria": [
 				{
-				"f": "coach.isCoach",
-				"op": "eq",
-				"v": "TRUE"
+					"f": "coach.isCoach",
+					"op": "eq",
+					"v": "TRUE"
 				}
 			],
-			"properties":{
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+			"properties": {
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"coach":{
-					"$ref":"uri://registries/people#blocks/coach"
+				"coach": {
+					"$ref": "uri://registries/people#blocks/coach"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
-		"referee":{
-			"extends":"uri://registries/people#models/person",
-			"title":"Rozhodca",
-			"transCode":"schema.people.referee",
+		"referee": {
+			"extends": "uri://registries/people#models/person",
+			"title": "Rozhodca",
+			"transCode": "schema.people.referee",
 			"forcedCriteria": [
 				{
-				"f": "referee.isReferee",
-				"op": "eq",
-				"v": "TRUE"
+					"f": "referee.isReferee",
+					"op": "eq",
+					"v": "TRUE"
 				}
 			],
-			"properties":{
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+			"properties": {
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"referee":{
-					"$ref":"uri://registries/people#blocks/referee"
+				"referee": {
+					"$ref": "uri://registries/people#blocks/referee"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
-		"officer":{
-			"extends":"uri://registries/people#models/person",
-			"title":"Funkcionár",
-			"transCode":"schema.people.officer",
+		"officer": {
+			"extends": "uri://registries/people#models/person",
+			"title": "Funkcionár",
+			"transCode": "schema.people.officer",
 			"forcedCriteria": [
 				{
-				"f": "officer.isOfficer",
-				"op": "eq",
-				"v": "TRUE"
+					"f": "officer.isOfficer",
+					"op": "eq",
+					"v": "TRUE"
 				}
 			],
-			"properties":{
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+			"properties": {
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"officer":{
-					"$ref":"uri://registries/people#blocks/officer"
+				"officer": {
+					"$ref": "uri://registries/people#blocks/officer"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
-		"player":{
-			"extends":"uri://registries/people#models/person",
-			"title":"Hráč",
-			"transCode":"schema.people.player",
+		"player": {
+			"extends": "uri://registries/people#models/person",
+			"title": "Hráč",
+			"transCode": "schema.people.player",
 			"forcedCriteria": [
 				{
-				"f": "player.isPlayer",
-				"op": "eq",
-				"v": "TRUE"
+					"f": "player.isPlayer",
+					"op": "eq",
+					"v": "TRUE"
 				}
 			],
-			"properties":{
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+			"properties": {
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"player":{
-					"$ref":"uri://registries/people#blocks/player"
+				"player": {
+					"$ref": "uri://registries/people#blocks/player"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
-		"player-km":{
-			"extends":"uri://registries/people#models/person",
-			"title":"Hráč",
-			"transCode":"schema.people.player",
+		"player-km": {
+			"extends": "uri://registries/people#models/person",
+			"title": "Hráč",
+			"transCode": "schema.people.player",
 			"security": {
 				"create": {
 					"static": [
@@ -677,27 +675,27 @@
 			},
 			"forcedCriteria": [
 				{
-				"f": "player.isPlayer",
-				"op": "eq",
-				"v": "TRUE"
+					"f": "player.isPlayer",
+					"op": "eq",
+					"v": "TRUE"
 				}
 			],
-			"properties":{
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+			"properties": {
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"player":{
-					"$ref":"uri://registries/people#blocks/player"
+				"player": {
+					"$ref": "uri://registries/people#blocks/player"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
 		"personalProfile": {
-			"extends":"uri://registries/people#models/person",
-			"title":"Môj profil",
-			"transCode":"schema.people.personalProfile",
+			"extends": "uri://registries/people#models/person",
+			"title": "Môj profil",
+			"transCode": "schema.people.personalProfile",
 			"security": {
 				"create": {
 					"static": [
@@ -715,26 +713,25 @@
 					]
 				}
 			},
-			"properties":{
-				"photoInfo":{
-					"$ref":"uri://registries/people#blocks/photoInfo"
+			"properties": {
+				"photoInfo": {
+					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
-				"contactInfo":{
-					"$ref":"uri://registries/people#blocks/contactInfo"
+				"contactInfo": {
+					"$ref": "uri://registries/people#blocks/contactInfo"
 				},
-				"otherInfo":{
-					"$ref":"uri://registries/people#blocks/otherInfo"
+				"otherInfo": {
+					"$ref": "uri://registries/people#blocks/otherInfo"
 				}
 			}
 		}
 	},
-
-	"views":{
-		"fullperson":{
-			"new":{
-				"extends":"uri://registries/people#views/fullperson/view",
+	"views": {
+		"fullperson": {
+			"new": {
+				"extends": "uri://registries/people#views/fullperson/view",
 				"saveBySchema": "uri://registries/people#views/fullperson/view",
-				"properties":{
+				"properties": {
 					"baseData": {
 						"properties": {
 							"registrationID": null
@@ -742,8 +739,8 @@
 					}
 				}
 			},
-			"view":{
-				"extends":"uri://registries/people#models/fullperson",
+			"view": {
+				"extends": "uri://registries/people#models/fullperson",
 				"clientActions": [
 					{
 						"__DIRECTIVE__": "action-link",
@@ -753,41 +750,45 @@
 					}
 				]
 			},
-			"search":{
-				"extends":"uri://registries/people#models/fullperson",
-				"recordActions": [{
-					"__DIRECTIVE__": "view-link",
-					"title": "Zobraziť",
-					"schema": ""
-				}],
+			"search": {
+				"extends": "uri://registries/people#models/fullperson",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Ffullperson/{{model.id}}"
+						}
+					}
+				],
 				"properties": {
-					"photoInfo":null
+					"photoInfo": null
 				},
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode":"schema.people.registrationID"
+						"transCode": "schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode":"schema.people.surName"
+						"transCode": "schema.people.surName"
 					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode":"schema.people.name"
+						"transCode": "schema.people.name"
 					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode":"schema.people.birthDate"
+						"transCode": "schema.people.birthDate"
 					},
 					{
 						"field": "contactInfo.city",
 						"title": "Mesto",
-						"transCode":"schema.people.city"
+						"transCode": "schema.people.city"
 					},
 					{
 						"field": "player.validFrom",
@@ -802,11 +803,11 @@
 				]
 			}
 		},
-		"fullperson-km":{
-			"new":{
-				"extends":"uri://registries/people#views/fullperson-km/view",
+		"fullperson-km": {
+			"new": {
+				"extends": "uri://registries/people#views/fullperson-km/view",
 				"saveBySchema": "uri://registries/people#views/fullperson-km/view",
-				"properties":{
+				"properties": {
 					"baseData": {
 						"properties": {
 							"registrationID": null
@@ -814,9 +815,9 @@
 					}
 				}
 			},
-			"view":{
-				"extends":"uri://registries/people#models/fullperson-km",
-				"properties":{
+			"view": {
+				"extends": "uri://registries/people#models/fullperson-km",
+				"properties": {
 					"baseData": {
 						"properties": {
 							"registrationID": {
@@ -919,127 +920,154 @@
 					}
 				}
 			},
-			"search":{
-				"extends":"uri://registries/people#models/fullperson-km",
+			"search": {
+				"extends": "uri://registries/people#models/fullperson-km",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Ffullperson-km/{{model.id}}"
+						}
+					}
+				],
 				"properties": {
-					"photoInfo":null
+					"photoInfo": null
 				},
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode":"schema.people.registrationID"
+						"transCode": "schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode":"schema.people.surName"
+						"transCode": "schema.people.surName"
 					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode":"schema.people.name"
+						"transCode": "schema.people.name"
 					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode":"schema.people.birthDate"
+						"transCode": "schema.people.birthDate"
 					},
 					{
-						"field": "player.clubOfFirstRegistration.refData.name",
+						"field": "player.clubOfFirstRegistration",
 						"title": "Materský klub",
-						"transCode":"schema.people.player.clubOfFirstRegistration"
+						"transCode": "schema.people.player.clubOfFirstRegistration"
 					},
 					{
-						"field": "player.club.refData.name",
+						"field": "player.club",
 						"title": "Klubová príslušnosť",
-						"transCode":"schema.people.player.club"
+						"transCode": "schema.people.player.club"
 					}
 				]
 			}
 		},
-		"coach":{
-			"new":{
-				"extends":"uri://registries/people#models/coach"
+		"coach": {
+			"new": {
+				"extends": "uri://registries/people#models/coach"
 			},
-			"view":{
-				"extends":"uri://registries/people#models/coach"
+			"view": {
+				"extends": "uri://registries/people#models/coach"
 			},
-			"search":{
-				"extends":"uri://registries/people#models/coach",
+			"search": {
+				"extends": "uri://registries/people#models/coach",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Freferee/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode":"schema.people.registrationID"
+						"transCode": "schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode":"schema.people.surName"
-						},
+						"transCode": "schema.people.surName"
+					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode":"schema.people.name"
+						"transCode": "schema.people.name"
 					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode":"schema.people.birthDate"
+						"transCode": "schema.people.birthDate"
 					},
 					{
 						"field": "contactInfo.city",
 						"title": "Mesto",
-						"transCode":"schema.people.city"
+						"transCode": "schema.people.city"
 					}
 				]
 			}
 		},
-		"referee":{
-			"new":{
-				"extends":"uri://registries/people#models/referee"
+		"referee": {
+			"new": {
+				"extends": "uri://registries/people#models/referee"
 			},
-			"view":{
-				"extends":"uri://registries/people#models/referee"
+			"view": {
+				"extends": "uri://registries/people#models/referee"
 			},
-			"search":{
-				"extends":"uri://registries/people#models/referee",
+			"search": {
+				"extends": "uri://registries/people#models/referee",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Freferee/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode":"schema.people.registrationID"
+						"transCode": "schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode":"schema.people.surName"
+						"transCode": "schema.people.surName"
 					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode":"schema.people.name"
+						"transCode": "schema.people.name"
 					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode":"schema.people.birthDate"
+						"transCode": "schema.people.birthDate"
 					},
 					{
 						"field": "contactInfo.city",
 						"title": "Mesto",
-						"transCode":"schema.people.city"
+						"transCode": "schema.people.city"
 					}
 				]
 			}
 		},
-		"officer":{
-			"new":{
-				"extends":"uri://registries/people#models/officer"
+		"officer": {
+			"new": {
+				"extends": "uri://registries/people#models/officer"
 			},
-			"view":{
-				"extends":"uri://registries/people#models/officer",
+			"view": {
+				"extends": "uri://registries/people#models/officer",
 				"clientActions": [
 					{
 						"__DIRECTIVE__": "action-link",
@@ -1049,45 +1077,54 @@
 					}
 				]
 			},
-			"search":{
-				"extends":"uri://registries/people#models/officer",
+			"search": {
+				"extends": "uri://registries/people#models/officer",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Fofficer/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode":"schema.people.registrationID"
+						"transCode": "schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode":"schema.people.surName"
+						"transCode": "schema.people.surName"
 					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode":"schema.people.name"
-						},
+						"transCode": "schema.people.name"
+					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode":"schema.people.birthDate"
+						"transCode": "schema.people.birthDate"
 					},
 					{
 						"field": "contactInfo.city",
 						"title": "Mesto",
-						"transCode":"schema.people.city"
+						"transCode": "schema.people.city"
 					}
 				]
 			}
 		},
-		"player":{
-			"new":{
-				"extends":"uri://registries/people#models/player",
-				"title":"Nový hráč"
+		"player": {
+			"new": {
+				"extends": "uri://registries/people#models/player",
+				"title": "Nový hráč"
 			},
-			"view":{
-				"extends":"uri://registries/people#models/player",
-				"title":"Hráč",
+			"view": {
+				"extends": "uri://registries/people#models/player",
+				"title": "Hráč",
 				"clientActions": [
 					{
 						"__DIRECTIVE__": "action-link",
@@ -1097,118 +1134,127 @@
 					}
 				]
 			},
-			"search":{
-				"extends":"uri://registries/people#models/player",
-				"title":"Hráč",
+			"search": {
+				"extends": "uri://registries/people#models/player",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Fplayer/{{model.id}}"
+						}
+					}
+				],
+				"title": "Hráč",
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode":"schema.people.registrationID"
+						"transCode": "schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode":"schema.people.surName"
+						"transCode": "schema.people.surName"
 					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode":"schema.people.name"
+						"transCode": "schema.people.name"
 					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode":"schema.people.birthDate"
+						"transCode": "schema.people.birthDate"
 					},
 					{
-						"field": "player.clubOfFirstRegistration.refData.name",
+						"field": "player.clubOfFirstRegistration",
 						"title": "Materský klub",
-						"transCode":"schema.people.player.clubOfFirstRegistration"
+						"transCode": "schema.people.player.clubOfFirstRegistration"
 					},
 					{
-						"field": "player.club.refData.name",
+						"field": "player.club",
 						"title": "Klubová príslušnosť",
-						"transCode":"schema.people.player.club"
+						"transCode": "schema.people.player.club"
 					},
 					{
 						"field": "player.hostingStartDate",
 						"title": "Dátum začiatku hosťovania",
-						"transCode":"schema.people.player.hostingStartDate"
+						"transCode": "schema.people.player.hostingStartDate"
 					},
 					{
 						"field": "player.hostingEndDate",
 						"title": "Dátum konca hosťovania",
-						"transCode":"schema.people.player.hostingEndDate"
+						"transCode": "schema.people.player.hostingEndDate"
 					}
 				]
 			}
 		},
-		"player-km":{
-			"new":{
-				"extends":"uri://registries/people#models/player-km",
-				"title":"Nový hráč"
+		"player-km": {
+			"new": {
+				"extends": "uri://registries/people#models/player-km",
+				"title": "Nový hráč"
 			},
-			"view":{
-				"extends":"uri://registries/people#models/player-km",
-				"title":"Hráč"
+			"view": {
+				"extends": "uri://registries/people#models/player-km",
+				"title": "Hráč"
 			},
-			"search":{
-				"extends":"uri://registries/people#models/player-km",
-				"title":"Hráč",
+			"search": {
+				"extends": "uri://registries/people#models/player-km",
+				"title": "Hráč",
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode":"schema.people.registrationID"
+						"transCode": "schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode":"schema.people.surName"
+						"transCode": "schema.people.surName"
 					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode":"schema.people.name"
+						"transCode": "schema.people.name"
 					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode":"schema.people.birthDate"
+						"transCode": "schema.people.birthDate"
 					},
 					{
 						"field": "player.clubOfFirstRegistration.refData.name",
 						"title": "Materský klub",
-						"transCode":"schema.people.player.clubOfFirstRegistration"
+						"transCode": "schema.people.player.clubOfFirstRegistration"
 					},
 					{
 						"field": "player.club.refData.name",
 						"title": "Klubová príslušnosť",
-						"transCode":"schema.people.player.club"
+						"transCode": "schema.people.player.club"
 					},
 					{
 						"field": "player.hostingStartDate",
 						"title": "Dátum začiatku hosťovania",
-						"transCode":"schema.people.player.hostingStartDate"
+						"transCode": "schema.people.player.hostingStartDate"
 					},
 					{
 						"field": "player.hostingEndDate",
 						"title": "Dátum konca hosťovania",
-						"transCode":"schema.people.player.hostingEndDate"
+						"transCode": "schema.people.player.hostingEndDate"
 					}
 				]
 			}
 		},
-		"personalProfile":{
-			"new":{
-				"extends":"uri://registries/people#models/personalProfile",
-				"title":"Môj profil"
+		"personalProfile": {
+			"new": {
+				"extends": "uri://registries/people#models/personalProfile",
+				"title": "Môj profil"
 			},
-			"view":{
-				"extends":"uri://registries/people#models/personalProfile",
-				"title":"Môj profil",
-				"properties":{
+			"view": {
+				"extends": "uri://registries/people#models/personalProfile",
+				"title": "Môj profil",
+				"properties": {
 					"baseData": {
 						"properties": {
 							"registrationID": {
@@ -1250,9 +1296,9 @@
 					}
 				}
 			},
-			"search":{
-				"extends":"uri://registries/people#models/personalProfile",
-				"title":"Môj profil",
+			"search": {
+				"extends": "uri://registries/people#models/personalProfile",
+				"title": "Môj profil",
 				"listFields": [
 					{
 						"field": "baseData.surName",

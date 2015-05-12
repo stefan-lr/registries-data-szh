@@ -167,6 +167,15 @@
 			},
 			"search":{
 				"extends":"uri://registries/transfers#models/transfers",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Ftransfers~23views~2Ftransfers/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.typeOfTransfer",
@@ -179,22 +188,17 @@
 						"transCode": "schema.transfer.dateOfRealization"
 					},
 					{
-						"field": "baseData.player.refData.name",
+						"field": "baseData.player",
 						"title": "Meno",
 						"transCode": "schema.transfer.name"
 					},
 					{
-						"field": "baseData.player.refData.surName",
-						"title": "Priezvisko",
-						"transCode": "schema.transfer.surName"
-					},
-					{
-						"field": "baseData.clubFrom.refData.name",
+						"field": "baseData.clubFrom",
 						"title": "Z klubu",
 						"transCode": "schema.transfer.clubFrom"
 					},
 					{
-						"field": "baseData.clubTo.refData.name",
+						"field": "baseData.clubTo",
 						"title": "Do klubu",
 						"transCode": "schema.transfer.clubTo"
 					}
