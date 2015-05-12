@@ -524,10 +524,10 @@
 				}
 			}
 		},
-		"fullperson-km": {
-			"extends": "uri://registries/people#models/person",
-			"title": "Osoba",
-			"transCode": "schema.people.title",
+		"fullperson-km":{
+			"extends":"uri://registries/people#models/person",
+			"title":"Osoba",
+			"transCode":"schema.people.title",
 			"security": {
 				"create": {
 					"static": [
@@ -545,18 +545,18 @@
 					]
 				}
 			},
-			"properties": {
-				"player": {
-					"$ref": "uri://registries/people#blocks/player"
+			"properties":{
+				"player":{
+					"$ref":"uri://registries/people#blocks/player"
 				},
-				"officer": {
-					"$ref": "uri://registries/people#blocks/officer"
+				"officer":{
+					"$ref":"uri://registries/people#blocks/officer"
 				},
-				"photoInfo": {
-					"$ref": "uri://registries/people#blocks/photoInfo"
+				"photoInfo":{
+					"$ref":"uri://registries/people#blocks/photoInfo"
 				},
-				"otherInfo": {
-					"$ref": "uri://registries/people#blocks/otherInfo"
+				"otherInfo":{
+					"$ref":"uri://registries/people#blocks/otherInfo"
 				}
 			}
 		},
@@ -803,11 +803,11 @@
 				]
 			}
 		},
-		"fullperson-km": {
-			"new": {
-				"extends": "uri://registries/people#views/fullperson-km/view",
+		"fullperson-km":{
+			"new":{
+				"extends":"uri://registries/people#views/fullperson-km/view",
 				"saveBySchema": "uri://registries/people#views/fullperson-km/view",
-				"properties": {
+				"properties":{
 					"baseData": {
 						"properties": {
 							"registrationID": null
@@ -815,9 +815,9 @@
 					}
 				}
 			},
-			"view": {
-				"extends": "uri://registries/people#models/fullperson-km",
-				"properties": {
+			"view":{
+				"extends":"uri://registries/people#models/fullperson-km",
+				"properties":{
 					"baseData": {
 						"properties": {
 							"registrationID": {
@@ -920,50 +920,41 @@
 					}
 				}
 			},
-			"search": {
-				"extends": "uri://registries/people#models/fullperson-km",
-				"clientActions": [
-					{
-						"__DIRECTIVE__": "schema-redirect-link",
-						"title": "Zobraziť",
-						"params": {
-							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Ffullperson-km/{{model.id}}"
-						}
-					}
-				],
+			"search":{
+				"extends":"uri://registries/people#models/fullperson-km",
 				"properties": {
-					"photoInfo": null
+					"photoInfo":null
 				},
 				"listFields": [
 					{
 						"field": "baseData.registrationID",
 						"title": "Registračné číslo",
-						"transCode": "schema.people.registrationID"
+						"transCode":"schema.people.registrationID"
 					},
 					{
 						"field": "baseData.surName",
 						"title": "Priezvisko",
-						"transCode": "schema.people.surName"
+						"transCode":"schema.people.surName"
 					},
 					{
 						"field": "baseData.name",
 						"title": "Meno",
-						"transCode": "schema.people.name"
+						"transCode":"schema.people.name"
 					},
 					{
 						"field": "baseData.birthDate",
 						"title": "Dátum narodenia",
-						"transCode": "schema.people.birthDate"
+						"transCode":"schema.people.birthDate"
 					},
 					{
 						"field": "player.clubOfFirstRegistration",
 						"title": "Materský klub",
-						"transCode": "schema.people.player.clubOfFirstRegistration"
+						"transCode":"schema.people.player.clubOfFirstRegistration"
 					},
 					{
 						"field": "player.club",
 						"title": "Klubová príslušnosť",
-						"transCode": "schema.people.player.club"
+						"transCode":"schema.people.player.club"
 					}
 				]
 			}
@@ -1136,6 +1127,7 @@
 			},
 			"search": {
 				"extends": "uri://registries/people#models/player",
+				"title":"Hráč",
 				"clientActions": [
 					{
 						"__DIRECTIVE__": "schema-redirect-link",
@@ -1224,12 +1216,12 @@
 						"transCode": "schema.people.birthDate"
 					},
 					{
-						"field": "player.clubOfFirstRegistration.refData.name",
+						"field": "player.clubOfFirstRegistration",
 						"title": "Materský klub",
 						"transCode": "schema.people.player.clubOfFirstRegistration"
 					},
 					{
-						"field": "player.club.refData.name",
+						"field": "player.club",
 						"title": "Klubová príslušnosť",
 						"transCode": "schema.people.player.club"
 					},

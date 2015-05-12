@@ -24,6 +24,13 @@
 		"menu.requisitions.title":"Žiadosti",
 		"menu.requisitions.new.lower.level":"Nová",
 		"menu.requisitions.search.lower.level":"Vyhľadáť",
+		"menu.requisitions.new.registration.lower.level":"Nová registrácia",
+		"menu.requisitions.search.registration.lower.level":"Hľadať registráciu",
+		"menu.requisitions.new.change.lower.level":"Zmena údajov",
+		"menu.requisitions.search.change.lower.level":"Hľadať zmenu údajov",
+		"menu.requisitions.new.transfer.lower.level":"Žiadosť o transfer",
+		"menu.requisitions.search.transfer.lower.level":"Hľadať žiadosť o transfer",
+
 
 		"schema.towns.town":"Mesto",
 
@@ -464,6 +471,13 @@
 		"menu.requisitions.title":"Žádosti",
 		"menu.requisitions.new.lower.level":"Nová",
 		"menu.requisitions.search.lower.level":"Hledat",
+		"menu.requisitions.new.registration.lower.level":"Nová registrácia",
+		"menu.requisitions.search.registration.lower.level":"Hľadať registráciu",
+		"menu.requisitions.new.change.lower.level":"Zmena údajov",
+		"menu.requisitions.search.change.lower.level":"Hľadať zmenu údajov",
+		"menu.requisitions.new.transfer.lower.level":"Žiadosť o transfer",
+		"menu.requisitions.search.transfer.lower.level":"Hľadať žiadosť o transfer",
+
 
 		"menu.new.person.lower.level": "Nová osoba",
 		"menu.new.company.lower.level": "Nová společnosť",

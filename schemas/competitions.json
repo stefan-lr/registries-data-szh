@@ -113,7 +113,7 @@
 						"transCode": "schema.competition.name"
 					},
 					{
-						"field": "baseData.season.",
+						"field": "baseData.season",
 						"title": "Súťažný ročník",
 						"transCode": "schema.competition.season"
 					},

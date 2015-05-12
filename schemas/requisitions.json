@@ -290,7 +290,7 @@
 		},
 		"peopleRegistration": {
 			"extends": "uri://registries/people#models/person",
-			"title": "Registracia osoby",
+			"title": "Registrácia osoby",
 			"xxtransCode": "schema.people.title",
 			"table": "requisitions",
 			"security": {
@@ -386,7 +386,7 @@
 		},
 		"dataChange-km": {
 			"extends": "uri://registries/people#models/fullperson-km",
-			"title": "Zmena udajov",
+			"title": "Zmena údajov",
 			"xxtransCode": "schema.people.title",
 			"table": "requisitions",
 			"security": {
@@ -473,7 +473,7 @@
 				"requisitionData": {
 					"$ref": "uri://registries/requisitions#blocks/baseData"
 				},
-				"baseData": {
+				"transferData": {
 					"$ref": "uri://registries/requisitions#blocks/transfer"
 				}
 			}
@@ -573,7 +573,16 @@
 				}
 			},
 			"search": {
-				"extends": "uri://registries/requisitions#views/requisition/search"
+				"extends": "uri://registries/requisitions#views/requisition/search",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FrequisitionApplicant/{{model.id}}"
+						}
+					}
+				]
 			}
 		},
 		"requisitionSolver": {
@@ -611,6 +620,17 @@
 						}
 					}
 				}
+			},
+			"search":{
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FrequisitionSolver/{{model.id}}"
+						}
+					}
+				]
 			}
 		},
 		"peopleRegistrationApplicant": {
@@ -619,14 +639,6 @@
 			},
 			"view": {
 				"extends": "uri://registries/requisitions#models/peopleRegistration",
-				"clientActions": [
-					{
-						"__DIRECTIVE__": "action-link",
-						"title": "Vytvoriť člena",
-						"schema": "uri://registries/requisitions#views/peopleRegistrationApplicant",
-						"template": "createMember.html"
-					}
-				],
 				"properties": {
 					"baseData": {
 						"properties": {
@@ -693,6 +705,14 @@
 						"field": "contactInfo.city",
 						"title": "Mesto",
 						"transCode": "schema.people.city"
+					},
+					{
+						"field": "requisitionData.applicant",
+						"transCode": "schema.requisitions.basedata.applicant"
+					},
+					{
+						"field": "requisitionData.status",
+						"transCode": "schema.requisitions.basedata.status"
 					}
 				]
 			}
@@ -701,6 +721,15 @@
 			"extends": "uri://registries/requisitions#models/peopleRegistration",
 			"new": null,
 			"view": {
+				"extends": "uri://registries/requisitions#views/peopleRegistrationApplicant/view",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "action-link",
+						"title": "Vytvoriť člena",
+						"schema": "uri://registries/requisitions#views/peopleRegistrationApplicant",
+						"template": "createMember.html"
+					}
+				],
 				"properties": {
 					"baseData": {
 						"properties": {
@@ -729,72 +758,381 @@
 								"required": false
 							}
 						}
+					},
+					"requisitionData": {
+						"extends": "uri://registries/requisitions#blocks/baseData",
+						"properties":{
+							"subject": null,
+							"text": null,
+							"responseText": null
+						}
 					}
 				}
 			},
 			"search": {
-				"$ref": "uri://registries/requisitions#views/peopleRegistrationApplicant/search"
+				"extends": "uri://registries/requisitions#views/peopleRegistrationApplicant/search",
+				"title": "Registrácia osoby",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FpeopleRegistrationSolver/{{model.id}}"
+						}
+					}
+				]
 			}
 		},
 		"dataChangeApplicant": {
-			"new": {
-				"$ref": "uri://registries/requisitions#views/dataChangeApplicant/view"
-			},
-			"view": {
-				"extends": "uri://registries/requisitions#models/dataChange-km",
-				"properties": {
-					"requisitionData": null,
+			"new" : {
+				"title": "Zmena údajov",
+				"xxtransCode": "schema.people.title",
+				"table": "requisitions",
+				"security": {
+					"create": {
+						"static": [
+							"System User"
+						]
+					},
+					"read": {
+						"static": [
+							"System User"
+						]
+					},
+					"modify": {
+						"static": [
+							"System User"
+						]
+					}
+				},
+				"forcedCriteria": [
+					{
+						"f": "peopleObjLink.people",
+						"op": "ex",
+						"v": ""
+					}
+				],
+				"properties" : {
 					"peopleObjLink": {
-						"properties": {
-							"people": {
-								"required": true
-							}
-						}
+						"$ref": "uri://registries/requisitions#blocks/peopleObjLink"
 					},
 					"baseData": {
+						"type": "object",
+						"title": "Základné informácie",
+						"transCode": "schema.people.baseData",
 						"properties": {
-							"titleBefore": null,
-							"stateofPerson": null,
+							"id": {
+								"title": "Identifikačné číslo",
+								"transCode": "schema.people.identifier",
+								"type": "string",
+								"required": false
+							},
 							"name": {
+								"title": "Meno",
+								"transCode": "schema.people.name",
+								"type": "string",
+								"collate": true,
 								"required": false
 							},
 							"surName": {
+								"title": "Priezvisko",
+								"transCode": "schema.people.surName",
+								"type": "string",
+								"collate": true,
 								"required": false
 							},
 							"birthDate": {
-								"required": false
-							},
-							"id": {
-								"required": false
+								"transCode": "schema.people.birthDate",
+								"required": false,
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Dátum narodenia"
 							},
 							"gender": {
-								"required": false
+								"transCode": "schema.people.gender",
+								"required": false,
+								"enum": ["M", "F"],
+								"enumTransCodes": ["enum.gender.M", "enum.gender.F"],
+								"translationPrefix": "enum.gender",
+								"render": {
+									"component": "psui-selectbox",
+									"searchable": false
+								},
+								"type": "string",
+								"title": "Pohlavie"
 							},
 							"nationality": {
-								"required": false
-							},
-							"registrationID": null
+								"$ref": "uri://registries/countries#country"
+							}
 						}
 					},
 					"player": {
+						"title": "Hráč",
+						"transCode": "schema.people.player",
+						"type": "object",
 						"properties": {
 							"isPlayer": {
-								"required": false
+								"transCode": "schema.people.isPlayer",
+								"required": false,
+								"enum": ["TRUE", "FALSE"],
+								"enumTransCodes": ["enum.boolean.true", "enum.boolean.false"],
+								"translationPrefix": "enum.boolean",
+								"render": {
+									"component": "psui-selectbox",
+									"searchable": false
+								},
+								"type": "string",
+								"title": "Je hráč"
 							},
-							"clubOfFirstRegistration": null,
-							"club": null,
 							"stateOfPlayer": {
-								"required": false
+								"transCode": "schema.people.player.stateOfPlayer",
+								"required": false,
+								"enum": ["active", "inactive"],
+								"enumTransCodes": ["enum.active.A", "enum.active.I"],
+								"translationPrefix": "enum.active",
+								"render": {
+									"component": "psui-selectbox",
+									"searchable": false
+								},
+								"type": "string",
+								"title": "Stav hráča"
 							},
-							"modifiedOn": null
+							"expirationOfProffesionalContract": {
+								"title": "Profesionálna zmluva",
+								"transCode": "schema.people.player.expirationOfProffesionalContract",
+								"type": "string"
+							},
+							"registrationCanceled": {
+								"transCode": "schema.people.player.registrationCanceled",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Zrušená registrácia"
+							},
+							"dateOfRegistration": {
+								"transCode": "schema.people.player.dateOfRegistration",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Dátum registrácie"
+							},
+							"hostingStartDate": {
+								"transCode": "schema.people.player.hostingStartDate",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Dátum začiatku hosťovania"
+							},
+							"hostingEndDate": {
+								"transCode": "schema.people.player.hostingEndDate",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Dátum konca hosťovania"
+							},
+							"validFrom": {
+								"transCode": "schema.people.player.validFrom",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Platnosť RP od"
+							},
+							"validTo": {
+								"transCode": "schema.people.player.validTo",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Platnosť RP od"
+							}
 						}
 					},
-					"contactInfo": null,
-					"otherInfo": null
+					"officer": {
+						"title": "Funkcionár",
+						"transCode": "schema.people.officer",
+						"type": "object",
+						"properties": {
+							"isOfficer": {
+								"transCode": "schema.people.isOfficer",
+								"enum": ["TRUE", "FALSE"],
+								"enumTransCodes": ["enum.boolean.true", "enum.boolean.false"],
+								"translationPrefix": "enum.boolean",
+								"render": {
+									"component": "psui-selectbox",
+									"searchable": false
+								},
+								"type": "string",
+								"title": "Je funkcionár"
+							},
+							"stateOfOfficer": {
+								"transCode": "schema.people.officer.stateOfOfficer",
+								"enum": ["active", "inactive"],
+								"enumTransCodes": ["enum.active.A", "enum.active.I"],
+								"translationPrefix": "enum.active",
+								"render": {
+									"component": "psui-selectbox",
+									"searchable": false
+								},
+								"type": "string",
+								"title": "Stav funkcionára"
+							},
+							"club": {
+								"type": "object",
+								"title": "Klubová príslušnosť",
+								"transCode": "schema.people.officer.club",
+								"objectLink2": {
+									"schema": "uri://registries/organizations#views/club-km/view",
+									"fields": {
+										"name": "club.name"
+									}
+								}
+							},
+							"note": {
+								"title": "Poznámka",
+								"transCode": "schema.people.officer.note",
+								"type": "string",
+								"large": true
+							},
+							"dateOfRegistration": {
+								"transCode": "schema.people.officer.dateOfRegistration",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Dátum registrácie"
+							},
+							"expiration": {
+								"transCode": "schema.people.officer.expiration",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Platnosť do"
+							},
+							"dateOfExpiration": {
+								"transCode": "schema.people.officer.dateOfExpiration",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Dátum platnosti preukazu"
+							},
+							"dateOfApplicationForId": {
+								"transCode": "schema.people.officer.dateOfApplicationForId",
+								"render": {
+									"component": "psui-datepicker"
+								},
+								"type": "string",
+								"title": "Dátum začiatku platnosti preukazu"
+							}
+						}
+					},
+					"photoInfo": {
+						"title": "Fotografie",
+						"transCode": "schema.people.photoInfo",
+						"type": "object",
+						"properties": {
+							"photo": {
+								"title": "Fotografia",
+								"transCode": "schema.people.photo",
+								"type": "string",
+								"render": {
+									"component": "psui-uploadable-image",
+									"height": 330,
+									"width": 230
+								}
+							}
+						}
+					},
+					"requisitionData": {
+						"extends": "uri://registries/requisitions#blocks/baseData",
+						"properties":{
+							"subject": null,
+							"text": null,
+							"responseText": null,
+							"applicant": {
+								"readOnly": true
+							},
+							"assignedTo": {
+								"readOnly": true
+							},
+							"setupDate": {
+								"readOnly": true
+							},
+							"status": {
+								"readOnly": true
+							}
+						}
+					}
 				}
 			},
-			"search": {
-				"extends": "uri://registries/requisitions#models/dataChange-km",
+			"view" : {
+				"title": "Zmena údajov",
+				"xxtransCode": "schema.people.title",
+				"table": "requisitions",
+				"security": {
+					"create": {
+						"static": [
+							"System User"
+						]
+					},
+					"read": {
+						"static": [
+							"System User"
+						]
+					},
+					"modify": {
+						"static": [
+							"System User"
+						]
+					}
+				},
+				"forcedCriteria": [
+					{
+						"f": "peopleObjLink.people",
+						"op": "ex",
+						"v": ""
+					}
+				],
+				"properties": {
+					"$ref": "uri://registries/requisitions#views/dataChangeApplicant/new/properties"
+				}
+			},
+			"search" : {
+				"title": "Zmena údajov",
+				"xxtransCode": "schema.people.title",
+				"table": "requisitions",
+				"security": {
+					"create": {
+						"static": [
+							"System User"
+						]
+					},
+					"read": {
+						"static": [
+							"System User"
+						]
+					},
+					"modify": {
+						"static": [
+							"System User"
+						]
+					}
+				},
+				"forcedCriteria": [
+					{
+						"f": "peopleObjLink.people",
+						"op": "ex",
+						"v": ""
+					}
+				],
 				"clientActions": [
 					{
 						"__DIRECTIVE__": "schema-redirect-link",
@@ -804,67 +1142,38 @@
 						}
 					}
 				],
-				"properties": {
-					"photoInfo": null
-				},
 				"listFields": [
 					{
-						"field": "baseData.registrationID",
-						"title": "Registračné číslo",
-						"transCode": "schema.people.registrationID"
-					},
-					{
-						"field": "baseData.surName",
-						"title": "Priezvisko",
+						"field": "peopleObjLink.people",
+						"title": "Osoba",
 						"transCode": "schema.people.surName"
 					},
 					{
-						"field": "baseData.name",
-						"title": "Meno",
-						"transCode": "schema.people.name"
+						"field": "requisitionData.applicant",
+						"title": "Žiadateľ",
+						"transCode": "schema.requisitions.basedata.applicant"
 					},
 					{
-						"field": "baseData.birthDate",
-						"title": "Dátum narodenia",
-						"transCode": "schema.people.birthDate"
-					},
-					{
-						"field": "contactInfo.city",
-						"title": "Mesto",
-						"transCode": "schema.people.city"
-					},
-					{
-						"field": "player.validFrom",
-						"title": "Platnosť RP od",
-						"transCode": "schema.people.player.validFrom"
-					},
-					{
-						"field": "player.validTo",
-						"title": "Platnosť RP do",
-						"transCode": "schema.people.player.validTo"
+						"field": "requisitionData.status",
+						"title": "Stav",
+						"transCode": "schema.requisitions.basedata.status"
 					}
-				]
+				],
+				"properties": {
+					"extends": "uri://registries/requisitions#views/dataChangeApplicant/new/properties",
+					"photoInfo": null
+				}
 			}
+			
 		},
 		"dataChangeSolver": {
-			"extends": "uri://registries/requisitions#models/dataChange-km",
+			"extends": "uri://registries/requisitions#views/dataChangeApplicant",
 			"new": null,
 			"view": {
 				"properties": {
 					"baseData": {
 						"properties": {
-							"registrationID": null
-						}
-					},
-					"peopleObjLink": {
-						"properties": {
-							"people": {
-								"required": true
-							}
-						}
-					},
-					"baseData": {
-						"properties": {
+							"registrationID": null,
 							"titleBefore": null,
 							"stateofPerson": null,
 							"name": {
@@ -903,12 +1212,29 @@
 							}
 						}
 					},
+					"requisitionData": {
+						"extends": "uri://registries/requisitions#blocks/baseData",
+						"properties":{
+							"subject": null,
+							"text": null,
+							"responseText": null
+						}
+					},
 					"contactInfo": null,
 					"otherInfo": null
 				}
 			},
 			"search": {
-				"$ref": "uri://registries/requisitions#views/dataChangeApplicant/search"
+				"extends": "uri://registries/requisitions#views/dataChangeApplicant/search",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FdataChangeSolver/{{model.id}}"
+						}
+					}
+				]
 			}
 		},
 		"transferApplicant": {
@@ -939,52 +1265,86 @@
 				],
 				"listFields": [
 					{
-						"field": "baseData.typeOfTransfer",
+						"field": "transferData.typeOfTransfer",
 						"title": "Typ zmeny",
 						"transCode": "schema.transfer.typeOfTransfer"
 					},
 					{
-						"field": "baseData.dateOfRealization",
+						"field": "transferData.dateOfRealization",
 						"title": "Dátum realizácie",
 						"transCode": "schema.transfer.dateOfRealization"
 					},
 					{
-						"field": "baseData.player",
+						"field": "transferData.player",
 						"title": "Meno",
 						"transCode": "schema.transfer.name"
 					},
 					{
-						"field": "baseData.player",
+						"field": "transferData.player",
 						"title": "Priezvisko",
 						"transCode": "schema.transfer.surName"
 					},
 					{
-						"field": "baseData.clubFrom",
+						"field": "transferData.clubFrom",
 						"title": "Z klubu",
 						"transCode": "schema.transfer.clubFrom"
 					},
 					{
-						"field": "baseData.clubTo",
+						"field": "transferData.clubTo",
 						"title": "Do klubu",
 						"transCode": "schema.transfer.clubTo"
+					},
+					{
+						"field": "requisitionData.applicant",
+						"transCode": "schema.requisitions.basedata.applicant"
+					},
+					{
+						"field": "requisitionData.status",
+						"transCode": "schema.requisitions.basedata.status"
 					}
 				]
+
 			}
-		},
+		},			
 		"transferSolver": {
-			"extends": "uri://registries/requisitions#models/transfer",
+			"extends": "uri://registries/requisitions#views/transferApplicant",
 			"new": null,
 			"view": {
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "action-link",
+						"title": "Vytvoriť transfer",
+						"schema": "uri://registries/requisitions#views/peopleRegistrationApplicant",
+						"template": "createTransfer.html"
+					}
+				],
 				"properties": {
 					"baseData": {
 						"properties": {
 							"stateOfTransfer": null
 						}
+					},
+					"requisitionData": {
+						"extends": "uri://registries/requisitions#blocks/baseData",
+						"properties":{
+							"subject": null,
+							"text": null,
+							"responseText": null
+						}
 					}
 				}
 			},
 			"search": {
-				"$ref": "uri://registries/requisitions#views/transferApplicant/search"
+				"extends": "uri://registries/requisitions#views/transferApplicant/search",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FtransferSolver/{{model.id}}"
+						}
+					}
+				]
 			}
 		}
 	}
