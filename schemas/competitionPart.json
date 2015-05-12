@@ -131,9 +131,18 @@
 			},
 			"search":{
 				"extends":"uri://registries/competitionPart#models/competitionPart",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2FcompetitionPart~23views~2FcompetitionPart/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
-						"field": "baseData.competition.refData.name",
+						"field": "baseData.competition",
 						"title": "Súťaž",
 						"transCode": "schema.competitionPart.competition"
 					},

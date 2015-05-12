@@ -97,6 +97,15 @@
 			},
 			"search":{
 				"extends":"uri://registries/competitions#models/competitions",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fcompetitions~23views~2Fcompetitions/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.name",
@@ -104,12 +113,12 @@
 						"transCode": "schema.competition.name"
 					},
 					{
-						"field": "baseData.season.refData.name",
+						"field": "baseData.season.",
 						"title": "Súťažný ročník",
 						"transCode": "schema.competition.season"
 					},
 					{
-						"field": "baseData.ageCategory.refData.name",
+						"field": "baseData.ageCategory",
 						"title": "Veková kategória",
 						"transCode": "schema.competition.ageCategory"
 					},

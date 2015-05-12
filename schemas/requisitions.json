@@ -491,6 +491,15 @@
 			},
 			"search": {
 				"extends": "uri://registries/requisitions#models/requisition",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2Frequisition/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.setupDate",
@@ -501,11 +510,11 @@
 						"transCode": "schema.requisitions.basedata.subject"
 					},
 					{
-						"field": "baseData.applicant.refData.surName",
+						"field": "baseData.applicant",
 						"transCode": "schema.requisitions.basedata.applicant"
 					},
 					{
-						"field": "baseData.assignedTo.refData.surName",
+						"field": "baseData.assignedTo",
 						"transCode": "schema.requisitions.basedata.assignedto"
 					},
 					{
@@ -652,6 +661,15 @@
 			},
 			"search": {
 				"extends": "uri://registries/requisitions#models/peopleRegistration",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FpeopleRegistrationApplicant/{{model.id}}"
+						}
+					}
+				],
 				"properties": {
 					"photoInfo": null
 				},
@@ -777,6 +795,15 @@
 			},
 			"search": {
 				"extends": "uri://registries/requisitions#models/dataChange-km",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FdataChangeApplicant/{{model.id}}"
+						}
+					}
+				],
 				"properties": {
 					"photoInfo": null
 				},
@@ -901,6 +928,15 @@
 			},
 			"search": {
 				"extends": "uri://registries/requisitions#models/transfer",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2Frequisitions~23views~2FtransferApplicant/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
 						"field": "baseData.typeOfTransfer",
@@ -913,22 +949,22 @@
 						"transCode": "schema.transfer.dateOfRealization"
 					},
 					{
-						"field": "baseData.player.refData.name",
+						"field": "baseData.player",
 						"title": "Meno",
 						"transCode": "schema.transfer.name"
 					},
 					{
-						"field": "baseData.player.refData.surName",
+						"field": "baseData.player",
 						"title": "Priezvisko",
 						"transCode": "schema.transfer.surName"
 					},
 					{
-						"field": "baseData.clubFrom.refData.name",
+						"field": "baseData.clubFrom",
 						"title": "Z klubu",
 						"transCode": "schema.transfer.clubFrom"
 					},
 					{
-						"field": "baseData.clubTo.refData.name",
+						"field": "baseData.clubTo",
 						"title": "Do klubu",
 						"transCode": "schema.transfer.clubTo"
 					}

@@ -526,9 +526,18 @@
 			},
 			"search": {
 				"extends":"uri://registries/refereeReports#models/refereeReports",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2FrefereeReports~23views~2FrefereeReports/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
-						"field": "baseData.homeClub.refData.name",
+						"field": "baseData.homeClub",
 						"title": "Domáce družstvo",
 						"transCode": "schema.refereeReport.listFields.homeClub"
 					},
@@ -541,7 +550,7 @@
 						"title": ""
 					},
 					{
-						"field": "baseData.awayClub.refData.name",
+						"field": "baseData.awayClub",
 						"title": "Hosťujúce družstvo",
 						"transCode": "schema.refereeReport.baseData.awayClub"
 					},
@@ -622,9 +631,18 @@
 			},
 			"search": {
 				"extends":"uri://registries/refereeReports#models/refereeReports-km",
+				"clientActions": [
+					{
+						"__DIRECTIVE__": "schema-redirect-link",
+						"title": "Zobraziť",
+						"params": {
+							"path": "/registry/view/uri~3A~2F~2Fregistries~2FrefereeReports~23views~2FrefereeReports-km/{{model.id}}"
+						}
+					}
+				],
 				"listFields": [
 					{
-						"field": "baseData.homeClub.refData.name",
+						"field": "baseData.homeClub",
 						"title": "Domáce družstvo",
 						"transCode": "schema.refereeReport.listFields.homeClub"
 					},
@@ -637,7 +655,7 @@
 						"title": ""
 					},
 					{
-						"field": "baseData.awayClub.refData.name",
+						"field": "baseData.awayClub",
 						"title": "Hosťujúce družstvo",
 						"transCode": "schema.refereeReport.baseData.awayClub"
 					},
