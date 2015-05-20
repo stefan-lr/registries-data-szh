@@ -52,6 +52,17 @@
 						}
 					}
 				},
+				"clubApplicant": {
+					"transCode": "schema.requisitions.basedata.clubApplicant",
+					"type": "object",
+					"required": true,
+					"objectLink2": {
+						"schema": "uri://registries/organizations#views/club/view",
+						"fields": {
+							"name": "club.name"
+						}
+					}
+				},
 				"assignedTo": {
 					"transCode": "schema.requisitions.basedata.assignedto",
 					"type": "object",
@@ -310,6 +321,10 @@
 					]
 				}
 			},
+			"fireEvents": {
+				"create": "event-requisition-created",
+				"update": "event-requisition-updated"
+			},
 			"forcedCriteria": [
 				{
 					"f": "baseData.id",
@@ -406,6 +421,10 @@
 					]
 				}
 			},
+			"fireEvents": {
+				"create": "event-requisition-created",
+				"update": "event-requisition-updated"
+			},
 			"forcedCriteria": [
 				{
 					"f": "peopleObjLink.people",
@@ -462,9 +481,13 @@
 					]
 				}
 			},
+			"fireEvents": {
+				"create": "event-requisition-created",
+				"update": "event-requisition-updated"
+			},
 			"forcedCriteria": [
 				{
-					"f": "baseData.player",
+					"f": "transferData.player",
 					"op": "ex",
 					"v": ""
 				}
@@ -536,7 +559,7 @@
 						"properties": {
 							"applicant": null,
 							"assignedTo": null,
-							"club": null,
+							"clubApplicant": null,
 							"setupDate": null,
 							"status": null,
 							"responseText": null,
@@ -555,7 +578,9 @@
 							"assignedTo": {
 								"readOnly": true
 							},
-							"club": null,
+							"clubApplicant": {
+								"readOnly": true
+							},
 							"setupDate": {
 								"readOnly": true
 							},
@@ -702,13 +727,13 @@
 						"transCode": "schema.people.birthDate"
 					},
 					{
-						"field": "contactInfo.city",
-						"title": "Mesto",
-						"transCode": "schema.people.city"
-					},
-					{
 						"field": "requisitionData.applicant",
 						"transCode": "schema.requisitions.basedata.applicant"
+					},
+					{
+						"field": "requisitionData.clubApplicant",
+						"title": "Klub",
+						"transCode": "schema.requisitions.basedata.clubApplicant"
 					},
 					{
 						"field": "requisitionData.status",
@@ -804,6 +829,10 @@
 							"System User"
 						]
 					}
+				},
+				"fireEvents": {
+					"create": "event-requisition-created",
+					"update": "event-requisition-updated"
 				},
 				"forcedCriteria": [
 					{
@@ -1060,6 +1089,9 @@
 							"applicant": {
 								"readOnly": true
 							},
+							"clubApplicant": {
+								"readOnly": true
+							},
 							"assignedTo": {
 								"readOnly": true
 							},
@@ -1094,6 +1126,10 @@
 						]
 					}
 				},
+				"fireEvents": {
+					"create": "event-requisition-created",
+					"update": "event-requisition-updated"
+				},
 				"forcedCriteria": [
 					{
 						"f": "peopleObjLink.people",
@@ -1126,6 +1162,10 @@
 						]
 					}
 				},
+				"fireEvents": {
+					"create": "event-requisition-created",
+					"update": "event-requisition-updated"
+				},
 				"forcedCriteria": [
 					{
 						"f": "peopleObjLink.people",
@@ -1146,12 +1186,17 @@
 					{
 						"field": "peopleObjLink.people",
 						"title": "Osoba",
-						"transCode": "schema.people.surName"
+						"transCode": "schema.people.title"
 					},
 					{
 						"field": "requisitionData.applicant",
 						"title": "Žiadateľ",
 						"transCode": "schema.requisitions.basedata.applicant"
+					},
+					{
+						"field": "requisitionData.clubApplicant",
+						"title": "Klub",
+						"transCode": "schema.requisitions.basedata.clubApplicant"
 					},
 					{
 						"field": "requisitionData.status",
@@ -1277,12 +1322,7 @@
 					{
 						"field": "transferData.player",
 						"title": "Meno",
-						"transCode": "schema.transfer.name"
-					},
-					{
-						"field": "transferData.player",
-						"title": "Priezvisko",
-						"transCode": "schema.transfer.surName"
+						"transCode": "schema.transfer.player"
 					},
 					{
 						"field": "transferData.clubFrom",
