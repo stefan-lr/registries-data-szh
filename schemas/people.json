@@ -743,6 +743,12 @@
 						"title": "Tlač hráčskej licencie",
 						"schema": "uri://registries/people#views/fullperson/view",
 						"template": "playerLicenseCard.html"
+					},
+					{
+						"__DIRECTIVE__": "action-link",
+						"title": "Aktivácia osobného konta",
+						"schema": "uri://registries/people#views/fullperson/view",
+						"template": "personalAccountActivation.html"
 					}
 				]
 			},
