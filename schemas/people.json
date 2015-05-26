@@ -180,11 +180,6 @@
 						}
 					}
 				},
-				"firstYear": {
-					"extends": "uri://registries/commontypes#blocks/year",
-					"title": "Rok začiatku kariéry",
-					"transCode": "schema.people.coach.firstYear"
-				},
 				"proffesionalCompetence": {
 					"extends": "uri://registries/commontypes#blocks/year",
 					"title": "Odborná spôsobilosť od (rok)",
@@ -198,7 +193,18 @@
 				"coachLicense": {
 					"title": "Trénerská licencia",
 					"transCode": "schema.people.coach.coachLicense",
-					"type": "string"
+					"type": "string",
+					"enum": [
+						"D",
+						"C",
+						"B",
+						"A",
+						"Master Coach"
+					],
+					"render": {
+						"component": "psui-selectbox",
+						"searchable": false
+					}
 				},
 				"coachLicenseType": {
 					"title": "Typ licencie",
@@ -208,23 +214,22 @@
 						"I",
 						"II",
 						"III",
-						"IV",
-						"DT"
+						"IV"
 					],
 					"render": {
 						"component": "psui-selectbox",
 						"searchable": false
 					}
 				},
-				"dateOfExpiration": {
-					"extends": "uri://registries/commontypes#blocks/date",
-					"title": "Dátum platnosti preukazu",
-					"transCode": "schema.people.coach.dateOfExpiration"
-				},
 				"dateOfApplicationForId": {
 					"extends": "uri://registries/commontypes#blocks/date",
-					"title": "Dátum začiatku platnosti preukazu",
+					"title": "Platnosť licencie od",
 					"transCode": "schema.people.coach.dateOfApplicationForId"
+				},
+				"dateOfExpiration": {
+					"extends": "uri://registries/commontypes#blocks/date",
+					"title": "Platnosť licencie do",
+					"transCode": "schema.people.coach.dateOfExpiration"
 				},
 				"feeDate": {
 					"extends": "uri://registries/commontypes#blocks/date",
@@ -253,6 +258,11 @@
 					"title": "Stav funkcionára",
 					"transCode": "schema.people.officer.stateOfOfficer"
 				},
+				"dateOfRegistration": {
+					"extends": "uri://registries/commontypes#blocks/date",
+					"title": "Dátum registrácie",
+					"transCode": "schema.people.officer.dateOfRegistration"
+				},
 				"club": {
 					"type": "object",
 					"title": "Klubová príslušnosť",
@@ -264,31 +274,15 @@
 						}
 					}
 				},
-				"note": {
-					"title": "Poznámka",
-					"transCode": "schema.people.officer.note",
-					"type": "string",
-					"large": true
-				},
-				"dateOfRegistration": {
+				"dateOfApplicationForId": {
 					"extends": "uri://registries/commontypes#blocks/date",
-					"title": "Dátum registrácie",
-					"transCode": "schema.people.officer.dateOfRegistration"
-				},
-				"expiration": {
-					"extends": "uri://registries/commontypes#blocks/date",
-					"title": "Platnosť do",
-					"transCode": "schema.people.officer.expiration"
+					"title": "Platnosť preukazu od",
+					"transCode": "schema.people.officer.dateOfApplicationForId"
 				},
 				"dateOfExpiration": {
 					"extends": "uri://registries/commontypes#blocks/date",
-					"title": "Dátum platnosti preukazu",
+					"title": "Platnosť preukazu do",
 					"transCode": "schema.people.officer.dateOfExpiration"
-				},
-				"dateOfApplicationForId": {
-					"extends": "uri://registries/commontypes#blocks/date",
-					"title": "Dátum začiatku platnosti preukazu",
-					"transCode": "schema.people.officer.dateOfApplicationForId"
 				}
 			}
 		},
@@ -454,9 +448,11 @@
 				},
 				"note": {
 					"title": "Poznámka",
-					"transCode": "schema.people.note",
+					"transCode":"schema.transfer.note",
 					"type": "string",
-					"large": true
+					"render": {
+						"component": "psui-textarea"
+					}
 				},
 				"language": {
 					"title": "Jazykové znalosti",
@@ -922,15 +918,6 @@
 			},
 			"search":{
 				"extends":"uri://registries/people#models/fullperson-km",
-				"clientActions": [
-					{
-						"__DIRECTIVE__": "schema-redirect-link",
-						"title": "Zobraziť",
-						"params": {
-							"path": "/registry/view/uri~3A~2F~2Fregistries~2Fpeople~23views~2Ffullperson/{{model.id}}"
-						}
-					}
-				],
 				"properties": {
 					"photoInfo":null
 				},
@@ -1110,9 +1097,19 @@
 						"transCode": "schema.people.birthDate"
 					},
 					{
-						"field": "contactInfo.city",
-						"title": "Mesto",
-						"transCode": "schema.people.city"
+						"field": "officer.club",
+						"title": "Klub",
+						"transCode": "schema.people.officer.club"
+					},
+					{
+						"field": "officer.dateOfApplicationForId",
+						"title": "Platnosť od",
+						"transCode": "schema.people.officer.startDate"
+					},
+					{
+						"field": "officer.dateOfExpiration",
+						"title": "Platnosť do",
+						"transCode": "schema.people.officer.endDate"
 					}
 				]
 			}

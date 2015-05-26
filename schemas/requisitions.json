@@ -52,17 +52,6 @@
 						}
 					}
 				},
-				"clubApplicant": {
-					"transCode": "schema.requisitions.basedata.clubApplicant",
-					"type": "object",
-					"required": true,
-					"objectLink2": {
-						"schema": "uri://registries/organizations#views/club/view",
-						"fields": {
-							"name": "club.name"
-						}
-					}
-				},
 				"assignedTo": {
 					"transCode": "schema.requisitions.basedata.assignedto",
 					"type": "object",
@@ -186,8 +175,7 @@
 					],
 					"enumTransCodes":[
 						"schema.transfer.typ.transfer",
-						"schema.transfer.typ.hosting",
-						"schema.transfer.typ.foreign.transfer"
+						"schema.transfer.typ.hosting"
 					],
 					"render": {
 						"component": "psui-selectbox",
@@ -238,7 +226,9 @@
 					"title": "Poznámka",
 					"transCode":"schema.transfer.note",
 					"type": "string",
-					"large": true
+					"render": {
+						"component": "psui-textarea"
+					}
 				}
 			}
 		},
@@ -321,10 +311,6 @@
 					]
 				}
 			},
-			"fireEvents": {
-				"create": "event-requisition-created",
-				"update": "event-requisition-updated"
-			},
 			"forcedCriteria": [
 				{
 					"f": "baseData.id",
@@ -392,7 +378,10 @@
 					"$ref": "uri://registries/people#blocks/photoInfo"
 				},
 				"otherInfo": {
-					"$ref": "uri://registries/people#blocks/otherInfo"
+					"extends": "uri://registries/people#blocks/otherInfo",
+					"properties": {
+						"language": null
+					}
 				},
 				"attachments": {
 					"$ref": "uri://registries/requisitions#blocks/attachments"
@@ -420,10 +409,6 @@
 						"System User"
 					]
 				}
-			},
-			"fireEvents": {
-				"create": "event-requisition-created",
-				"update": "event-requisition-updated"
 			},
 			"forcedCriteria": [
 				{
@@ -457,6 +442,24 @@
 							}
 						}
 					}
+				},
+				"otherInfo": {
+					"title": "Ostatné údaje",
+					"transCode": "schema.people.otherInfo",
+					"type": "object",
+					"properties": {
+						"note": {
+							"title": "Poznámka",
+							"transCode":"schema.transfer.note",
+							"type": "string",
+							"render": {
+								"component": "psui-textarea"
+							}
+						}
+					}
+				},
+				"attachments": {
+					"$ref": "uri://registries/requisitions#blocks/attachments"
 				}
 			}
 		},
@@ -481,13 +484,9 @@
 					]
 				}
 			},
-			"fireEvents": {
-				"create": "event-requisition-created",
-				"update": "event-requisition-updated"
-			},
 			"forcedCriteria": [
 				{
-					"f": "transferData.player",
+					"f": "baseData.player",
 					"op": "ex",
 					"v": ""
 				}
@@ -498,6 +497,9 @@
 				},
 				"transferData": {
 					"$ref": "uri://registries/requisitions#blocks/transfer"
+				},
+				"attachments": {
+					"$ref": "uri://registries/requisitions#blocks/attachments"
 				}
 			}
 		}
@@ -559,7 +561,7 @@
 						"properties": {
 							"applicant": null,
 							"assignedTo": null,
-							"clubApplicant": null,
+							"club": null,
 							"setupDate": null,
 							"status": null,
 							"responseText": null,
@@ -578,9 +580,7 @@
 							"assignedTo": {
 								"readOnly": true
 							},
-							"clubApplicant": {
-								"readOnly": true
-							},
+							"club": null,
 							"setupDate": {
 								"readOnly": true
 							},
@@ -727,13 +727,13 @@
 						"transCode": "schema.people.birthDate"
 					},
 					{
-						"field": "requisitionData.applicant",
-						"transCode": "schema.requisitions.basedata.applicant"
+						"field": "contactInfo.city",
+						"title": "Mesto",
+						"transCode": "schema.people.city"
 					},
 					{
-						"field": "requisitionData.clubApplicant",
-						"title": "Klub",
-						"transCode": "schema.requisitions.basedata.clubApplicant"
+						"field": "requisitionData.applicant",
+						"transCode": "schema.requisitions.basedata.applicant"
 					},
 					{
 						"field": "requisitionData.status",
@@ -829,10 +829,6 @@
 							"System User"
 						]
 					}
-				},
-				"fireEvents": {
-					"create": "event-requisition-created",
-					"update": "event-requisition-updated"
 				},
 				"forcedCriteria": [
 					{
@@ -989,77 +985,40 @@
 						"type": "object",
 						"properties": {
 							"isOfficer": {
-								"transCode": "schema.people.isOfficer",
-								"enum": ["TRUE", "FALSE"],
-								"enumTransCodes": ["enum.boolean.true", "enum.boolean.false"],
-								"translationPrefix": "enum.boolean",
-								"render": {
-									"component": "psui-selectbox",
-									"searchable": false
-								},
-								"type": "string",
-								"title": "Je funkcionár"
+								"extends": "uri://registries/commonenums#blocks/boolean",
+								"title": "Je funkcionár",
+								"transCode": "schema.people.isOfficer"
 							},
 							"stateOfOfficer": {
-								"transCode": "schema.people.officer.stateOfOfficer",
-								"enum": ["active", "inactive"],
-								"enumTransCodes": ["enum.active.A", "enum.active.I"],
-								"translationPrefix": "enum.active",
-								"render": {
-									"component": "psui-selectbox",
-									"searchable": false
-								},
-								"type": "string",
-								"title": "Stav funkcionára"
+								"extends": "uri://registries/commonenums#blocks/active",
+								"title": "Stav funkcionára",
+								"transCode": "schema.people.officer.stateOfOfficer"
+							},
+							"dateOfRegistration": {
+								"extends": "uri://registries/commontypes#blocks/date",
+								"title": "Dátum registrácie",
+								"transCode": "schema.people.officer.dateOfRegistration"
 							},
 							"club": {
 								"type": "object",
 								"title": "Klubová príslušnosť",
 								"transCode": "schema.people.officer.club",
 								"objectLink2": {
-									"schema": "uri://registries/organizations#views/club-km/view",
+									"schema": "uri://registries/organizations#views/club/view",
 									"fields": {
 										"name": "club.name"
 									}
 								}
 							},
-							"note": {
-								"title": "Poznámka",
-								"transCode": "schema.people.officer.note",
-								"type": "string",
-								"large": true
-							},
-							"dateOfRegistration": {
-								"transCode": "schema.people.officer.dateOfRegistration",
-								"render": {
-									"component": "psui-datepicker"
-								},
-								"type": "string",
-								"title": "Dátum registrácie"
-							},
-							"expiration": {
-								"transCode": "schema.people.officer.expiration",
-								"render": {
-									"component": "psui-datepicker"
-								},
-								"type": "string",
-								"title": "Platnosť do"
+							"dateOfApplicationForId": {
+								"extends": "uri://registries/commontypes#blocks/date",
+								"title": "Platnosť preukazu od",
+								"transCode": "schema.people.officer.dateOfApplicationForId"
 							},
 							"dateOfExpiration": {
-								"transCode": "schema.people.officer.dateOfExpiration",
-								"render": {
-									"component": "psui-datepicker"
-								},
-								"type": "string",
-								"title": "Dátum platnosti preukazu"
-							},
-							"dateOfApplicationForId": {
-								"transCode": "schema.people.officer.dateOfApplicationForId",
-								"render": {
-									"component": "psui-datepicker"
-								},
-								"type": "string",
-								"title": "Dátum začiatku platnosti preukazu"
+								"extends": "uri://registries/commontypes#blocks/date",
+								"title": "Platnosť preukazu do",
+								"transCode": "schema.people.officer.dateOfExpiration"
 							}
 						}
 					},
@@ -1080,6 +1039,24 @@
 							}
 						}
 					},
+					"otherInfo": {
+						"title": "Ostatné údaje",
+						"transCode": "schema.people.otherInfo",
+						"type": "object",
+						"properties": {
+							"note": {
+								"title": "Poznámka",
+								"transCode":"schema.transfer.note",
+								"type": "string",
+								"render": {
+									"component": "psui-textarea"
+								}
+							}
+						}
+					},
+					"attachments": {
+						"$ref": "uri://registries/requisitions#blocks/attachments"
+					},
 					"requisitionData": {
 						"extends": "uri://registries/requisitions#blocks/baseData",
 						"properties":{
@@ -1087,9 +1064,6 @@
 							"text": null,
 							"responseText": null,
 							"applicant": {
-								"readOnly": true
-							},
-							"clubApplicant": {
 								"readOnly": true
 							},
 							"assignedTo": {
@@ -1126,10 +1100,6 @@
 						]
 					}
 				},
-				"fireEvents": {
-					"create": "event-requisition-created",
-					"update": "event-requisition-updated"
-				},
 				"forcedCriteria": [
 					{
 						"f": "peopleObjLink.people",
@@ -1162,10 +1132,6 @@
 						]
 					}
 				},
-				"fireEvents": {
-					"create": "event-requisition-created",
-					"update": "event-requisition-updated"
-				},
 				"forcedCriteria": [
 					{
 						"f": "peopleObjLink.people",
@@ -1186,17 +1152,12 @@
 					{
 						"field": "peopleObjLink.people",
 						"title": "Osoba",
-						"transCode": "schema.people.title"
+						"transCode": "schema.people.surName"
 					},
 					{
 						"field": "requisitionData.applicant",
 						"title": "Žiadateľ",
 						"transCode": "schema.requisitions.basedata.applicant"
-					},
-					{
-						"field": "requisitionData.clubApplicant",
-						"title": "Klub",
-						"transCode": "schema.requisitions.basedata.clubApplicant"
 					},
 					{
 						"field": "requisitionData.status",
@@ -1322,7 +1283,12 @@
 					{
 						"field": "transferData.player",
 						"title": "Meno",
-						"transCode": "schema.transfer.player"
+						"transCode": "schema.transfer.name"
+					},
+					{
+						"field": "transferData.player",
+						"title": "Priezvisko",
+						"transCode": "schema.transfer.surName"
 					},
 					{
 						"field": "transferData.clubFrom",
