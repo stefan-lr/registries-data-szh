@@ -53,6 +53,18 @@
 						}
 					}
 				},
+				"season": {
+					"type": "object",
+					"title": "Súťažný ročnik",
+					"transCode": "schema.transfer.season",
+					"objectLink2": {
+						"schema": "uri://registries/seasons#views/seasons/view",
+						"fields": {
+							"name": "baseData.name"
+						}
+					},
+					"required": true
+				},
 				"typeOfTransfer": {
 					"title": "Typ zmeny",
 					"transCode":"schema.transfer.typeOfTransfer",

@@ -122,7 +122,9 @@
 
 			transferDao.get(event.transferId,function (err,transfer){
 				if (err){log.error(err);return;}
-				transfer.baseData.active='TRUE';
+				
+				transfer.baseData.stateOfTransfer='schválený';
+
 				peopleDao.get(transfer.baseData.player.oid,function(err,player){
 					if (err){log.error(err);return;}
 					if (!player.player){
@@ -140,6 +142,8 @@
 					player.player.club=transfer.baseData.clubTo;
 					player.player.hostingStartDate=transfer.baseData.dateFrom;
 					player.player.hostingEndDate=transfer.baseData.dateTo;
+					transfer.baseData.active='TRUE';
+
 					var playerId=player.id;
 
 					peopleDao.save(player, function(err,data){
@@ -156,7 +160,7 @@
 
 		};
 		this.handleHostingEnd=function (event){
-			var  self=this;
+			var self=this;
 			var transferDao = new universalDaoModule.UniversalDao(
 				this.ctx.mongoDriver,
 				{collectionName: 'transfers'}
@@ -202,7 +206,6 @@
 							log.verbose('transfer updated');
 							self.removePlayerFromRoster(playerId,transfer.baseData.season.oid);
 						});
-
 					});
 				});
 			});
