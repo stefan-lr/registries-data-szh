@@ -1043,3 +1043,6 @@ a.portal-menu-bottom-entry-head {
 	}
 }
 
+.only-riderszone, .only-location, .portal-content-navigation {
+	display: none;
+}
