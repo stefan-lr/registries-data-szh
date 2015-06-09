@@ -53,12 +53,21 @@
 				entity.requisitionData = {};
 				entity.requisitionData.setupDate=dateUtils.nowToReverse();
 				entity.requisitionData.status='created';
-				entity.requisitionData.applicant={schema:"uri://registries/people#views/fullperson-km/view",registry:'people',oid:event.user.id};
-				entity.requisitionData.clubApplicant={schema:"uri://registries/organizations#views/club-km/view",registry:'organizations',oid:event.user.officer.club.oid};
+				entity.requisitionData.applicant = {
+					schema: "uri://registries/people#views/fullperson-km/view",
+					oid: event.user.id
+				};
+				if (event.user && event.user.officer && event.user.officer.club) {
+					entity.requisitionData.clubApplicant = {
+						schema: "uri://registries/organizations#views/club-km/view",
+						oid: event.user.officer.club.oid
+					};
+				} else {
+					log.warn('Applicant %s does not have assigned club as officer but should have', event.user.id);
+				}
 
-
-				var qf=QueryFilter.create();
-				qf.addCriterium("systemCredentials.login.email","eq",solverAddress);
+				var qf = QueryFilter.create();
+				qf.addCriterium("systemCredentials.login.email", "eq", solverAddress);
 
 				userDao.find(qf, function(err, data) {
 					if (err){
@@ -67,13 +76,17 @@
 					}
 
 					// assign to and send mail.
-					if (data.length==1){
-						var solver=data[0];
-						
-							entity.requisitionData.assignedTo={schema:"uri://registries/people#views/fullperson-km/view",registry:'people',oid:solver.id};
-						
-						
+					if (data.length === 1){
+						var solver = data[0];
+
+							entity.requisitionData.assignedTo = {
+								schema: "uri://registries/people#views/fullperson-km/view",
+								oid: solver.id
+							};
+					} else {
+						log.warn('Failed to find solver with configured email %s in database, requisition left withoud solver', solverAddress);
 					}
+
 					self.sendRequisitionCreated(solverAddress,self.ctx.config.webserverPublicUrl,event.user.baseData.name.v+' '+event.user.baseData.surName.v,entity.requisitionData.subject,self.ctx.config.serviceUrl+'/requisitions/'+entity.id);
 
 					requisitionsDao.save(entity,function(err,data){
@@ -159,8 +172,6 @@
 			log.verbose('Sending mail ', mailOptions);
 
 			transport.sendMail(mailOptions);
-
-
 		};
 
 	}
