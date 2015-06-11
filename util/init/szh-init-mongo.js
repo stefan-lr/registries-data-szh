@@ -36,7 +36,7 @@ mongoDriver.init(config.mongoDbURI, function(err) {
 					"System Admin" : true,
 					"Registry People" : true,
 					"Registry Club" : true,
-					"Registry Requisitions" : true,
+					"Registry Requests" : true,
 					"Registry Competitions" : true,
 					"RefereeReport - read - KM" : true,
 					"RefereeReport - write - KM" : true,
@@ -44,8 +44,8 @@ mongoDriver.init(config.mongoDbURI, function(err) {
 					"Club - write - KM" : true,
 					"Person - read - KM" : true,
 					"Person - write - KM" : true,
-					"Requisitions - read - KM" : true,
-					"Requisitions - write - KM" : true,
+					"Requests - read - KM" : true,
+					"Requests - write - KM" : true,
 					"Portal - write" : true
 				},
 				"groups": {
@@ -84,11 +84,11 @@ mongoDriver.init(config.mongoDbURI, function(err) {
 				"permissions" : {
 					"System User" : true,
 					"Registry People" : true,
-					"Registry Requisitions" : true,
+					"Registry Requests" : true,
 					"Person - read - KM" : true,
 					"Person - write - KM" : true,
-					"Requisitions - read - KM" : true,
-					"Requisitions - write - KM" : true,
+					"Requests - read - KM" : true,
+					"Requests - write - KM" : true,
 					"Club - read - KM" : true,
 					"Club - write - KM" : true
 				},
@@ -119,7 +119,7 @@ mongoDriver.init(config.mongoDbURI, function(err) {
 					"System User" : true,
 					"Registry People" : true,
 					"Registry Club" : true,
-					"Registry Requisitions" : true,
+					"Registry Requests" : true,
 					"Registry Competitions" : true,
 					"Registry - read" : true,
 					"Registry - write" : true,
